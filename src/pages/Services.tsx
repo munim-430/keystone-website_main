@@ -138,6 +138,7 @@ const Services = () => {
     <Helmet>
       <title>Our Services — Keystone Overseas</title>
       <meta name="description" content="Student counseling, admission processing, visa guidance, scholarship assistance, and Dhanmondi Language Academy. 98% visa approval rate." />
+      <link rel="canonical" href="https://www.keystoneeducations.com/services" />
     </Helmet>
     <div className="pt-24 pb-24 lg:pb-0 overflow-hidden">
 

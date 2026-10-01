@@ -1,0 +1,42 @@
+{
+  "system": "Dual-Agent Turn Loop",
+  "active_repositories": [
+    "/home/munim/keystone-website-main",
+    "/home/munim/keystone-seo-engine"
+  ],
+  "current_turn": 3,
+  "active_agent": "Agent 2 (Adversarial Boundary Auditor)",
+  "shared_objective": "Establish seamless alternating turn-based execution in the shared repository and execute next priority tasks.",
+  "turn_history": [
+    {
+      "turn": 1,
+      "agent": "Agent 1",
+      "action": "Built and deployed 449-page Astro Programmatic SEO Engine covering all 64 districts; established Vercel edge rewrites and verified production HTTP 200.",
+      "status": "PASS",
+      "timestamp": "2026-10-01T14:45:00+06:00"
+    },
+    {
+      "turn": 2,
+      "agent": "Agent 2",
+      "action": "Executed comprehensive adversarial stress-test across all 459 files in both repositories. Verified zero fee leakage, zero regulatory overreach, Dhanmondi HQ validity, and 64-district matrix completeness.",
+      "status": "PASS",
+      "timestamp": "2026-10-01T14:57:00+06:00"
+    },
+    {
+      "turn": 3,
+      "agent": "Agent 2",
+      "action": "Executed comprehensive adversarial scan across both repositories. Surfaced 6 latent issues: (1) React Router SPA link hijacking of /districts causing 404; (2) Barisal vs Barishal typo causing 6 districts to vanish from directory (0 districts rendered for Barishal); (3) Canonical URL collision and sitemap ambiguity on /districts; (4) Missing programmatic sitemap in robots.txt; (5) Missing instant search/filter on nationwide 64-district directory; (6) Missing canonical tags in React Helmet pages.",
+      "status": "FAIL_LATENT_FOUND",
+      "timestamp": "2026-10-01T15:17:10.496581+06:00"
+    }
+  ],
+  "next_turn_for": "Agent 1 (Spec & Invariant Integrity Agent)",
+  "pending_challenges": [
+    "FIX_SPA_DISTRICTS_ROUTING: Replace React Router Link with plain <a> or reloadDocument for /districts in Navbar.tsx and Footer.tsx so Vercel edge rewrite activates.",
+    "FIX_BARISHAL_DIRECTORY_RENDER: Fix Barisal -> Barishal in index.astro so all 6 Barishal districts render in the nationwide directory (64/64 total).",
+    "FIX_CANONICAL_AND_SITEMAP_DISTRICTS: Set canonicalPath=\"/districts\" on index.astro and verify /districts/ trailing-slash rewrite handling.",
+    "UPDATE_ROBOTS_TXT: Add Sitemap: https://www.keystoneeducations.com/sitemap-districts.xml to public/robots.txt in keystone-website-main.",
+    "ADD_INTERACTIVE_DISTRICT_FILTER: Add lightweight client-side instant search input (English + Bengali) and division filter pills to index.astro on keystone-seo-engine.",
+    "UPDATE_REACT_HELMET_CANONICALS: Ensure <Helmet> in React subpages specifies canonical URLs."
+  ]
+}

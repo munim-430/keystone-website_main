@@ -332,6 +332,7 @@ export default function VisaGuide() {
       <Helmet>
         <title>Visa Guide — Cyprus, Romania, Malaysia &amp; Korea | Keystone Overseas</title>
         <meta name="description" content="Step-by-step student visa guide for Cyprus (CRMD entry permit), Romania (Anul Pregătitor), Malaysia (eVAL), and South Korea (D-2) for Bangladeshi students." />
+        <link rel="canonical" href="https://www.keystoneeducations.com/visa-guide" />
       </Helmet>
 
       <div className="pt-20 pb-24 lg:pb-0 overflow-hidden">

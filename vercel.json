@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/districts", "destination": "https://keystone-seo-engine.vercel.app/" },
+    { "source": "/districts/", "destination": "https://keystone-seo-engine.vercel.app/" },
     { "source": "/districts/:path*", "destination": "https://keystone-seo-engine.vercel.app/districts/:path*" },
     { "source": "/cyprus-without-ielts/:path*", "destination": "https://keystone-seo-engine.vercel.app/cyprus-without-ielts/:path*" },
     { "source": "/romania-prep-year/:path*", "destination": "https://keystone-seo-engine.vercel.app/romania-prep-year/:path*" },

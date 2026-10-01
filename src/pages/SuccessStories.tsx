@@ -112,6 +112,7 @@ const SuccessStories = () => {
     <Helmet>
       <title>Student Success Stories — Keystone Overseas</title>
       <meta name="description" content="Real stories from 500+ Bangladeshi students placed in Cyprus, Romania, Malaysia, South Korea, Canada and Europe with Keystone Overseas." />
+      <link rel="canonical" href="https://www.keystoneeducations.com/success-stories" />
     </Helmet>
     <div className="pt-24 pb-24 lg:pb-0 overflow-hidden">
 

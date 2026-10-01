@@ -54,10 +54,17 @@ const Footer = () => {
                 { label: 'Dhanmondi Desk', to: '/#contact' },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link to={item.to} className="flex items-center hover:text-brand-red transition-colors group">
-                    <ChevronRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0" />
-                    {item.label}
-                  </Link>
+                  {item.to.startsWith('/districts') ? (
+                    <a href={item.to} className="flex items-center hover:text-brand-red transition-colors group">
+                      <ChevronRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0" />
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link to={item.to} className="flex items-center hover:text-brand-red transition-colors group">
+                      <ChevronRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0" />
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

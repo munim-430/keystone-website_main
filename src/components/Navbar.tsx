@@ -70,10 +70,17 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-1">
             {mainLinks.map((link) => (
-              <Link key={link.name} to={link.path}
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors hover:text-brand-red hover:bg-slate-50 ${location.pathname === link.path ? 'text-brand-red' : 'text-gray-700'}`}>
-                {link.name}
-              </Link>
+              link.path.startsWith('/districts') ? (
+                <a key={link.name} href={link.path}
+                  className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors hover:text-brand-red hover:bg-slate-50 ${location.pathname === link.path ? 'text-brand-red' : 'text-gray-700'}`}>
+                  {link.name}
+                </a>
+              ) : (
+                <Link key={link.name} to={link.path}
+                  className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors hover:text-brand-red hover:bg-slate-50 ${location.pathname === link.path ? 'text-brand-red' : 'text-gray-700'}`}>
+                  {link.name}
+                </Link>
+              )
             ))}
 
             <div className="relative" ref={dropdownRef}>

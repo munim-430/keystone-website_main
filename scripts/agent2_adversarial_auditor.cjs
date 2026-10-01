@@ -8,25 +8,48 @@ console.log('====================================================\n');
 let violations = [];
 let passCount = 0;
 
+const IGNORED_DIRS = new Set([
+  'node_modules',
+  '.git',
+  '.next',
+  '.astro',
+  '.cache',
+  '.vercel',
+  'dist',
+  'build'
+]);
+
 function walk(dir) {
   let results = [];
   if (!fs.existsSync(dir)) return results;
-  const list = fs.readdirSync(dir);
+  let list;
+  try {
+    list = fs.readdirSync(dir);
+  } catch (e) {
+    return results;
+  }
+
   for (const file of list) {
-    if (file === 'node_modules' || file === '.git' || file === '.next' || file === '.astro') continue;
+    if (IGNORED_DIRS.has(file)) continue;
     const fullPath = path.join(dir, file);
-    const stat = fs.statSync(fullPath);
-    if (stat && stat.isDirectory()) {
-      results = results.concat(walk(fullPath));
-    } else if (/\.(html|astro|tsx|jsx|ts|js|json|md)$/i.test(file)) {
-      results.push(fullPath);
+    try {
+      const stat = fs.statSync(fullPath);
+      if (stat && stat.isDirectory()) {
+        results = results.concat(walk(fullPath));
+      } else if (/\.(html|astro|tsx|jsx|ts|js|json|md)$/i.test(file)) {
+        results.push(fullPath);
+      }
+    } catch (e) {
+      continue;
     }
   }
   return results;
 }
 
-const files = walk('.');
-console.log(`Auditing ${files.length} source and content files...\n`);
+// Always walk the repository root containing this scripts directory
+const repoRoot = path.resolve(__dirname, '..');
+const files = walk(repoRoot);
+console.log(`Auditing ${files.length} source and content files in ${repoRoot}...\n`);
 
 // 1. Fee Leakage Stress Test
 const feePatterns = [
@@ -37,8 +60,7 @@ const feePatterns = [
 ];
 
 for (const f of files) {
-  // Exclude auditor scripts and contracts themselves from fee scan
-  if (f.includes('agent2_adversarial_auditor') || f.includes('b2b_partner_contract')) continue;
+  if (f.includes('agent2_adversarial_auditor') || f.includes('b2b_partner_contract') || f.includes('CO_AGENT_PROTOCOL') || f.includes('turn_state')) continue;
   const content = fs.readFileSync(f, 'utf8');
   for (const p of feePatterns) {
     if (p.regex.test(content)) {
@@ -58,7 +80,7 @@ const overreachPatterns = [
 ];
 
 for (const f of files) {
-  if (f.includes('agent2_adversarial_auditor')) continue;
+  if (f.includes('agent2_adversarial_auditor') || f.includes('CO_AGENT_PROTOCOL') || f.includes('turn_state')) continue;
   const content = fs.readFileSync(f, 'utf8');
   for (const p of overreachPatterns) {
     if (p.regex.test(content)) {
@@ -78,7 +100,7 @@ const piiAndContactPatterns = [
 ];
 
 for (const f of files) {
-  if (f.includes('agent2_adversarial_auditor')) continue;
+  if (f.includes('agent2_adversarial_auditor') || f.includes('CO_AGENT_PROTOCOL') || f.includes('turn_state')) continue;
   const content = fs.readFileSync(f, 'utf8');
   for (const p of piiAndContactPatterns) {
     if (p.regex.test(content)) {

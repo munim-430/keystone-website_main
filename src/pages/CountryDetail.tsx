@@ -24,6 +24,7 @@ const CountryDetail = () => {
       <Helmet>
         <title>{`Study in ${country.name} from Bangladesh — Keystone Overseas`}</title>
         <meta name="description" content={`${country.shortDescription} Requirements, universities, and visa guidance for Bangladeshi students.`} />
+        <link rel="canonical" href={`https://www.keystoneeducations.com/country/${id}`} />
         <meta property="og:title" content={`Study in ${country.name} — Keystone Overseas`} />
         <meta property="og:description" content={country.shortDescription} />
       </Helmet>

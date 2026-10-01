@@ -39,6 +39,7 @@ const About = () => {
     <Helmet>
       <title>About Us — Keystone Overseas</title>
       <meta name="description" content="Meet the team behind Keystone Overseas. Founded by Hasibul Munim — 9 years in South Korea — helping 500+ Bangladeshi students study abroad." />
+      <link rel="canonical" href="https://www.keystoneeducations.com/about" />
     </Helmet>
     <div className="pt-24 pb-24 lg:pb-0 overflow-hidden">
 
