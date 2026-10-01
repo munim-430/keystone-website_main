@@ -104,18 +104,18 @@ function getResults(answers: Record<string, string>): Result[] {
     color: 'from-emerald-500 to-teal-600',
   });
 
-  // South Korea
-  let koreaScore = 0;
-  if (['hsc', 'bachelor'].includes(answers.education)) koreaScore += 30;
-  if (['low', 'medium', 'scholarship'].includes(answers.budget)) koreaScore += 30;
-  if (answers.preference === 'scholarship') koreaScore += 25;
-  if (['none', 'basic'].includes(answers.language)) koreaScore += 15;
+  // South Korea (IEQAS)
+  let koreaScore = 20;
+  if (['hsc', 'bachelor', 'master'].includes(answers.education)) koreaScore += 25;
+  if (['low', 'medium', 'scholarship'].includes(answers.budget)) koreaScore += 25;
+  if (['scholarship', 'work', 'affordable'].includes(answers.preference)) koreaScore += 25;
+  if (['none', 'basic', 'good'].includes(answers.language)) koreaScore += 15;
   results.push({
-    country: 'South Korea',
+    country: 'South Korea (IEQAS)',
     flag: '🇰🇷',
-    match: Math.min(koreaScore, 94),
-    reason: 'Generous GKS and university scholarships (up to 100%). Direct alumni counseling from founder (9 years in Korea).',
-    color: 'from-brand-blue to-brand-blue-dark',
+    match: Math.min(koreaScore, 97),
+    reason: 'Official IEQAS Accredited Universities with automated Confirmation of Visa Issuance (VIC), 30%–100% tuition scholarships, and legal 25–30 hrs/week part-time work rights.',
+    color: 'from-blue-600 to-indigo-800',
   });
 
   // Hungary (Schengen)

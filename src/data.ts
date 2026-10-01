@@ -161,39 +161,45 @@ export const countries: Country[] = [
     id: 'south-korea',
     name: 'South Korea',
     image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?q=80&w=1000&auto=format&fit=crop',
-    shortDescription: 'Founder 9-year direct resident experience with up to 100% scholarships.',
-    fullDescription: 'South Korea represents an elite academic and technological powerhouse. Keystone Overseas’ founder Hasibul Munim resided in South Korea for 9 years, providing applicants with unmatched insider counseling on IEQAS-certified universities, GKS scholarships, and lawful work-study frameworks.',
+    shortDescription: 'Official IEQAS Accredited Universities with up to 100% scholarships & streamlined visa.',
+    fullDescription: 'South Korea is an elite technological and academic global powerhouse. Keystone Overseas specializes in official IEQAS-certified (교육국제화역량 인증제) universities approved by the Korean Ministry of Education and Ministry of Justice. Students admitted to certified institutions benefit from automated Visa Issuance Confirmation (사증발급인정서 - VIC), simplified financial screening, legal part-time work rights (up to 25–30 hrs/week), and founder insider guidance based on 9 years resident experience in South Korea.',
     benefits: [
-      'Direct alumni network and founder guidance (9 years in Korea)',
-      '30% to 100% tuition scholarships for qualified international applicants',
-      'High-tech post-study career opportunities in AI, Robotics, and Electronics',
-      'Safe, modern, and high-living-standard environment',
-      'Authorized part-time work permitted during academic terms'
+      'Official IEQAS Accredited Universities with streamlined visa confirmation (HiKorea)',
+      '30% to 100% tuition fee reduction scholarships based on GPA & IELTS / TOPIK',
+      'Direct alumni network and founder guidance (9 years resident experience in South Korea)',
+      'Legal part-time work rights permitted during semesters (25–30 hrs/week) and full-time in vacations',
+      'Affordable flagship national universities (~2,000,000 KRW / semester) and high-tech career pathways'
     ],
     universities: [
-      'Kyungdong University (Global Campus)',
-      'Sejong University',
-      'Kyungsung University',
-      'Dong-A University',
-      'Sungkyunkwan University'
+      'Korea University (우수인증대학)',
+      'Sungkyunkwan University - SKKU (우수인증대학)',
+      'Hanyang University (우수인증대학)',
+      'Chung-Ang University - CAU (우수인증대학)',
+      'Konkuk University (우수인증대학)',
+      'Pusan National University - PNU (Flagship National)',
+      'Kyungpook National University - KNU (Flagship National)',
+      'Sejong University (우수인증대학)',
+      'Ajou University (우수인증대학)',
+      'University of Seoul (Public National)'
     ],
     requirements: [
-      'HSC / Bachelor with minimum GPA 3.00/5.00',
-      'English proficiency (IELTS 5.5+) or TOPIK Level 3+ (Korean language)',
-      'Bank Solvency verification ($10,000 fixed deposit)',
-      'Comprehensive Study Plan & Statement of Purpose'
+      'HSC / A-Level / Bachelor with minimum GPA 3.50/5.00 (or CGPA 2.80+ for Masters)',
+      'English Track: IELTS 5.5–6.5 (or Korean Track: TOPIK Level 3+ / D-4 language training)',
+      'Statutory Bank Solvency: 20M KRW (~$15,000 USD) for Seoul / 16M-18M KRW for Regional Universities',
+      'Attested Academic Certificates (Board, MoE, MoFA Dhaka) & Study Plan'
     ],
     visaProcess: [
-      'University pre-screening and admission interview',
-      'Issuance of Certificate of Admission (CoA)',
-      'D-2 / D-4 visa application at the Embassy of the Republic of Korea in Dhaka',
-      'Pre-departure orientation and airport meet-and-greet in Seoul/Busan'
+      'Academic pre-screening & university admission offer',
+      'Confirmation of Visa Issuance (VIC / 사증발급인정서) issued via Korea Immigration Service',
+      'Direct visa sticker endorsement at Embassy of the Republic of Korea in Dhaka (Baridhara)',
+      'Pre-departure orientation and airport arrival coordination in Incheon / Gimhae'
     ],
     capital: 'Seoul',
     cities: [
-      { name: 'Seoul', x: 70, y: 30, description: 'Capital megacity housing top global research universities.' },
-      { name: 'Busan', x: 80, y: 70, description: 'Major maritime and industrial center with top national universities.' },
-      { name: 'Daejeon', x: 65, y: 50, description: 'Korea’s premier technology and scientific innovation cluster.' }
+      { name: 'Seoul', x: 70, y: 30, description: 'Capital megacity housing top global IEQAS research universities (Korea Univ, SKKU, Hanyang, CAU).' },
+      { name: 'Busan', x: 80, y: 70, description: 'Maritime and industrial capital, home to Pusan National University and coastal campuses.' },
+      { name: 'Daegu', x: 75, y: 55, description: 'High-tech and industrial hub, home to Kyungpook National University (KNU).' },
+      { name: 'Daejeon', x: 65, y: 50, description: 'Korea’s Silicon Valley, home to premier science institutes and national universities.' }
     ]
   },
   {

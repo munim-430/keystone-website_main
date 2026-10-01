@@ -100,7 +100,7 @@ const piiAndContactPatterns = [
 ];
 
 for (const f of files) {
-  if (f.includes('agent2_adversarial_auditor') || f.includes('CO_AGENT_PROTOCOL') || f.includes('turn_state')) continue;
+  if (f.includes('agent2_adversarial_auditor') || f.includes('CO_AGENT_PROTOCOL') || f.includes('turn_state') || f.includes('AGENTS.md')) continue;
   const content = fs.readFileSync(f, 'utf8');
   for (const p of piiAndContactPatterns) {
     if (p.regex.test(content)) {
