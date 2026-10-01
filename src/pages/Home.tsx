@@ -179,7 +179,7 @@ const Home = () => {
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 gap-4">
                 {[
-                  { value: '2022', label: 'Founded', sub: 'Est. in Gazipur' },
+                  { value: '2022', label: 'Founded', sub: 'Est. in Dhaka' },
                   { value: '500+', label: 'Students', sub: 'Successfully placed' },
                   { value: '98%', label: 'Visa Rate', sub: 'Industry leading' },
                   { value: '10+', label: 'Countries', sub: 'Global network' },

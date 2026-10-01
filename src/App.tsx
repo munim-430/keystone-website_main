@@ -17,7 +17,7 @@ import { TAWKTO_PROPERTY_ID, TAWKTO_WIDGET_ID } from './constants';
 
 function TawkTo() {
   useEffect(() => {
-    if (TAWKTO_PROPERTY_ID === 'YOUR_TAWKTO_PROPERTY_ID') return;
+    if (!TAWKTO_PROPERTY_ID) return;
     const s = document.createElement('script');
     s.async = true;
     s.src = `https://embed.tawk.to/${TAWKTO_PROPERTY_ID}/${TAWKTO_WIDGET_ID}`;

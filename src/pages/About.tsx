@@ -24,7 +24,7 @@ const teamMembers = [
 ];
 
 const milestones = [
-  { year: '2022', event: 'Keystone Education founded in Gazipur, Bangladesh by Hasibul Munim' },
+  { year: '2022', event: 'Keystone Education founded in Bangladesh by Hasibul Munim' },
   { year: '2022', event: 'First batch of students placed in South Korea with GKS scholarship support' },
   { year: '2023', event: 'Expanded to Malaysian and Canadian pathway programs' },
   { year: '2023', event: 'Crossed 200 successful student placements' },
@@ -166,7 +166,7 @@ const About = () => {
                       className="p-2 text-slate-400 hover:text-brand-blue hover:bg-slate-50 rounded-lg transition-colors">
                       <Facebook size={16} />
                     </a>
-                    <a href="mailto:info@keystoneeducations.com"
+                    <a href="mailto:contact@keystoneeducations.com"
                       className="p-2 text-slate-400 hover:text-brand-blue hover:bg-slate-50 rounded-lg transition-colors">
                       <Mail size={16} />
                     </a>
