@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: 'Hasibul Munim',
     role: 'Founder & Chief Consultant',
-    bio: 'Hasibul spent 9 transformative years living and studying in South Korea, giving him unparalleled firsthand knowledge of the Korean education system, culture, and visa process. He founded Keystone Education in 2022 with one mission: to make international education accessible to every Bangladeshi student who dares to dream. His personal journey from Bangladesh to Korea — and back — is the heart of everything Keystone stands for.',
+    bio: 'Hasibul spent 9 transformative years living and studying in South Korea, giving him unparalleled firsthand knowledge of the Korean education system, culture, and visa process. He founded Keystone Overseas in 2022 with one mission: to make international education accessible to every Bangladeshi student who dares to dream. His personal journey from Bangladesh to Korea — and back — is the heart of everything Keystone stands for.',
     expertise: ['South Korea', 'GKS Scholarships', 'Student Counseling'],
     photo: '/hasibul.jpg',
     color: 'from-brand-blue to-brand-blue-light',
@@ -24,20 +24,21 @@ const teamMembers = [
 ];
 
 const milestones = [
-  { year: '2022', event: 'Keystone Education founded in Gazipur, Bangladesh by Hasibul Munim' },
+  { year: '2022', event: 'Keystone founded in Bangladesh by Hasibul Munim after 9 years in South Korea' },
   { year: '2022', event: 'First batch of students placed in South Korea with GKS scholarship support' },
   { year: '2023', event: 'Expanded to Malaysian and Canadian pathway programs' },
   { year: '2023', event: 'Crossed 200 successful student placements' },
-  { year: '2024', event: 'Launched Cyprus and Europe pathways. Opened Narsingdi branch' },
+  { year: '2024', event: 'Launched Cyprus and Europe high-conversion pathways' },
   { year: '2025', event: 'Surpassed 500+ students placed across 10+ countries' },
+  { year: '2026', event: 'Rebranded to Keystone Overseas; launched flagship Dhanmondi Academy and European Prep Batches' },
 ];
 
 const About = () => {
   return (
     <>
     <Helmet>
-      <title>About Us — Keystone Education Consultancy</title>
-      <meta name="description" content="Meet the team behind Keystone Education. Founded in 2022 by Hasibul Munim — 9 years in South Korea — helping 500+ Bangladeshi students study abroad." />
+      <title>About Us — Keystone Overseas</title>
+      <meta name="description" content="Meet the team behind Keystone Overseas. Founded by Hasibul Munim — 9 years in South Korea — helping 500+ Bangladeshi students study abroad." />
     </Helmet>
     <div className="pt-24 pb-24 lg:pb-0 overflow-hidden">
 
@@ -59,7 +60,7 @@ const About = () => {
                 Turning Dreams Into <span className="text-brand-red">Destinations</span>
               </h1>
               <p className="text-xl text-blue-200 leading-relaxed mb-8">
-                Since 2022, Keystone Education Consultancy has been Bangladesh's trusted partner for international student placement — guiding 500+ students to universities across 10+ countries.
+                Since 2022, Keystone Overseas has been Bangladesh's trusted partner for international student placement — guiding 500+ students to universities across 10+ countries.
               </p>
               <div className="grid grid-cols-3 gap-6">
                 {[
@@ -85,7 +86,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-dark/60 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
                   <p className="text-white font-bold">"Where global dreams begin."</p>
-                  <p className="text-blue-200 text-sm mt-1">— Keystone Education Consultancy, est. 2022</p>
+                  <p className="text-blue-200 text-sm mt-1">— Keystone Overseas, est. 2022</p>
                 </div>
               </div>
             </motion.div>
@@ -166,7 +167,7 @@ const About = () => {
                       className="p-2 text-slate-400 hover:text-brand-blue hover:bg-slate-50 rounded-lg transition-colors">
                       <Facebook size={16} />
                     </a>
-                    <a href="mailto:info@keystoneeducations.com"
+                    <a href="mailto:munim.m247@gmail.com"
                       className="p-2 text-slate-400 hover:text-brand-blue hover:bg-slate-50 rounded-lg transition-colors">
                       <Mail size={16} />
                     </a>

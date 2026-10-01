@@ -62,18 +62,32 @@ type Result = {
 function getResults(answers: Record<string, string>): Result[] {
   const results: Result[] = [];
 
-  // South Korea
-  let koreaScore = 0;
-  if (['hsc', 'bachelor'].includes(answers.education)) koreaScore += 30;
-  if (['low', 'medium', 'scholarship'].includes(answers.budget)) koreaScore += 30;
-  if (answers.preference === 'scholarship') koreaScore += 25;
-  if (['none', 'basic'].includes(answers.language)) koreaScore += 15;
+  // Cyprus (EU)
+  let cyprusScore = 20;
+  if (['hsc', 'bachelor', 'ssc'].includes(answers.education)) cyprusScore += 25;
+  if (['low', 'medium'].includes(answers.budget)) cyprusScore += 25;
+  if (['affordable', 'work'].includes(answers.preference)) cyprusScore += 20;
+  if (['none', 'basic'].includes(answers.language)) cyprusScore += 25;
   results.push({
-    country: 'South Korea',
-    flag: '🇰🇷',
-    match: Math.min(koreaScore, 95),
-    reason: 'Generous GKS scholarships, affordable tuition, and world-class universities make Korea ideal for Bangladeshi students.',
-    color: 'from-brand-blue to-brand-blue-dark',
+    country: 'Cyprus (EU)',
+    flag: '🇨🇾',
+    match: Math.min(cyprusScore, 98),
+    reason: 'Zero IELTS required & study gaps up to 8 years accepted. Direct CRMD Entry Permit with NO visa interview in India.',
+    color: 'from-amber-500 to-orange-600',
+  });
+
+  // Romania (EU)
+  let romaniaScore = 20;
+  if (['hsc', 'bachelor'].includes(answers.education)) romaniaScore += 25;
+  if (['low', 'medium'].includes(answers.budget)) romaniaScore += 25;
+  if (['affordable', 'pr'].includes(answers.preference)) romaniaScore += 20;
+  if (['none', 'basic'].includes(answers.language)) romaniaScore += 25;
+  results.push({
+    country: 'Romania (EU)',
+    flag: '🇷🇴',
+    match: Math.min(romaniaScore, 96),
+    reason: 'Official 1-Year Preparatory Language Year (Anul Pregătitor) with zero IELTS requirement and low statutory tuition (€2,200/yr).',
+    color: 'from-blue-600 to-indigo-700',
   });
 
   // Malaysia
@@ -86,8 +100,36 @@ function getResults(answers: Record<string, string>): Result[] {
     country: 'Malaysia',
     flag: '🇲🇾',
     match: Math.min(malaysiaScore, 92),
-    reason: 'Very affordable costs, English-medium universities, and a Muslim-friendly environment make Malaysia a top choice.',
+    reason: 'Very affordable costs ($2,500–$4,500/yr), 95%+ visa ratio via EMGS, and fast eVAL issuance in Dhaka.',
     color: 'from-emerald-500 to-teal-600',
+  });
+
+  // South Korea
+  let koreaScore = 0;
+  if (['hsc', 'bachelor'].includes(answers.education)) koreaScore += 30;
+  if (['low', 'medium', 'scholarship'].includes(answers.budget)) koreaScore += 30;
+  if (answers.preference === 'scholarship') koreaScore += 25;
+  if (['none', 'basic'].includes(answers.language)) koreaScore += 15;
+  results.push({
+    country: 'South Korea',
+    flag: '🇰🇷',
+    match: Math.min(koreaScore, 94),
+    reason: 'Generous GKS and university scholarships (up to 100%). Direct alumni counseling from founder (9 years in Korea).',
+    color: 'from-brand-blue to-brand-blue-dark',
+  });
+
+  // Hungary (Schengen)
+  let hungaryScore = 0;
+  if (['hsc', 'bachelor', 'master'].includes(answers.education)) hungaryScore += 25;
+  if (['medium', 'high'].includes(answers.budget)) hungaryScore += 25;
+  if (['affordable', 'pr'].includes(answers.preference)) hungaryScore += 20;
+  if (['basic', 'good'].includes(answers.language)) hungaryScore += 20;
+  results.push({
+    country: 'Hungary (Schengen)',
+    flag: '🇭🇺',
+    match: Math.min(hungaryScore, 89),
+    reason: 'Full 29-Nation Schengen visa. Direct biometric submission at VFS Global Dhaka (Gulshan) with zero Indian transit.',
+    color: 'from-violet-500 to-purple-700',
   });
 
   // Canada
@@ -99,24 +141,9 @@ function getResults(answers: Record<string, string>): Result[] {
   results.push({
     country: 'Canada',
     flag: '🇨🇦',
-    match: Math.min(canadaScore, 90),
-    reason: 'Excellent PR pathways, post-graduation work permits, and globally recognized degrees.',
+    match: Math.min(canadaScore, 87),
+    reason: 'Post-Graduation Work Permit (PGWP) pathways and permanent residency opportunities for eligible graduates.',
     color: 'from-red-500 to-rose-600',
-  });
-
-  // Cyprus / Europe
-  let europeScore = 0;
-  if (['hsc', 'bachelor'].includes(answers.education)) europeScore += 25;
-  if (['medium', 'high'].includes(answers.budget)) europeScore += 25;
-  if (answers.preference === 'affordable') europeScore += 20;
-  if (['good', 'excellent'].includes(answers.language)) europeScore += 20;
-  europeScore += 10;
-  results.push({
-    country: 'Cyprus / Europe',
-    flag: '🇪🇺',
-    match: Math.min(europeScore, 88),
-    reason: 'European degrees at competitive costs with excellent career opportunities across the EU.',
-    color: 'from-violet-500 to-purple-700',
   });
 
   return results.sort((a, b) => b.match - a.match);

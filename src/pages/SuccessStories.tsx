@@ -110,8 +110,8 @@ const SuccessStories = () => {
   return (
     <>
     <Helmet>
-      <title>Student Success Stories — Keystone Education Consultancy</title>
-      <meta name="description" content="Real stories from 500+ Bangladeshi students who studied in South Korea, Malaysia, Canada and more with Keystone Education's help." />
+      <title>Student Success Stories — Keystone Overseas</title>
+      <meta name="description" content="Real stories from 500+ Bangladeshi students placed in Cyprus, Romania, Malaysia, South Korea, Canada and Europe with Keystone Overseas." />
     </Helmet>
     <div className="pt-24 pb-24 lg:pb-0 overflow-hidden">
 

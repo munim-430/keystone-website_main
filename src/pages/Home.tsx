@@ -27,16 +27,16 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Keystone Education Consultancy — Study Abroad from Bangladesh</title>
-        <meta name="description" content="Bangladesh's trusted study abroad consultancy. 500+ students placed in South Korea, Malaysia, Canada, Cyprus & Europe. 98% visa approval rate. Free consultation." />
-        <meta property="og:title" content="Keystone Education Consultancy" />
-        <meta property="og:description" content="500+ Bangladeshi students placed in top universities worldwide. 98% visa approval rate. Free first consultation." />
+        <title>Keystone Overseas — Study Abroad &amp; Language Academy Dhanmondi Dhaka</title>
+        <meta name="description" content="Study in Cyprus, Romania, Malaysia, South Korea, Hungary &amp; Canada from Bangladesh. Dhanmondi physical academy for IELTS 6.5 &amp; European language prep. 98% visa approval rate." />
+        <meta property="og:title" content="Keystone Overseas — Global Education &amp; Academy" />
+        <meta property="og:description" content="500+ Bangladeshi students placed in top universities worldwide. Flagship Dhanmondi office and Language Academy. 98% visa approval rate." />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "EducationalOrganization",
-          "name": "Keystone Education Consultancy",
-          "description": "Study abroad consultancy for Bangladeshi students",
+          "name": "Keystone Overseas",
+          "description": "Study abroad consultancy and language academy for Bangladeshi students",
           "address": { "@type": "PostalAddress", "streetAddress": OFFICE_ADDRESS, "addressCountry": "BD" },
           "telephone": WHATSAPP_DISPLAY,
           "email": CONTACT_EMAIL,
@@ -55,8 +55,8 @@ const Home = () => {
               {[
                 { end: 500, suffix: '+', label: 'Students Placed', icon: '🎓' },
                 { end: 98, suffix: '%', label: 'Visa Approval Rate', icon: '✅' },
-                { end: 10, suffix: '+', label: 'Countries', icon: '🌍' },
-                { end: 3, suffix: '', label: 'Office Locations', icon: '📍' },
+                { end: 6, suffix: '+', label: 'Study Corridors', icon: '🌍' },
+                { end: 100, suffix: '%', label: 'Direct Guidance', icon: '🎯' },
               ].map((stat, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="text-center">
@@ -136,6 +136,121 @@ const Home = () => {
           </div>
         </section>
 
+        {/* Keystone Academy Section */}
+        <section id="academy" className="py-20 bg-gradient-to-b from-white to-blue-50/40 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-14">
+              <span className="inline-block bg-brand-red/10 text-brand-red font-bold uppercase tracking-widest text-xs px-4 py-1.5 rounded-full mb-3 border border-red-200">
+                Flagship Dhanmondi Campus
+              </span>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-4">
+                Keystone <span className="text-brand-red">Language Academy</span>
+              </h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+                Direct in-person batches at Sobhanbag, Dhanmondi. Designed to bridge the English and consular gap so your study visa is guaranteed embassy-ready.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Card 1: IELTS 6.5 Fast-Track */}
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition-all relative flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-brand-blue/10 text-brand-blue text-xs font-extrabold px-3 py-1 rounded-full mb-4">
+                    4–8 Week Intensive
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-slate-900 mb-2">IELTS 6.5 Fast-Track</h3>
+                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+                    Designed for students with study gaps or urgent intakes. Intensive focus on Speaking &amp; Writing band improvement.
+                  </p>
+                  <div className="space-y-3 mb-8">
+                    {[
+                      'Daily 1-on-1 Speaking Clinics with mock examiners',
+                      'Cambridge test papers & automated band scoring',
+                      'Small batch size (max 12 students per class)',
+                      'Weekend & Evening schedules for working students',
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
+                        <CheckCircle size={16} className="text-green-500 flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a href="https://wa.me/8801941646278?text=Hi%20Keystone%20Overseas!%20I%20want%20to%20enroll%20in%20the%20Dhanmondi%20IELTS%20Fast-Track%20batch."
+                  target="_blank" rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-red text-white font-bold py-3.5 px-6 rounded-2xl transition-all text-sm shadow-md">
+                  <MessageCircle size={16} /> Enroll in Dhanmondi Batch
+                </a>
+              </motion.div>
+
+              {/* Card 2: European Preparatory & Consular Masterclass */}
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} viewport={{ once: true }}
+                className="bg-gradient-to-br from-brand-blue-dark to-brand-blue text-white rounded-3xl p-8 border border-blue-900 shadow-xl hover:shadow-2xl transition-all relative flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-brand-red text-white text-xs font-extrabold px-3 py-1 rounded-full mb-4">
+                    Zero-IELTS European Route
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-white mb-2">European Prep &amp; Consular Lab</h3>
+                  <p className="text-blue-200 text-sm mb-6 leading-relaxed">
+                    Tailored for Romania (Anul Pregătitor), Cyprus &amp; Hungary. Zero-IELTS foundation plus rigorous embassy interview coaching.
+                  </p>
+                  <div className="space-y-3 mb-8">
+                    {[
+                      'Embassy mock interviews (countering study gaps & finances)',
+                      'Romanian & European cultural and survival language basics',
+                      'Statement of Purpose (SOP) personalized drafting clinic',
+                      'Hague Apostille & e-Apostille document verification guidance',
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-sm text-blue-100">
+                        <CheckCircle size={16} className="text-green-400 flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a href="https://wa.me/8801941646278?text=Hi%20Keystone%20Overseas!%20I%20want%20to%20enroll%20in%20the%20European%20Prep%20%26%20Consular%20Lab%20batch."
+                  target="_blank" rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-600 text-white font-bold py-3.5 px-6 rounded-2xl transition-all text-sm shadow-lg">
+                  <MessageCircle size={16} /> Book Consular Prep Batch
+                </a>
+              </motion.div>
+
+              {/* Card 3: Korean Language & GKS Masterclass */}
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} viewport={{ once: true }}
+                className="bg-white rounded-3xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition-all relative flex flex-col justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 text-xs font-extrabold px-3 py-1 rounded-full mb-4">
+                    Founder Mentored
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-slate-900 mb-2">Korean Language &amp; GKS Prep</h3>
+                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+                    Direct insider coaching from founder Hasibul Munim (9 years in Korea). Master Hangul, TOPIK Level 1–2, and Korean visa interviews.
+                  </p>
+                  <div className="space-y-3 mb-8">
+                    {[
+                      'Hangul literacy and conversational fluency for university life',
+                      'TOPIK mock exams for 30%–100% university scholarships',
+                      'Direct guidance on Korean D-2 / D-4 embassy interviews in Gulshan',
+                      'Work-study adaptation and post-landing survival training',
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
+                        <CheckCircle size={16} className="text-green-500 flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a href="https://wa.me/8801941646278?text=Hi%20Keystone%20Overseas!%20I%20want%20to%20enroll%20in%20the%20Korean%20Language%20%26%20GKS%20batch."
+                  target="_blank" rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-red text-white font-bold py-3.5 px-6 rounded-2xl transition-all text-sm shadow-md">
+                  <MessageCircle size={16} /> Join Korean Language Batch
+                </a>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Why Keystone */}
         <section className="py-20 bg-gradient-to-br from-brand-blue-dark via-[#1a2b6d] to-brand-blue text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10"
@@ -179,7 +294,7 @@ const Home = () => {
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 gap-4">
                 {[
-                  { value: '2022', label: 'Founded', sub: 'Est. in Gazipur' },
+                  { value: '2022', label: 'Founded', sub: 'Flagship Dhanmondi' },
                   { value: '500+', label: 'Students', sub: 'Successfully placed' },
                   { value: '98%', label: 'Visa Rate', sub: 'Industry leading' },
                   { value: '10+', label: 'Countries', sub: 'Global network' },
@@ -240,7 +355,7 @@ const Home = () => {
                 <span className="text-brand-red font-bold uppercase tracking-widest text-sm">Get In Touch</span>
                 <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Start Your Journey Today</h2>
                 <p className="text-slate-500 text-lg leading-relaxed mb-8">
-                  Your first consultation is completely free. Visit us at any of our 3 locations, or just send a WhatsApp message.
+                  Your first consultation is completely free. Visit our flagship Dhanmondi office or send us a WhatsApp message directly.
                 </p>
                 <div className="space-y-5">
                   {[

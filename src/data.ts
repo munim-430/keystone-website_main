@@ -2,94 +2,237 @@ import { Country } from './types';
 
 export const countries: Country[] = [
   {
-    id: 'south-korea',
-    name: 'South Korea',
-    image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?q=80&w=1000&auto=format&fit=crop',
-    shortDescription: 'Experience world-class education in the heart of East Asia.',
-    fullDescription: 'South Korea has become a top destination for international students, offering a blend of traditional culture and cutting-edge technology. With its globally ranked universities and vibrant student life, it provides an unparalleled educational experience.',
+    id: 'cyprus',
+    name: 'Cyprus (EU)',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1000&auto=format&fit=crop',
+    shortDescription: 'Highest visa success in Europe with zero Indian transit hassles.',
+    fullDescription: 'The Republic of Cyprus provides an accessible European Union educational corridor for Bangladeshi students. Admissions and Entry Permits (CRMD Blue Paper) are issued directly by the university and Cyprus Migration Department in Nicosia, allowing students to fly directly from Dhaka to Larnaca with no embassy interview in India.',
     benefits: [
-      'High-quality education at affordable costs',
-      'Generous scholarship opportunities (GKS, etc.)',
-      'Safe and welcoming environment',
-      'Opportunity to learn a new language and culture',
-      'Strong post-study work opportunities'
+      'No IELTS mandatory (Medium of Instruction or internal placement test)',
+      'High study gap tolerance (3 to 8+ years accepted)',
+      'Zero consular interview in India (Direct CRMD Entry Permit & OKTB)',
+      'Affordable tuition fees (€3,000 – €4,000 / year with installment plans)',
+      'Legal part-time work rights (20 hrs/week during study terms)'
     ],
-    universities: ['Seoul National University', 'KAIST', 'Korea University', 'Yonsei University', 'Sungkyunkwan University'],
-    requirements: ['High School Diploma or equivalent', 'English Proficiency (IELTS/TOEFL) or TOPIK (Korean)', 'Statement of Purpose', 'Letters of Recommendation'],
-    visaProcess: ['Receive Admission Letter', 'Apply for D-2 Student Visa', 'Submit Financial Documents', 'Interview at Embassy (if required)'],
-    capital: 'Seoul',
+    universities: [
+      'University of Nicosia',
+      'European University Cyprus',
+      'Frederick University',
+      'Cyprus International University',
+      'Near East University'
+    ],
+    requirements: [
+      'SSC & HSC / Diploma Transcripts (Apostilled / Attested)',
+      'Valid Passport (minimum 2 years validity)',
+      'Bank Solvency Certificate & 6-Month Statement (~€7,000)',
+      'Police Clearance Certificate & Medical Screening'
+    ],
+    visaProcess: [
+      'University Offer Letter & Document Verification',
+      'Tuition Deposit Transfer to University Account',
+      'University submits file to CRMD Nicosia for Entry Permit',
+      'Issuance of Entry Clearance & OK-to-Board Letter from Dhaka'
+    ],
+    capital: 'Nicosia',
     cities: [
-      { name: 'Seoul', x: 70, y: 30, description: 'Capital city with top universities like SNU and Yonsei.' },
-      { name: 'Busan', x: 80, y: 70, description: 'Port city known for its beaches and Pusan National University.' },
-      { name: 'Daejeon', x: 65, y: 50, description: 'The technology hub, home to KAIST.' }
-    ]
-  },
-  {
-    id: 'canada',
-    name: 'Canada',
-    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=1000&auto=format&fit=crop',
-    shortDescription: 'A global leader in education with diverse opportunities.',
-    fullDescription: 'Canada is consistently ranked as one of the best countries in the world for education and quality of life. Its inclusive society and high academic standards make it a dream destination for students worldwide.',
-    benefits: ['Globally recognized degrees', 'Post-graduation work permit (PGWP)', 'Pathways to permanent residency', 'Diverse and multicultural society', 'High standard of living'],
-    universities: ['University of Toronto', 'University of British Columbia', 'McGill University', 'University of Waterloo', 'University of Alberta'],
-    requirements: ['Academic Transcripts', 'IELTS/PTE Academic scores', 'Proof of Funds', 'Study Permit application'],
-    visaProcess: ['Letter of Acceptance from a DLI', 'Apply for Study Permit online', 'Biometrics collection', 'Medical examination'],
-    capital: 'Ottawa',
-    cities: [
-      { name: 'Toronto', x: 80, y: 80, description: 'Canadas largest city and home to UofT.' },
-      { name: 'Vancouver', x: 15, y: 75, description: 'Beautiful coastal city, home to UBC.' },
-      { name: 'Montreal', x: 85, y: 75, description: 'Cultural hub and home to McGill University.' }
+      { name: 'Nicosia', x: 60, y: 45, description: 'Capital and academic hub of Cyprus.' },
+      { name: 'Limassol', x: 50, y: 70, description: 'Major coastal business, maritime and tourism city.' },
+      { name: 'Larnaca', x: 70, y: 60, description: 'Main international airport gateway and university campuses.' }
     ]
   },
   {
     id: 'malaysia',
     name: 'Malaysia',
     image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1000&auto=format&fit=crop',
-    shortDescription: 'Affordable quality education in a tropical paradise.',
-    fullDescription: 'Malaysia offers a unique mix of modern infrastructure and natural beauty. It is a hub for international branch campuses, providing Western-standard education at a fraction of the cost.',
-    benefits: ['Low cost of living and tuition fees', 'International branch campuses (UK, Australia)', 'English is widely spoken', 'Safe and peaceful environment', 'Easy visa processing'],
-    universities: ['University of Malaya', 'Monash University Malaysia', "Taylor's University", 'Sunway University', 'Asia Pacific University (APU)'],
-    requirements: ["High School or Bachelor's degree", 'English proficiency (IELTS/TOEFL)', 'Passport copies', 'Health declaration'],
-    visaProcess: ['Apply for VAL (Visa Approval Letter)', 'Single Entry Visa (SEV) application', 'Post-arrival medical check-up', 'Student Pass endorsement'],
+    shortDescription: '95%+ visa success ratio and affordable globally ranked campuses.',
+    fullDescription: 'Malaysia is Southeast Asia’s premier education hub, hosting prestigious branch campuses from the UK and Australia alongside globally ranked research universities. Admissions and visa approval letters (eVAL) are processed 100% online through EMGS with rapid turnaround.',
+    benefits: [
+      '95%+ visa approval ratio through official EMGS system',
+      'Very affordable tuition fees ($2,500 – $4,500 / year)',
+      'Study gaps up to 5 years accepted for Bachelor and Diploma programs',
+      'English-speaking academic environment with modern infrastructure',
+      'Visa stamped directly at the High Commission of Malaysia in Dhaka'
+    ],
+    universities: [
+      'University of Malaya (UM)',
+      'Taylor’s University',
+      'Sunway University',
+      'Asia Pacific University (APU)',
+      'Lincoln University College'
+    ],
+    requirements: [
+      'HSC / A-Level / Polytechnic Diploma (Minimum GPA 2.50+)',
+      'White background passport-size photographs',
+      'Passport copy (all pages valid for at least 18 months)',
+      'Pre-arrival Health Declaration Form'
+    ],
+    visaProcess: [
+      'Online application lodged with university',
+      'Issuance of eVAL (Electronic Visa Approval Letter) via EMGS',
+      'Single Entry Visa (SEV) endorsement in Dhaka',
+      'Flight to Kuala Lumpur and Student Pass sticker upon arrival'
+    ],
     capital: 'Kuala Lumpur',
     cities: [
-      { name: 'Kuala Lumpur', x: 45, y: 60, description: 'The vibrant capital with numerous international campuses.' },
-      { name: 'Penang', x: 40, y: 40, description: 'Known for its heritage and top-tier research universities.' },
-      { name: 'Johor Bahru', x: 55, y: 80, description: 'Gateway to Singapore, home to EduCity.' }
+      { name: 'Kuala Lumpur', x: 45, y: 60, description: 'The vibrant metropolis housing premier international campuses.' },
+      { name: 'Penang', x: 40, y: 40, description: 'Historic island hub known for science and engineering universities.' },
+      { name: 'Johor Bahru', x: 55, y: 80, description: 'Bordering Singapore, home to EduCity international university cluster.' }
     ]
   },
   {
-    id: 'cyprus',
-    name: 'Cyprus',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1000&auto=format&fit=crop',
-    shortDescription: 'Study in a beautiful Mediterranean island with rich history.',
-    fullDescription: 'Cyprus is an emerging destination for international students, offering high-quality education in a safe, sunny, and historic Mediterranean setting. It is particularly known for its business and hospitality programs.',
-    benefits: ['Affordable European education', 'Safe and friendly environment', 'High standard of living', 'Opportunity to explore Europe', 'Multicultural student community'],
-    universities: ['University of Cyprus', 'University of Nicosia', 'European University Cyprus', 'Cyprus International University', 'Near East University'],
-    requirements: ['High School Diploma', 'English proficiency proof', 'Financial documents', 'Passport'],
-    visaProcess: ['Admission Letter', 'Apply for Entry Permit', 'Medical tests and insurance', 'Final Residence Permit in Cyprus'],
-    capital: 'Nicosia',
+    id: 'romania',
+    name: 'Romania (EU)',
+    image: 'https://images.unsplash.com/photo-1584646098378-0874589d76b1?q=80&w=1000&auto=format&fit=crop',
+    shortDescription: 'Official Preparatory Language Year (Anul Pregătitor) with zero IELTS.',
+    fullDescription: 'Romania provides an authentic European Union higher education pathway regulated by the Romanian Ministry of Education. Non-EU students have the statutory right to enroll in the 1-year Romanian Language Preparatory Year (Anul Pregătitor de Limba Română) with zero IELTS requirement, transitioning directly into 4-year engineering, computer science, and business degrees.',
+    benefits: [
+      'Zero IELTS required — official 1-year Preparatory Year (60 ECTS)',
+      'Low statutory tuition fees (€2,200 – €2,700 / year)',
+      'Accepts study gaps from 3 to 8+ years with professional experience records',
+      'Digital e-Apostille integration via apostille.mygov.bd',
+      'Authorized consular submission in Kuala Lumpur, Bangkok, and Hanoi (bypassing India)'
+    ],
+    universities: [
+      'POLITEHNICA Bucharest (UNSTPB)',
+      'Technical University of Cluj-Napoca (UTCN)',
+      'West University of Timișoara (UVT)',
+      'University of Bucharest (UB)',
+      'Ovidius University of Constanța (UOC)'
+    ],
+    requirements: [
+      'HSC / Alim / Polytechnic Diploma certificate & marksheet',
+      'Digital Hague Apostille via Bangladesh MoFA (apostille.mygov.bd)',
+      'Bank Solvency (€5,000 – €6,500) and 6-month statement',
+      'Valid Passport, Police Clearance & Medical Certificate'
+    ],
+    visaProcess: [
+      'Institutional application and academic verification',
+      'Issuance of Scrisoare de Acceptare (Letter of Acceptance) by Ministry of Education',
+      '1-Year Tuition Payment via direct international bank transfer',
+      'Type D/SD Visa submission via evisa.mae.ro and consular appointment'
+    ],
+    capital: 'Bucharest',
     cities: [
-      { name: 'Nicosia', x: 60, y: 45, description: 'The capital and largest city of Cyprus.' },
-      { name: 'Limassol', x: 50, y: 70, description: 'A major port and business hub.' },
-      { name: 'Larnaca', x: 70, y: 60, description: 'Known for its palm-tree seafront and university campuses.' }
+      { name: 'Bucharest', x: 75, y: 65, description: 'Capital city and technology flagship, home to UNSTPB and UB.' },
+      { name: 'Cluj-Napoca', x: 45, y: 35, description: 'Silicon Valley of Eastern Europe, home to UTCN and UBB.' },
+      { name: 'Timișoara', x: 25, y: 50, description: 'European Capital of Culture with premier polytechnic and comprehensive faculties.' }
     ]
   },
   {
-    id: 'europe',
-    name: 'Europe',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1000&auto=format&fit=crop',
-    shortDescription: 'Access a wide range of prestigious universities across the continent.',
-    fullDescription: 'Studying in Europe offers students the chance to experience diverse cultures, languages, and some of the oldest and most prestigious universities in the world. From Germany to France, the opportunities are endless.',
-    benefits: ['Low or no tuition fees in many countries', 'Schengen visa allows travel across 27 countries', 'Rich cultural and historical experience', 'High academic standards', 'Strong focus on research and innovation'],
-    universities: ['Technical University of Munich (Germany)', 'Sorbonne University (France)', 'University of Amsterdam (Netherlands)', 'Sapienza University of Rome (Italy)', 'Lund University (Sweden)'],
-    requirements: ['Academic Transcripts', 'Language proficiency (English or local language)', 'Motivation Letter', 'Proof of financial means'],
-    visaProcess: ['University Admission', 'National Visa (Type D) application', 'Block account or financial proof', 'Residence permit application upon arrival'],
-    capital: 'Berlin',
+    id: 'hungary',
+    name: 'Hungary (Schengen)',
+    image: 'https://images.unsplash.com/photo-1549877452-9c387954fbc2?q=80&w=1000&auto=format&fit=crop',
+    shortDescription: 'Full 29-Nation Schengen visa processed in Dhaka via VFS Global.',
+    fullDescription: 'Hungary is a central European Schengen nation offering world-renowned medical, engineering, and business education. All long-term student visa (Type D) files and biometric appointments are conducted directly inside Dhaka at the VFS Global Application Centre in Gulshan-1.',
+    benefits: [
+      'Full Schengen visa with unrestricted travel across 29 European countries',
+      'Direct in-person submission & biometrics at VFS Global Dhaka (No India trip)',
+      'Medium of Instruction (MOI) and internal university language tests accepted',
+      'Moderate tuition costs (€2,500 – €4,500 / year)',
+      'Comprehensive English-taught Bachelor and Master degree options'
+    ],
+    universities: [
+      'University of Debrecen',
+      'Budapest Metropolitan University',
+      'Duna College Budapest',
+      'Kodolányi János University',
+      'International Business School (IBS) Budapest'
+    ],
+    requirements: [
+      'Academic certificates attested by Education Board & MoFA Dhaka',
+      'MOI Certificate from previous educational institution or IELTS score',
+      'Bank balance certificate and sponsorship declaration (~€8,000)',
+      'Detailed Motivation Letter / Statement of Purpose'
+    ],
+    visaProcess: [
+      'Direct admission and conditional offer from Hungarian university',
+      'Tuition fee settlement and issuance of final Acceptance Letter',
+      'Appointment booking and document submission at VFS Dhaka',
+      'Consular interview in Dhaka and Schengen Type D visa issuance'
+    ],
+    capital: 'Budapest',
     cities: [
-      { name: 'Berlin', x: 50, y: 30, description: 'Capital of Germany, hub for tech and arts.' },
-      { name: 'Paris', x: 40, y: 50, description: 'Global center for fashion, gastronomy, and culture.' },
-      { name: 'Amsterdam', x: 45, y: 35, description: 'Known for its artistic heritage and elaborate canal system.' }
+      { name: 'Budapest', x: 50, y: 40, description: 'The historic capital renowned for architecture and elite universities.' },
+      { name: 'Debrecen', x: 80, y: 45, description: 'Second-largest city and major educational hub of eastern Hungary.' },
+      { name: 'Szeged', x: 60, y: 75, description: 'Vibrant university town renowned for scientific research and technology.' }
+    ]
+  },
+  {
+    id: 'south-korea',
+    name: 'South Korea',
+    image: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?q=80&w=1000&auto=format&fit=crop',
+    shortDescription: 'Founder 9-year direct resident experience with up to 100% scholarships.',
+    fullDescription: 'South Korea represents an elite academic and technological powerhouse. Keystone Overseas’ founder Hasibul Munim resided in South Korea for 9 years, providing applicants with unmatched insider counseling on IEQAS-certified universities, GKS scholarships, and lawful work-study frameworks.',
+    benefits: [
+      'Direct alumni network and founder guidance (9 years in Korea)',
+      '30% to 100% tuition scholarships for qualified international applicants',
+      'High-tech post-study career opportunities in AI, Robotics, and Electronics',
+      'Safe, modern, and high-living-standard environment',
+      'Authorized part-time work permitted during academic terms'
+    ],
+    universities: [
+      'Kyungdong University (Global Campus)',
+      'Sejong University',
+      'Kyungsung University',
+      'Dong-A University',
+      'Sungkyunkwan University'
+    ],
+    requirements: [
+      'HSC / Bachelor with minimum GPA 3.00/5.00',
+      'English proficiency (IELTS 5.5+) or TOPIK Level 3+ (Korean language)',
+      'Bank Solvency verification ($10,000 fixed deposit)',
+      'Comprehensive Study Plan & Statement of Purpose'
+    ],
+    visaProcess: [
+      'University pre-screening and admission interview',
+      'Issuance of Certificate of Admission (CoA)',
+      'D-2 / D-4 visa application at the Embassy of the Republic of Korea in Dhaka',
+      'Pre-departure orientation and airport meet-and-greet in Seoul/Busan'
+    ],
+    capital: 'Seoul',
+    cities: [
+      { name: 'Seoul', x: 70, y: 30, description: 'Capital megacity housing top global research universities.' },
+      { name: 'Busan', x: 80, y: 70, description: 'Major maritime and industrial center with top national universities.' },
+      { name: 'Daejeon', x: 65, y: 50, description: 'Korea’s premier technology and scientific innovation cluster.' }
+    ]
+  },
+  {
+    id: 'canada',
+    name: 'Canada',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=1000&auto=format&fit=crop',
+    shortDescription: 'World-recognized degrees and post-graduation work permits (PGWP).',
+    fullDescription: 'Canada remains a top choice for students with strong academic profiles and verified financial resources seeking prestigious university credentials and post-study employment pathways.',
+    benefits: [
+      'Post-Graduation Work Permit (PGWP) eligibility',
+      'Globally respected degrees from top public universities and colleges',
+      'Multicultural society with high quality of life',
+      'Spousal work permit options for eligible Master’s degree students',
+      'Clear pathways for skilled career advancement'
+    ],
+    universities: [
+      'University of Toronto',
+      'University of British Columbia',
+      'McGill University',
+      'Seneca Polytechnic',
+      'Conestoga College'
+    ],
+    requirements: [
+      'Academic Transcripts with strong marks',
+      'IELTS Academic (Band 6.0–6.5 minimum) or PTE Academic',
+      'Guaranteed Investment Certificate (GIC) / Verified Proof of Funds',
+      'Study Permit application and Letter of Explanation'
+    ],
+    visaProcess: [
+      'Letter of Acceptance from a Designated Learning Institution (DLI)',
+      'Provincial Attestation Letter (PAL) acquisition',
+      'Online Study Permit submission via IRCC portal',
+      'Biometrics at VFS Dhaka and medical examination'
+    ],
+    capital: 'Ottawa',
+    cities: [
+      { name: 'Toronto', x: 80, y: 80, description: 'Canada’s financial and educational hub.' },
+      { name: 'Vancouver', x: 15, y: 75, description: 'Coastal city renowned for natural beauty and research institutions.' },
+      { name: 'Montreal', x: 85, y: 75, description: 'Bilingual cultural hub with top international universities.' }
     ]
   }
 ];

@@ -1,5 +1,6 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { CheckCircle, Globe, GraduationCap, FileText, Landmark, ArrowRight, ChevronRight, Plane, Map as MapIcon, ExternalLink } from 'lucide-react';
 import { countries } from '../data';
 import ConsultationForm from '../components/ConsultationForm';
@@ -20,6 +21,12 @@ const CountryDetail = () => {
 
   return (
     <div className="pt-20">
+      <Helmet>
+        <title>{`Study in ${country.name} from Bangladesh — Keystone Overseas`}</title>
+        <meta name="description" content={`${country.shortDescription} Requirements, universities, and visa guidance for Bangladeshi students.`} />
+        <meta property="og:title" content={`Study in ${country.name} — Keystone Overseas`} />
+        <meta property="og:description" content={country.shortDescription} />
+      </Helmet>
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">

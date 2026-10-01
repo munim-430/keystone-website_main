@@ -4,10 +4,152 @@ import { CheckCircle, AlertCircle, Clock, DollarSign, FileText, MessageCircle } 
 import { Helmet } from 'react-helmet-async';
 import { WHATSAPP_CONSULTATION } from '../constants';
 
-type Country = 'malaysia' | 'korea';
+type Country = 'cyprus' | 'romania' | 'malaysia' | 'korea';
 type Level = 'ug' | 'pg';
 
 const data = {
+  cyprus: {
+    flag: '🇨🇾',
+    name: 'Cyprus',
+    color: 'from-amber-600 to-orange-700',
+    accent: 'bg-amber-600',
+    light: 'bg-amber-50 text-amber-800 border-amber-200',
+    ug: {
+      title: 'Undergraduate & Diploma Visa (CRMD Entry Permit)',
+      intro: 'Cyprus offers an accessible European Union pathway for Bangladeshi students. Entry permits (Blue Paper) are issued directly by the Civil Registry and Migration Department (CRMD) in Nicosia — NO interview or travel to India needed.',
+      timeline: '3–6 weeks after document submission',
+      cost: '€150–€250 (official migration fee approx.)',
+      steps: [
+        { step: '01', title: 'University Application', desc: 'Select an accredited Cyprus university (e.g. University of Nicosia, European University Cyprus, Frederick). Keystone submits your attested academic documents.' },
+        { step: '02', title: 'Offer Letter & Deposit', desc: 'Receive conditional offer letter. Transfer tuition deposit directly to university bank account via authorized student file transfer.' },
+        { step: '03', title: 'Document Attestation', desc: 'Attest academic certificates, marksheets, police clearance, and medical reports via Education Board, Ministry of Foreign Affairs (MoFA Dhaka), and notary.' },
+        { step: '04', title: 'CRMD Nicosia Filing', desc: 'University submits attested documents to Ministry of Education and CRMD in Nicosia for Entry Clearance.' },
+        { step: '05', title: 'Blue Paper & OKTB', desc: 'CRMD issues official Entry Permit (Blue Paper). Keystone arranges OK-to-Board (OKTB) with airlines flying directly from Dhaka to Larnaca.' },
+        { step: '06', title: 'Arrival & Resident Permit', desc: 'Arrive in Cyprus, complete arrival medical confirmation, and obtain your Temporary Resident Card from migration.' },
+      ],
+      documents: [
+        'Original SSC & HSC / Diploma certificates + marksheets (attested by MoFA Dhaka)',
+        'Valid passport (minimum 2 years validity)',
+        'Police Clearance Certificate (attested by MoFA)',
+        'Medical screening certificate (Hepatitis B/C, HIV, VDRL, Chest X-ray)',
+        'Bank solvency certificate & 6-month bank statement (~€7,000 balance)',
+        'Affidavit of Financial Sponsorship',
+        'Official CRMD Entry Permit (Blue Paper)',
+        'Passport-size photographs (white background)',
+      ],
+      tips: [
+        'Zero IELTS required — Medium of Instruction (MOI) or internal placement test is accepted',
+        'Study gaps up to 5–8 years are accepted with professional experience documentation',
+        'No consular interview in India — files are processed directly in Nicosia',
+        'Part-time work permitted up to 20 hours/week during study terms',
+      ],
+      warnings: [
+        'Ensure medical tests are done at reputable, certified diagnostic labs',
+        'Do not submit irregular or unverified bank statements',
+      ],
+    },
+    pg: {
+      title: 'Postgraduate (Master\'s) Student Visa',
+      intro: 'Cyprus universities offer recognized European Master\'s degrees with flexible schedules and work rights. Ideal for graduates seeking European qualifications at moderate tuition.',
+      timeline: '3–6 weeks after document submission',
+      cost: '€150–€250 (migration fee approx.)',
+      steps: [
+        { step: '01', title: 'Program Selection', desc: 'Choose a Master\'s program in Business, Computer Science, or Management. Submit Bachelor\'s transcripts for review.' },
+        { step: '02', title: 'Admission & Tuition Deposit', desc: 'Receive unconditional offer letter and settle initial tuition deposit directly with university.' },
+        { step: '03', title: 'Attestation & Verification', desc: 'Attest degree certificates, transcripts, and police clearance through MoFA Dhaka.' },
+        { step: '04', title: 'Migration Clearance', desc: 'CRMD Nicosia reviews file and issues postgraduate Entry Permit.' },
+        { step: '05', title: 'OK-to-Board & Flight', desc: 'Receive entry permit and fly directly to Larnaca from Dhaka.' },
+        { step: '06', title: 'Enrollment & Residency', desc: 'Register at campus and activate student employment authorization.' },
+      ],
+      documents: [
+        'Bachelor\'s degree certificate + transcripts (attested by MoFA Dhaka)',
+        'Valid passport (minimum 2 years validity)',
+        'Police Clearance Certificate (attested by MoFA)',
+        'Medical screening certificate (Hepatitis B/C, HIV, VDRL, Chest X-ray)',
+        'Bank solvency certificate & 6-month statement (~€7,000)',
+        'CV / Resume with work experience (explaining any gaps)',
+        'Sponsorship affidavit from sponsor',
+      ],
+      tips: [
+        'Evening and weekend classes accommodate student career schedules',
+        'Spouses can apply for visit visas after student obtains residency',
+      ],
+      warnings: [
+        'Ensure all graduation documents are officially verified prior to submission',
+      ],
+    },
+  },
+  romania: {
+    flag: '🇷🇴',
+    name: 'Romania',
+    color: 'from-indigo-600 to-blue-800',
+    accent: 'bg-indigo-600',
+    light: 'bg-indigo-50 text-indigo-800 border-indigo-200',
+    ug: {
+      title: 'Language Preparatory Year (Anul Pregătitor) — Type D/SD',
+      intro: 'Under Order of the Minister of Education (OME 5516/2024), international students have the statutory right to enroll in the 1-year Romanian Language Preparatory Year with ZERO IELTS, transitioning directly into European degree programs.',
+      timeline: '6–10 weeks total process',
+      cost: '€120 (statutory consular fee approx.)',
+      steps: [
+        { step: '01', title: 'Choose University & Program', desc: 'Apply to accredited state institutions (e.g. POLITEHNICA Bucharest, UTCN Cluj, UVT Timișoara, Ovidius Constanța).' },
+        { step: '02', title: 'Letter of Acceptance (Scrisoare)', desc: 'The Romanian Ministry of Education issues your official Scrisoare de Acceptare la Studii confirming your statutory student status.' },
+        { step: '03', title: 'Tuition Payment', desc: 'Transfer Year 1 tuition (€2,200–€2,700) directly via international bank wire to the university state treasury account.' },
+        { step: '04', title: 'Digital Hague Apostille', desc: 'Authenticate educational certificates and transcripts through the Bangladesh MoFA e-Apostille system (apostille.mygov.bd).' },
+        { step: '05', title: 'Type D/SD Visa Application', desc: 'File electronic application via evisa.mae.ro. Attend appointment at designated Romanian embassy mission (Bangkok / Kuala Lumpur / Hanoi) bypassing India transit freeze.' },
+        { step: '06', title: 'Arrival & Permis de Ședere', desc: 'Arrive in Romania and register with the General Inspectorate for Immigration (IGI) to receive your Schengen-valid Temporary Residence Permit.' },
+      ],
+      documents: [
+        'Original SSC & HSC / Polytechnic Diploma certificates + marksheets with digital Hague Apostille',
+        'Official Letter of Acceptance (Scrisoare de Acceptare la Studii) from Ministry of Education',
+        'Proof of 1-year tuition payment to university',
+        'Bank solvency certificate & statement showing minimum €5,000–€6,500',
+        'Police Clearance Certificate with Hague Apostille',
+        'Medical fitness certificate certifying no contagious diseases',
+        'Valid passport (minimum 2 years validity)',
+        'Electronic visa application form (evisa.mae.ro confirmation)',
+      ],
+      tips: [
+        'Zero IELTS required by statutory law (OME 5516/2024) for Anul Pregătitor',
+        'Study gaps up to 5–8 years accepted with supporting employment documentation',
+        'Romania is an official Schengen member since March 2024 (free air/sea Schengen movement)',
+        'Low living costs (€300–€450/month) and legal 20 hrs/week part-time work rights',
+      ],
+      warnings: [
+        'Hague Apostille through apostille.mygov.bd is strictly mandatory',
+        'Do not miss the Ministry of Education registration deadlines (typically late summer)',
+      ],
+    },
+    pg: {
+      title: 'Postgraduate (Master\'s & Prep Year) Visa — Type D/SD',
+      intro: 'Bangladeshi Bachelor\'s graduates can enter English-taught Master\'s programs or take the 1-year language preparatory foundation to access European research faculties.',
+      timeline: '6–10 weeks total process',
+      cost: '€120 (statutory consular fee approx.)',
+      steps: [
+        { step: '01', title: 'Select Master\'s Faculty', desc: 'Choose from top polytechnic and research universities in Bucharest, Cluj-Napoca, or Timișoara.' },
+        { step: '02', title: 'Ministry Acceptance Letter', desc: 'Romanian Ministry of Education issues Scrisoare de Acceptare after credential evaluation.' },
+        { step: '03', title: 'Tuition Transfer', desc: 'Pay annual tuition directly to university bank account.' },
+        { step: '04', title: 'Hague Apostille & Visa Lodgement', desc: 'Apostille documents on apostille.mygov.bd and lodge Type D/SD visa file on evisa.mae.ro.' },
+        { step: '05', title: 'Consular Appointment & Approval', desc: 'Complete biometric appointment at designated consular mission and collect visa.' },
+        { step: '06', title: 'Residence Card (Permis de Ședere)', desc: 'Obtain biometric EU residence card with Schengen mobility.' },
+      ],
+      documents: [
+        'Bachelor\'s certificate and marksheets with digital Hague Apostille',
+        'Scrisoare de Acceptare from Romanian Ministry of Education',
+        'Proof of 1-year tuition transfer',
+        'Bank balance certificate (€5,000–€6,500)',
+        'Apostilled Police Clearance Certificate',
+        'Medical clearance certificate',
+        'Valid passport (minimum 2 years validity)',
+      ],
+      tips: [
+        'Degrees are fully accredited and recognized across the European Union (ECTS)',
+        'Opportunity to convert to EU Blue Card / permanent work residence upon graduation',
+      ],
+      warnings: [
+        'Ensure all degree verifications from UGC Bangladesh are completed prior to Apostille',
+      ],
+    },
+  },
   malaysia: {
     flag: '🇲🇾',
     name: 'Malaysia',
@@ -180,7 +322,7 @@ const data = {
 };
 
 export default function VisaGuide() {
-  const [country, setCountry] = useState<Country>('malaysia');
+  const [country, setCountry] = useState<Country>('cyprus');
   const [level, setLevel] = useState<Level>('ug');
   const guide = data[country][level];
   const meta = data[country];
@@ -188,8 +330,8 @@ export default function VisaGuide() {
   return (
     <>
       <Helmet>
-        <title>Visa Guide — Malaysia & Korea | Keystone Education</title>
-        <meta name="description" content="Step-by-step student visa guide for Malaysia and South Korea. Documents, process, tips and warnings for Bangladeshi students — UG and Postgraduate." />
+        <title>Visa Guide — Cyprus, Romania, Malaysia &amp; Korea | Keystone Overseas</title>
+        <meta name="description" content="Step-by-step student visa guide for Cyprus (CRMD entry permit), Romania (Anul Pregătitor), Malaysia (eVAL), and South Korea (D-2) for Bangladeshi students." />
       </Helmet>
 
       <div className="pt-20 pb-24 lg:pb-0 overflow-hidden">
@@ -215,10 +357,10 @@ export default function VisaGuide() {
         <div className="sticky top-16 z-40 bg-white border-b border-slate-200 shadow-sm">
           <div className="max-w-4xl mx-auto px-4 py-3 flex flex-col sm:flex-row gap-3">
             {/* Country */}
-            <div className="flex rounded-xl border border-slate-200 overflow-hidden flex-1">
-              {(['malaysia', 'korea'] as Country[]).map((c) => (
+            <div className="flex rounded-xl border border-slate-200 overflow-hidden flex-1 flex-wrap sm:flex-nowrap">
+              {(['cyprus', 'romania', 'malaysia', 'korea'] as Country[]).map((c) => (
                 <button key={c} onClick={() => setCountry(c)}
-                  className={`flex-1 py-2.5 text-sm font-bold transition-all ${country === c ? 'bg-brand-blue text-white' : 'text-slate-600 hover:bg-slate-50'}`}>
+                  className={`flex-1 py-2.5 px-2 text-xs sm:text-sm font-bold transition-all ${country === c ? 'bg-brand-blue text-white' : 'text-slate-600 hover:bg-slate-50'}`}>
                   {data[c].flag} {data[c].name}
                 </button>
               ))}

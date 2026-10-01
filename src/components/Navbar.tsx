@@ -5,15 +5,17 @@ import { useState, useEffect, useRef } from 'react';
 import { WHATSAPP_CONSULTATION } from '../constants';
 
 const countries = [
+  { name: '🇨🇾 Cyprus (No India Trip)', path: '/country/cyprus' },
+  { name: '🇷🇴 Romania (Zero IELTS)', path: '/country/romania' },
+  { name: '🇲🇾 Malaysia (Fast Visa)', path: '/country/malaysia' },
+  { name: '🇭🇺 Hungary (Schengen)', path: '/country/hungary' },
   { name: '🇰🇷 South Korea', path: '/country/south-korea' },
   { name: '🇨🇦 Canada', path: '/country/canada' },
-  { name: '🇲🇾 Malaysia', path: '/country/malaysia' },
-  { name: '🇨🇾 Cyprus', path: '/country/cyprus' },
-  { name: '🇪🇺 Europe', path: '/country/europe' },
 ];
 
 const mainLinks = [
   { name: 'Home', path: '/' },
+  { name: 'Academy', path: '/#academy' },
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
   { name: 'Visa Guide', path: '/visa-guide' },
@@ -60,7 +62,7 @@ const Navbar = () => {
               <GraduationCap className="text-white w-6 h-6" />
             </div>
             <span className="font-display font-extrabold text-lg tracking-tight text-brand-blue">
-              Keystone<span className="text-brand-red">Education</span>
+              Keystone<span className="text-brand-red">Overseas</span>
             </span>
           </Link>
 

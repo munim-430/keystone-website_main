@@ -162,7 +162,7 @@ const Hero: React.FC = () => {
           <div className="flex-1 text-center lg:text-left max-w-2xl">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
               <span className="flex h-2 w-2 rounded-full bg-brand-blue animate-pulse" />
-              <span className="text-xs font-bold text-brand-blue uppercase tracking-wider">Keystone Education Consultancy</span>
+              <span className="text-xs font-bold text-brand-blue uppercase tracking-wider">Keystone Overseas & Academy</span>
             </div>
             <p className="text-brand-blue font-medium italic mb-2 tracking-wide">"Where global dreams begin."</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
@@ -170,14 +170,12 @@ const Hero: React.FC = () => {
             </h1>
             <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
               Empowering Bangladeshi students to achieve their international education goals with excellence.
-              We provide expert guidance for admissions to top-tier universities in South Korea, the UK, and the USA.
+              We provide expert counseling and visa processing for top universities in Cyprus, Romania, Malaysia, South Korea, Hungary, and Canada.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
               <a
-                href="https://forms.gle/grR8xEBQG9rUCmjV7"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="w-full sm:w-auto flex items-center justify-center gap-2 bg-brand-blue-dark text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-brand-blue hover:shadow-xl active:scale-95 group"
               >
                 <MessageCircle size={20} className="text-green-400" />
@@ -185,10 +183,10 @@ const Hero: React.FC = () => {
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href="/services"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full font-semibold transition-all hover:bg-slate-50 hover:border-slate-300 active:scale-95"
+                href="#academy"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-brand-red text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-red-700 hover:shadow-xl active:scale-95"
               >
-                Explore Services
+                Language Academy
               </a>
             </div>
 
@@ -217,16 +215,16 @@ const Hero: React.FC = () => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100 via-blue-50 to-transparent blur-2xl opacity-70" />
                 <AnimatedGlobe />
                 <div className="absolute top-4 right-0 bg-white shadow-lg border border-slate-100 rounded-2xl px-3 py-2 flex items-center gap-2 text-sm font-semibold text-slate-700 animate-bounce" style={{animationDuration:'3s'}}>
-                  🇰🇷 South Korea
+                  🇨🇾 Cyprus (No India Trip)
                 </div>
                 <div className="absolute bottom-10 right-0 bg-white shadow-lg border border-slate-100 rounded-2xl px-3 py-2 flex items-center gap-2 text-sm font-semibold text-slate-700 animate-bounce" style={{animationDuration:'4s',animationDelay:'0.5s'}}>
-                  🇬🇧 United Kingdom
+                  🇷🇴 Romania (0 IELTS)
                 </div>
                 <div className="absolute bottom-10 left-0 bg-white shadow-lg border border-slate-100 rounded-2xl px-3 py-2 flex items-center gap-2 text-sm font-semibold text-slate-700 animate-bounce" style={{animationDuration:'3.5s',animationDelay:'1s'}}>
-                  🇨🇦 Canada
+                  🇰🇷 South Korea
                 </div>
                 <div className="absolute top-4 left-0 bg-white shadow-lg border border-slate-100 rounded-2xl px-3 py-2 flex items-center gap-2 text-sm font-semibold text-slate-700 animate-bounce" style={{animationDuration:'4.5s',animationDelay:'0.2s'}}>
-                  🇲🇾 Malaysia
+                  🇲🇾 Malaysia (Fast eVAL)
                 </div>
               </div>
 

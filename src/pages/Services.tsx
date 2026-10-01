@@ -112,14 +112,32 @@ const services = [
     ],
     highlight: 'Lifetime WhatsApp support',
   },
+  {
+    id: 'academy',
+    icon: <BookOpen size={36} />,
+    title: 'Language & Consular Academy',
+    tagline: 'Flagship Dhanmondi campus for IELTS & European prep.',
+    color: 'from-brand-red to-red-700',
+    lightColor: 'bg-brand-red/10 text-brand-red',
+    description:
+      'Our physical academy at House 7, Mirpur Road, Sobhanbag, Dhanmondi prepares students for language exams and consular interviews. We offer high-intensity IELTS 6.5 crash courses, Romanian & Korean language foundations, and mock consular defense.',
+    steps: [
+      'IELTS 6.5 Fast-Track (4-week & 8-week small batches)',
+      '1-on-1 Daily Speaking Clinics with mock examiners',
+      'European preparatory language basics (Romania Anul Pregătitor)',
+      'Embassy mock interview training (study gaps, financials & SOP defense)',
+      'Cambridge exam simulation with real-time analytics',
+    ],
+    highlight: 'Flagship Dhanmondi Physical Campus',
+  },
 ];
 
 const Services = () => {
   return (
     <>
     <Helmet>
-      <title>Our Services — Keystone Education Consultancy</title>
-      <meta name="description" content="Student counseling, admission processing, visa guidance, scholarship assistance, pre-departure briefing and post-landing support. 98% visa approval rate." />
+      <title>Our Services — Keystone Overseas</title>
+      <meta name="description" content="Student counseling, admission processing, visa guidance, scholarship assistance, and Dhanmondi Language Academy. 98% visa approval rate." />
     </Helmet>
     <div className="pt-24 pb-24 lg:pb-0 overflow-hidden">
 

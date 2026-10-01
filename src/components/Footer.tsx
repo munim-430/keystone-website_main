@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Mail, Phone, MapPin, GraduationCap, ChevronRight } from 'lucide-react';
+import { CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER, FACEBOOK_URL } from '../constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,20 +22,20 @@ const Footer = () => {
                 <GraduationCap className="text-white w-5 h-5" />
               </div>
               <span className="font-bold text-2xl text-white tracking-tight">
-                Keystone<span className="text-brand-red">Education</span>
+                Keystone<span className="text-brand-red">Overseas</span>
               </span>
             </div>
             <p className="text-slate-400 leading-relaxed">
-              Where global dreams begin. Founded in 2022, we empower Bangladeshi students to achieve their international education goals with expert guidance and support.
+              Where global dreams begin. We empower Bangladeshi students to achieve their international higher education goals with transparent, street-smart counseling and Keystone Academy language preparation.
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/share/187gaTjhFD/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
+              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
                 <Facebook size={20} className="text-white" />
               </a>
-              <a href="mailto:info@keystoneeducations.com" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
                 <Mail size={20} className="text-white" />
               </a>
-              <a href="https://wa.me/8801941646278" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
                 <Phone size={20} className="text-white" />
               </a>
             </div>
@@ -45,10 +46,11 @@ const Footer = () => {
             <ul className="space-y-4">
               {[
                 { label: 'Home', to: '/' },
-                { label: 'About', to: '/about' },
+                { label: 'About Us', to: '/about' },
                 { label: 'Services', to: '/services' },
+                { label: 'Visa Guide', to: '/visa-guide' },
                 { label: 'Success Stories', to: '/success-stories' },
-                { label: 'Contact', to: '/#contact' },
+                { label: 'Dhanmondi Desk', to: '/#contact' },
               ].map((item) => (
                 <li key={item.label}>
                   <Link to={item.to} className="flex items-center hover:text-brand-red transition-colors group">
@@ -61,38 +63,38 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Contact Us</h3>
+            <h3 className="text-white font-bold text-lg mb-6">Dhanmondi Office</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin className="text-brand-red mt-1 flex-shrink-0" size={20} />
-                <span>Gazipur Main Branch, Rajendrapur Bazar, Gazipur, Bangladesh</span>
+                <span>{OFFICE_ADDRESS}</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="text-brand-red flex-shrink-0" size={20} />
-                <span>+8801941646278 (WhatsApp)</span>
+                <span>{WHATSAPP_DISPLAY} (Direct / WhatsApp)</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="text-brand-red flex-shrink-0" size={20} />
-                <span>info@keystoneeducations.com</span>
+                <span>{CONTACT_EMAIL}</span>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Our Mission</h3>
+            <h3 className="text-white font-bold text-lg mb-6">Keystone Academy</h3>
             <p className="text-slate-400 mb-6">
-              Dedicated to providing transparent and professional consultancy services for students seeking higher education abroad since 2022.
+              IELTS 6.5 Fast-Track &amp; European Vocational Language preparation batches starting every month at our Dhanmondi campus.
             </p>
-            <a href="https://forms.gle/grR8xEBQG9rUCmjV7" target="_blank" rel="noopener noreferrer"
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%2C%20I%20want%20to%20enroll%20in%20Keystone%20Academy%20batches%20at%20Dhanmondi.`} target="_blank" rel="noopener noreferrer"
               className="inline-block bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-red transition-all">
-              Start Application
+              Join Academy Batch
             </a>
           </div>
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-slate-500">
-            © 2022–{currentYear} Keystone Education Consultancy. All rights reserved.
+            © 2022–{currentYear} Keystone Overseas &amp; Keystone Academy. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-slate-500">
             <a href="#" className="hover:text-blue-400">Privacy Policy</a>
