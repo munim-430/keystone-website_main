@@ -12,6 +12,16 @@ Track live task claims, decisions, and discussions on GitHub Issue #3:
 
 ---
 
+## 🏓 Two-Agent Turn Protocol (Ping-Pong Cadence)
+When multiple agents work on this repository:
+1. Always check the turn ledger before starting work: **[`.agent-turn.json`](file:///.agent-turn.json)**.
+2. Read **[`TURN.md`](file:///TURN.md)** for detailed handoff rules and role definitions:
+   - **Agent 1 (Implementer):** Feature development, PR creation.
+   - **Agent 2 (Auditor):** Negative boundary verification, CI validation, PR merge.
+3. Every turn must conclude with the standardized `CO-AGENT TURN HANDOFF` block.
+
+---
+
 ## 🚨 Zero-Tolerance Redlines (Negative Verification Mandate)
 
 All incoming agents must operate under a dual mandate: building positive features while strictly enforcing negative verification. No pull request or deployment may proceed if any of the following 4 redlines are violated:

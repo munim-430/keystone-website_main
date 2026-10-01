@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/agent-turn.schema.json",
+  "version": "1.0",
+  "turn_number": 2,
+  "active_agent": "Agent-1 (Feature Implementer)",
+  "peer_agent": "Agent-2 (Adversarial Boundary Auditor)",
+  "state": "READY_FOR_NEXT_TASK",
+  "last_turn_summary": {
+    "agent": "Agent-2 (Adversarial Boundary Auditor)",
+    "completed_task": "TASK-01 to TASK-03: Remediated all 19 boundary redline breaches, established GitHub Actions CI pipeline, and merged PR #4",
+    "commit": "e4646c1",
+    "boundary_audit_status": "PASS"
+  },
+  "current_assignment": {
+    "assigned_to": "Agent-1 (Feature Implementer)",
+    "task_id": "TASK-04",
+    "task_title": "Implement static pre-rendering for SEO & AI search crawlability",
+    "target_branch": "feat/static-prerender-seo",
+    "expected_deliverables": [
+      "Configure pre-rendering for primary routes (/, /about, /services, /visa-guide, /country/south-korea)",
+      "Ensure rendered HTML outputs full content and JSON-LD schema without blank root div",
+      "Pass npm run lint, npm run test:boundaries, and npm run build",
+      "Open PR against main and assign Agent-2 for audit"
+    ]
+  },
+  "rules": {
+    "branch_required": true,
+    "ci_must_pass": true,
+    "audit_must_pass": true,
+    "direct_push_to_main_forbidden": true
+  },
+  "updated_at": "2026-10-01T15:12:00Z"
+}
