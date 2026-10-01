@@ -46,6 +46,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {[
                 { label: 'Home', to: '/' },
+                { label: 'All 64 Districts', to: '/districts' },
                 { label: 'About Us', to: '/about' },
                 { label: 'Services', to: '/services' },
                 { label: 'Visa Guide', to: '/visa-guide' },

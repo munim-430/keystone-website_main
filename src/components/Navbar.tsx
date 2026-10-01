@@ -15,6 +15,7 @@ const countries = [
 
 const mainLinks = [
   { name: 'Home', path: '/' },
+  { name: '64 Districts', path: '/districts' },
   { name: 'Academy', path: '/#academy' },
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
