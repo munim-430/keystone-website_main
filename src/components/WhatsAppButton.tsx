@@ -46,7 +46,7 @@ const WhatsAppButton = () => {
                 <MessageCircle size={16} className="text-white" />
               </div>
               <div>
-                <p className="font-bold text-slate-900 text-sm">Keystone Education</p>
+                <p className="font-bold text-slate-900 text-sm">Keystone Overseas</p>
                 <div className="flex items-center gap-1">
                   <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                   <span className="text-xs text-green-600 font-medium">Online now</span>
