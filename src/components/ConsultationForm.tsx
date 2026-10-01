@@ -14,11 +14,30 @@ const ConsultationForm = () => {
     setIsLoading(true);
     setError('');
     const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get('from_name')?.toString() || '';
+    const phone = formData.get('phone')?.toString() || '';
+    const education = formData.get('education_level')?.toString() || '';
+    const country = formData.get('preferred_country')?.toString() || '';
+    const msg = formData.get('message')?.toString() || '';
+
     try {
-      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form, { publicKey: EMAILJS_PUBLIC_KEY });
-      setIsSubmitted(true);
+      if (EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY) {
+        await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form, { publicKey: EMAILJS_PUBLIC_KEY });
+        setIsSubmitted(true);
+      } else {
+        const text = encodeURIComponent(
+          `Hi Keystone! I would like a consultation.\nName: ${name}\nPhone: ${phone}\nEducation: ${education}\nDestination: ${country}\nNote: ${msg}`
+        );
+        window.open(`https://wa.me/8801941646278?text=${text}`, '_blank');
+        setIsSubmitted(true);
+      }
     } catch {
-      setError('Failed to send. Please WhatsApp us directly.');
+      const text = encodeURIComponent(
+        `Hi Keystone! I would like a consultation.\nName: ${name}\nPhone: ${phone}\nEducation: ${education}\nDestination: ${country}\nNote: ${msg}`
+      );
+      window.open(`https://wa.me/8801941646278?text=${text}`, '_blank');
+      setIsSubmitted(true);
     } finally {
       setIsLoading(false);
     }

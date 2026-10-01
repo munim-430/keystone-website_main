@@ -31,7 +31,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/share/187gaTjhFD/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
                 <Facebook size={20} className="text-white" />
               </a>
-              <a href="mailto:info@keystoneeducations.com" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
+              <a href="mailto:contact@keystoneeducations.com" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
                 <Mail size={20} className="text-white" />
               </a>
               <a href="https://wa.me/8801941646278" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue transition-colors">
@@ -65,7 +65,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin className="text-brand-red mt-1 flex-shrink-0" size={20} />
-                <span>Gazipur Main Branch, Rajendrapur Bazar, Gazipur, Bangladesh</span>
+                <span>Dhaka Headquarters, Bangladesh</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="text-brand-red flex-shrink-0" size={20} />
@@ -73,7 +73,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="text-brand-red flex-shrink-0" size={20} />
-                <span>info@keystoneeducations.com</span>
+                <span>contact@keystoneeducations.com</span>
               </li>
             </ul>
           </div>
