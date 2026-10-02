@@ -6,7 +6,7 @@ import Counter from '../components/Counter';
 import ConsultationForm from '../components/ConsultationForm';
 import { ArrowRight, CheckCircle, MessageCircle, Star, Globe, GraduationCap, Users, Award, Plane } from 'lucide-react';
 import { countries } from '../data';
-import { WHATSAPP_CONSULTATION, FACEBOOK_URL, WHATSAPP_DISPLAY, CONTACT_EMAIL, OFFICE_ADDRESS, OFFICE_HOURS } from '../constants';
+import { WHATSAPP_CONSULTATION, WHATSAPP_BASE, FACEBOOK_URL, WHATSAPP_DISPLAY, CONTACT_EMAIL, OFFICE_ADDRESS, OFFICE_HOURS } from '../constants';
 
 const services = [
   { icon: <Users size={28} />, title: 'Student Counseling', desc: 'Personalized guidance matching your academic background, goals and budget to the right country and university.', color: 'bg-brand-blue/10 text-brand-blue' },
@@ -177,7 +177,7 @@ const Home = () => {
                     ))}
                   </div>
                 </div>
-                <a href="https://wa.me/8801941646278?text=Hi%20Keystone%20Overseas!%20I%20want%20to%20enroll%20in%20the%20Dhanmondi%20IELTS%20Fast-Track%20batch."
+                <a href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hi Keystone Overseas! I want to enroll in the Dhanmondi IELTS Fast-Track batch.")}`}
                   target="_blank" rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-red text-white font-bold py-3.5 px-6 rounded-2xl transition-all text-sm shadow-md">
                   <MessageCircle size={16} /> Enroll in Dhanmondi Batch
@@ -209,7 +209,7 @@ const Home = () => {
                     ))}
                   </div>
                 </div>
-                <a href="https://wa.me/8801941646278?text=Hi%20Keystone%20Overseas!%20I%20want%20to%20enroll%20in%20the%20European%20Prep%20%26%20Consular%20Lab%20batch."
+                <a href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hi Keystone Overseas! I want to enroll in the European Prep & Consular Lab batch.")}`}
                   target="_blank" rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-600 text-white font-bold py-3.5 px-6 rounded-2xl transition-all text-sm shadow-lg">
                   <MessageCircle size={16} /> Book Consular Prep Batch
@@ -241,7 +241,7 @@ const Home = () => {
                     ))}
                   </div>
                 </div>
-                <a href="https://wa.me/8801941646278?text=Hi%20Keystone%20Overseas!%20I%20want%20to%20enroll%20in%20the%20Korean%20Language%20%26%20GKS%20batch."
+                <a href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hi Keystone Overseas! I want to enroll in the Korean Language & GKS batch.")}`}
                   target="_blank" rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-red text-white font-bold py-3.5 px-6 rounded-2xl transition-all text-sm shadow-md">
                   <MessageCircle size={16} /> Join Korean Language Batch

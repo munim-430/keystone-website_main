@@ -4,7 +4,7 @@ import { CheckCircle, AlertCircle, Clock, DollarSign, FileText, MessageCircle } 
 import { Helmet } from 'react-helmet-async';
 import { WHATSAPP_CONSULTATION } from '../constants';
 
-type Country = 'cyprus' | 'romania' | 'malaysia' | 'korea';
+type Country = 'cyprus' | 'romania' | 'malaysia' | 'korea' | 'hungary' | 'canada';
 type Level = 'ug' | 'pg';
 
 const data = {
@@ -319,6 +319,163 @@ const data = {
       ],
     },
   },
+  hungary: {
+    flag: '🇭🇺',
+    name: 'Hungary',
+    color: 'from-violet-600 to-purple-800',
+    accent: 'bg-violet-600',
+    light: 'bg-violet-50 text-violet-800 border-violet-200',
+    ug: {
+      title: 'Undergraduate Student Visa (Schengen D-Type)',
+      intro: 'Hungary is a full Schengen member state offering high-quality European university education at affordable tuition. Bangladeshi students submit biometrics directly at VFS Global Dhaka (Gulshan) — no India transit required.',
+      timeline: '6–10 weeks after document submission',
+      cost: '~HUF 60,000–75,000 (approx. BDT 20,000) official visa fee',
+      steps: [
+        { step: '01', title: 'University Application', desc: 'Apply to accredited Hungarian universities (e.g. University of Debrecen, Budapest Metropolitan University, Óbuda University). Many offer English-taught programs.' },
+        { step: '02', title: 'Conditional Offer Letter', desc: 'Receive and accept your conditional offer letter. Confirm enrollment and program details.' },
+        { step: '03', title: 'Financial & Document Preparation', desc: 'Prepare bank statements (minimum €6,000–€8,000), affidavit of support, police clearance, and academic certificates.' },
+        { step: '04', title: 'VFS Dhaka Biometric Appointment', desc: 'Book your Hungarian student visa appointment at VFS Global Dhaka — Gulshan branch. Submit biometrics and complete the application form in person.' },
+        { step: '05', title: 'Embassy Review & Decision', desc: 'Hungarian embassy processes your application. Students may be invited for a brief phone or in-person interview.' },
+        { step: '06', title: 'Arrival & Registration', desc: 'Arrive in Hungary, register with local authorities (OIF), and collect your Schengen-valid residence permit for students.' },
+      ],
+      documents: [
+        'Original SSC & HSC / Diploma certificates + marksheets (attested by MoFA Dhaka)',
+        'Valid passport (minimum 2 years validity)',
+        'University conditional offer / acceptance letter',
+        'Proof of tuition payment or scholarship letter',
+        'Bank statement showing minimum €6,000–€8,000',
+        'Affidavit of Financial Sponsorship',
+        'Police Clearance Certificate (attested by MoFA)',
+        'Medical travel insurance (minimum €30,000 coverage)',
+        'Completed Hungarian national visa application form',
+        'Passport-size photographs (white background, 35×45mm)',
+      ],
+      tips: [
+        'Hungary grants full 26-Nation Schengen access — travel to all EU/EEA Schengen states freely',
+        'VFS Global Dhaka (Gulshan) handles biometrics — no embassy visit to India required',
+        'Stipendium Hungaricum scholarship covers full tuition + monthly stipend for eligible students',
+        'Part-time work permitted up to 24 hours/week under Hungarian student residence permit',
+      ],
+      warnings: [
+        'Ensure travel insurance covers the full Schengen zone for the visa validity period',
+        'VFS appointment slots fill quickly — book as early as possible after receiving offer letter',
+      ],
+    },
+    pg: {
+      title: "Postgraduate (Master's / PhD) Student Visa",
+      intro: "Hungary's Stipendium Hungaricum and self-funded Master's programs offer European qualifications with Schengen freedom. Submit your visa application at VFS Global Dhaka with zero India transit.",
+      timeline: '6–10 weeks after document submission',
+      cost: '~HUF 60,000–75,000 official visa fee',
+      steps: [
+        { step: '01', title: "Master's Program Selection", desc: "Choose from English-taught Master's programs in Business, Engineering, IT, or Natural Sciences." },
+        { step: '02', title: 'Stipendium Hungaricum / Self-Funded Admission', desc: 'Apply through Stipendium Hungaricum scholarship portal or directly to the university for self-funded enrollment.' },
+        { step: '03', title: 'Document Attestation', desc: "Attest Bachelor's degree and transcripts via MoFA Dhaka. Prepare motivation letter and CV." },
+        { step: '04', title: 'VFS Dhaka Biometric Submission', desc: 'Complete your visa application at VFS Global Dhaka (Gulshan). Provide biometrics and certified documents.' },
+        { step: '05', title: 'Visa Approval & Travel', desc: 'Receive Schengen D-type student visa valid for your program duration.' },
+        { step: '06', title: 'Arrival & University Registration', desc: 'Register at the university and obtain your Hungarian residence permit for students (tartózkodási engedély).' },
+      ],
+      documents: [
+        "Bachelor's degree certificate + transcripts (attested by MoFA Dhaka)",
+        'Valid passport (minimum 2 years validity)',
+        'Master\'s acceptance / offer letter from Hungarian university',
+        'Stipendium Hungaricum award letter (if applicable) or proof of tuition payment',
+        'Bank statement showing minimum €6,000',
+        'Motivation letter + CV',
+        'Police Clearance Certificate (attested by MoFA)',
+        'Medical travel insurance (minimum €30,000 Schengen coverage)',
+        'Completed national visa application form',
+      ],
+      tips: [
+        'Stipendium Hungaricum deadlines are typically January–February — plan applications early',
+        'PhD programs under Stipendium Hungaricum are fully funded including accommodation',
+        'A Hungarian degree has EU-wide recognition for professional licensing and employment',
+      ],
+      warnings: [
+        'Self-funded applicants must demonstrate clear source of funds in their bank statements',
+        'Check whether your chosen program is English-taught or Hungarian-medium before applying',
+      ],
+    },
+  },
+  canada: {
+    flag: '🇨🇦',
+    name: 'Canada',
+    color: 'from-red-600 to-rose-700',
+    accent: 'bg-red-600',
+    light: 'bg-red-50 text-red-800 border-red-200',
+    ug: {
+      title: 'Undergraduate Student Visa (Study Permit)',
+      intro: 'Canada offers one of the world\'s most recognized post-graduation work pathways. The Post-Graduation Work Permit (PGWP) allows graduates to work in Canada for up to 3 years, creating clear permanent residency pathways.',
+      timeline: '8–16 weeks (online) or 4–8 weeks (biometric-included at VAC Dhaka)',
+      cost: 'CAD 150 study permit + CAD 85 biometrics fee (statutory fees)',
+      steps: [
+        { step: '01', title: 'Designated Learning Institution (DLI) Selection', desc: 'Choose a DLI-listed Canadian university or college eligible for PGWP (e.g. University of Toronto, University of British Columbia, Carleton University).' },
+        { step: '02', title: 'Acceptance Letter & Tuition Payment', desc: 'Receive your Letter of Acceptance (LOA). Pay tuition deposit directly to the institution.' },
+        { step: '03', title: 'Study Permit Application (IRCC Portal)', desc: 'Apply online via the IRCC portal. Complete IMM5709 and IMM5707 forms, upload all documents, and pay statutory fees.' },
+        { step: '04', title: 'Biometrics at VAC Dhaka', desc: 'Book biometrics appointment at the Visa Application Centre (VAC) in Dhaka. Fingerprints and photograph are collected.' },
+        { step: '05', title: 'Medical Examination', desc: 'Complete an IRCC-designated physician medical exam at an authorized panel physician in Dhaka if required.' },
+        { step: '06', title: 'Study Permit Approval & Travel', desc: 'Receive Port of Entry (POE) Letter of Introduction. Travel to Canada and obtain your Study Permit at the border/airport.' },
+      ],
+      documents: [
+        'Letter of Acceptance (LOA) from a Designated Learning Institution (DLI)',
+        'Proof of tuition payment to Canadian institution',
+        'Valid passport (minimum 2 years validity)',
+        'Proof of financial support: minimum CAD 10,000–15,000 + first-year tuition in bank statements',
+        'Statement of Purpose (SOP) explaining study plans and intent to return to Bangladesh',
+        'Academic transcripts + certificates (SSC, HSC, Bachelor\'s if applicable)',
+        'IELTS Academic: minimum 6.0 overall (varies by university and program)',
+        'Completed IMM5709 (Study Permit Application) and IMM5707 forms',
+        'Biometrics enrollment confirmation',
+        'Medical examination results from IRCC panel physician (if required)',
+      ],
+      tips: [
+        'PGWP duration = length of program (max 3 years) — plan for a 2–3 year program for maximum benefit',
+        'Express Entry CRS points are earned during PGWP work period — plan your Canadian Experience Class (CEC) PR route',
+        'Provincial Nominee Programs (PNPs) in Manitoba, New Brunswick, and Saskatchewan offer lower CRS thresholds',
+        'Apply at least 6–8 months before your intended start date — processing times vary significantly',
+      ],
+      warnings: [
+        'SOP must clearly demonstrate genuine student intent and strong ties to Bangladesh to avoid refusal',
+        'Insufficient funds is the most common refusal reason — maintain clear, consistent bank statements',
+        'IELTS scores must meet both overall and individual band requirements of your specific program',
+      ],
+    },
+    pg: {
+      title: "Postgraduate (Master's / PhD) Study Permit",
+      intro: "Canada's world-class graduate research ecosystem combined with the PGWP pathway makes it a top destination for career-focused Bangladeshi students. Master's graduates gain 3-year open work permits.",
+      timeline: '8–16 weeks processing',
+      cost: 'CAD 150 study permit + CAD 85 biometrics fee (statutory fees)',
+      steps: [
+        { step: '01', title: "Master's / PhD Program Selection", desc: "Choose a DLI graduate program aligned with your undergraduate major. Check PGWP eligibility — all on-campus DLI programs qualify." },
+        { step: '02', title: 'Application & Acceptance', desc: 'Submit graduate application including transcripts, two reference letters, SOP, and IELTS/TOEFL scores.' },
+        { step: '03', title: 'Financial Documentation', desc: 'Demonstrate minimum CAD 12,000–20,000 in personal/family funds, plus scholarship letters if applicable.' },
+        { step: '04', title: 'IRCC Online Application', desc: 'Apply for Study Permit online via IRCC portal. Complete all forms and upload biometric + medical consent.' },
+        { step: '05', title: 'Biometrics & Medical', desc: 'Attend biometrics appointment at VAC Dhaka and complete panel physician medical exam.' },
+        { step: '06', title: 'Arrival & PGWP Planning', desc: 'Arrive in Canada. After graduation, apply for PGWP immediately — valid for up to 3 years for Master\'s programs.' },
+      ],
+      documents: [
+        "Master's / PhD acceptance letter from a DLI",
+        'Valid passport (minimum 2 years validity)',
+        "Bachelor's degree certificate + transcripts (attested by MoFA Dhaka)",
+        'Two academic/professional reference letters',
+        'Statement of Purpose (research proposal / career rationale)',
+        'IELTS Academic: minimum 6.5 overall (6.0 in each band) or TOEFL iBT 90+',
+        'Bank statements showing minimum CAD 12,000–20,000 + first-year tuition',
+        'Scholarship / funding letters (if applicable)',
+        'Medical examination from IRCC panel physician',
+      ],
+      tips: [
+        'Funded graduate positions (TA/RA) significantly reduce self-funding requirements — email professors early',
+        'Canadian graduate degrees rank highly in Express Entry CRS point allocation under Federal Skilled Worker',
+        "Quebec's PEQ accelerated immigration stream is specifically designed for Québec university graduates",
+        'Start PGWP application at IRCC the day you receive your final transcripts — do not delay',
+      ],
+      warnings: [
+        'PhD programs without supervisor confirmation have very low acceptance rates — contact professors directly',
+        'PGWP cannot be extended — plan your PR pathway (CEC/PNP) before it expires',
+        'Thesis-based vs. coursework Master\'s differ in PGWP duration impact — confirm with the institution',
+      ],
+    },
+  },
 };
 
 export default function VisaGuide() {
@@ -330,8 +487,8 @@ export default function VisaGuide() {
   return (
     <>
       <Helmet>
-        <title>Visa Guide — Cyprus, Romania, Malaysia &amp; Korea | Keystone Overseas</title>
-        <meta name="description" content="Step-by-step student visa guide for Cyprus (CRMD entry permit), Romania (Anul Pregătitor), Malaysia (eVAL), and South Korea (D-2) for Bangladeshi students." />
+        <title>Visa Guide — Cyprus, Romania, Malaysia, Korea, Hungary & Canada | Keystone Overseas</title>
+        <meta name="description" content="Step-by-step student visa guide for Cyprus (CRMD entry permit), Romania (Anul Pregătitor), Malaysia (eVAL), South Korea (D-2), Hungary (Schengen VFS Dhaka), and Canada (PGWP) for Bangladeshi students." />
         <link rel="canonical" href="https://www.keystoneeducations.com/visa-guide" />
       </Helmet>
 
@@ -359,7 +516,7 @@ export default function VisaGuide() {
           <div className="max-w-4xl mx-auto px-4 py-3 flex flex-col sm:flex-row gap-3">
             {/* Country */}
             <div className="flex rounded-xl border border-slate-200 overflow-hidden flex-1 flex-wrap sm:flex-nowrap">
-              {(['cyprus', 'romania', 'malaysia', 'korea'] as Country[]).map((c) => (
+              {(['cyprus', 'romania', 'malaysia', 'korea', 'hungary', 'canada'] as Country[]).map((c) => (
                 <button key={c} onClick={() => setCountry(c)}
                   className={`flex-1 py-2.5 px-2 text-xs sm:text-sm font-bold transition-all ${country === c ? 'bg-brand-blue text-white' : 'text-slate-600 hover:bg-slate-50'}`}>
                   {data[c].flag} {data[c].name}

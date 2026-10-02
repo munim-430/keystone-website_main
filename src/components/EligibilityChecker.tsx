@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, ArrowRight, ArrowLeft, RefreshCw, ExternalLink } from 'lucide-react';
+import { CheckCircle, ArrowRight, ArrowLeft, RefreshCw } from 'lucide-react';
+import { WHATSAPP_NUMBER } from '../constants';
 
 type Step = {
   id: string;
@@ -17,6 +18,16 @@ const steps: Step[] = [
       { label: 'HSC / A-Level', value: 'hsc', icon: '🎓' },
       { label: "Bachelor's Degree", value: 'bachelor', icon: '🏛️' },
       { label: "Master's Degree", value: 'master', icon: '🔬' },
+    ],
+  },
+  {
+    id: 'gap',
+    question: 'How long is your study gap?',
+    options: [
+      { label: 'No Gap / Fresh', value: 'none', icon: '✅' },
+      { label: '1–2 Years', value: 'low', icon: '📅' },
+      { label: '3–5 Years', value: 'medium', icon: '⏳' },
+      { label: '5+ Years', value: 'high', icon: '📆' },
     ],
   },
   {
@@ -51,6 +62,41 @@ const steps: Step[] = [
   },
 ];
 
+const GAP_LABEL: Record<string, string> = {
+  none: 'No Gap / Fresh',
+  low: '1–2 Years',
+  medium: '3–5 Years',
+  high: '5+ Years',
+};
+
+const EDUCATION_LABEL: Record<string, string> = {
+  ssc: 'SSC / O-Level',
+  hsc: 'HSC / A-Level',
+  bachelor: "Bachelor's Degree",
+  master: "Master's Degree",
+};
+
+const BUDGET_LABEL: Record<string, string> = {
+  low: 'Under $5,000',
+  medium: '$5,000–$12,000',
+  high: '$12,000–$25,000',
+  scholarship: 'Scholarship / Open',
+};
+
+const PREFERENCE_LABEL: Record<string, string> = {
+  affordable: 'Affordable Tuition',
+  scholarship: 'Scholarship',
+  work: 'Work While Studying',
+  pr: 'PR / Residency Path',
+};
+
+const LANGUAGE_LABEL: Record<string, string> = {
+  none: 'No Certificate',
+  basic: 'IELTS 5.0–5.5',
+  good: 'IELTS 6.0–6.5',
+  excellent: 'IELTS 7.0+',
+};
+
 type Result = {
   country: string;
   flag: string;
@@ -61,13 +107,18 @@ type Result = {
 
 function getResults(answers: Record<string, string>): Result[] {
   const results: Result[] = [];
+  const gap = answers.gap ?? 'none';
 
-  // Cyprus (EU)
+  // Cyprus (EU) — specialist in high study gaps & zero IELTS
   let cyprusScore = 20;
   if (['hsc', 'bachelor', 'ssc'].includes(answers.education)) cyprusScore += 25;
-  if (['low', 'medium'].includes(answers.budget)) cyprusScore += 25;
-  if (['affordable', 'work'].includes(answers.preference)) cyprusScore += 20;
-  if (['none', 'basic'].includes(answers.language)) cyprusScore += 25;
+  if (['low', 'medium'].includes(answers.budget)) cyprusScore += 20;
+  if (['affordable', 'work'].includes(answers.preference)) cyprusScore += 15;
+  if (['none', 'basic'].includes(answers.language)) cyprusScore += 20;
+  // Gap scoring: Cyprus accepts 5–8 yr gap — strongly favour high gap applicants
+  if (gap === 'high') cyprusScore += 20;
+  else if (gap === 'medium') cyprusScore += 15;
+  else if (gap === 'low') cyprusScore += 8;
   results.push({
     country: 'Cyprus (EU)',
     flag: '🇨🇾',
@@ -76,12 +127,16 @@ function getResults(answers: Record<string, string>): Result[] {
     color: 'from-amber-500 to-orange-600',
   });
 
-  // Romania (EU)
+  // Romania (EU) — zero IELTS preparatory year, gap tolerant
   let romaniaScore = 20;
   if (['hsc', 'bachelor'].includes(answers.education)) romaniaScore += 25;
-  if (['low', 'medium'].includes(answers.budget)) romaniaScore += 25;
-  if (['affordable', 'pr'].includes(answers.preference)) romaniaScore += 20;
-  if (['none', 'basic'].includes(answers.language)) romaniaScore += 25;
+  if (['low', 'medium'].includes(answers.budget)) romaniaScore += 20;
+  if (['affordable', 'pr'].includes(answers.preference)) romaniaScore += 15;
+  if (['none', 'basic'].includes(answers.language)) romaniaScore += 20;
+  // Gap scoring: Romania Preparatory Year (Anul Pregătitor) designed for gap students
+  if (gap === 'high') romaniaScore += 18;
+  else if (gap === 'medium') romaniaScore += 15;
+  else if (gap === 'low') romaniaScore += 8;
   results.push({
     country: 'Romania (EU)',
     flag: '🇷🇴',
@@ -96,6 +151,7 @@ function getResults(answers: Record<string, string>): Result[] {
   if (['low', 'medium'].includes(answers.budget)) malaysiaScore += 35;
   if (answers.preference === 'affordable') malaysiaScore += 25;
   if (['none', 'basic', 'good'].includes(answers.language)) malaysiaScore += 15;
+  if (['none', 'low'].includes(gap)) malaysiaScore += 10; // Malaysia prefers low gap
   results.push({
     country: 'Malaysia',
     flag: '🇲🇾',
@@ -110,11 +166,12 @@ function getResults(answers: Record<string, string>): Result[] {
   if (['low', 'medium', 'scholarship'].includes(answers.budget)) koreaScore += 25;
   if (['scholarship', 'work', 'affordable'].includes(answers.preference)) koreaScore += 25;
   if (['none', 'basic', 'good'].includes(answers.language)) koreaScore += 15;
+  if (['none', 'low'].includes(gap)) koreaScore += 10; // Korea generally prefers lower gap
   results.push({
     country: 'South Korea (IEQAS)',
     flag: '🇰🇷',
     match: Math.min(koreaScore, 97),
-    reason: 'Official IEQAS Accredited Universities with automated Confirmation of Visa Issuance (VIC), 30%–100% tuition scholarships, and legal 25–30 hrs/week part-time work rights.',
+    reason: 'Official IEQAS Accredited Universities with automated VIC, 30%–100% tuition scholarships, and legal 25–30 hrs/week part-time work rights.',
     color: 'from-blue-600 to-indigo-800',
   });
 
@@ -124,6 +181,7 @@ function getResults(answers: Record<string, string>): Result[] {
   if (['medium', 'high'].includes(answers.budget)) hungaryScore += 25;
   if (['affordable', 'pr'].includes(answers.preference)) hungaryScore += 20;
   if (['basic', 'good'].includes(answers.language)) hungaryScore += 20;
+  if (['none', 'low'].includes(gap)) hungaryScore += 10;
   results.push({
     country: 'Hungary (Schengen)',
     flag: '🇭🇺',
@@ -147,6 +205,22 @@ function getResults(answers: Record<string, string>): Result[] {
   });
 
   return results.sort((a, b) => b.match - a.match);
+}
+
+/** Build a zero-drop WhatsApp URL containing every student answer. */
+function buildWhatsAppUrl(answers: Record<string, string>, topCountry: string): string {
+  const lines = [
+    `*Student Eligibility Result — Keystone Overseas*`,
+    `🏆 *Best Match:* ${topCountry}`,
+    `🎓 *Education:* ${EDUCATION_LABEL[answers.education] ?? answers.education}`,
+    `⏳ *Study Gap:* ${GAP_LABEL[answers.gap] ?? answers.gap ?? 'Not specified'}`,
+    `💰 *Budget:* ${BUDGET_LABEL[answers.budget] ?? answers.budget}`,
+    `🎯 *Priority:* ${PREFERENCE_LABEL[answers.preference] ?? answers.preference}`,
+    `📊 *English Level:* ${LANGUAGE_LABEL[answers.language] ?? answers.language}`,
+    ``,
+    `Please guide me on my best study abroad options.`,
+  ];
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
 }
 
 const EligibilityChecker = () => {
@@ -178,13 +252,16 @@ const EligibilityChecker = () => {
   };
 
   const results = showResults ? getResults(answers) : [];
+  const whatsappUrl = showResults && results.length > 0
+    ? buildWhatsAppUrl(answers, `${results[0].flag} ${results[0].country}`)
+    : '';
 
   return (
     <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
       {/* Header */}
       <div className="bg-gradient-to-r from-brand-blue to-brand-blue-light p-6 text-white">
         <h3 className="text-xl font-bold mb-1">🎯 Student Eligibility Checker</h3>
-        <p className="text-blue-200 text-sm">Answer 4 quick questions to find your best destination</p>
+        <p className="text-blue-200 text-sm">Answer {steps.length} quick questions to find your best destination</p>
         {!showResults && (
           <div className="mt-4 flex gap-2">
             {steps.map((_, i) => (
@@ -297,14 +374,25 @@ const EligibilityChecker = () => {
                 ))}
               </div>
 
+              {/* Zero-Drop WhatsApp CTA — all answers packaged in query string */}
               <a
-                href="https://wa.me/8801941646278?text=Hi%2C%20I%20used%20the%20eligibility%20checker%20and%20want%20to%20know%20more!"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 flex items-center justify-center gap-2 w-full bg-brand-blue hover:bg-brand-red text-white py-3 rounded-2xl font-bold text-sm transition-all"
               >
                 Talk to a Counselor <ArrowRight size={16} />
               </a>
+
+              {/* Summary of captured answers */}
+              <div className="mt-4 bg-slate-50 rounded-xl p-3 text-xs text-slate-500 space-y-1">
+                <p className="font-semibold text-slate-700 mb-1">📋 Your Profile Summary</p>
+                <p>🎓 Education: {EDUCATION_LABEL[answers.education] ?? '—'}</p>
+                <p>⏳ Study Gap: {GAP_LABEL[answers.gap] ?? '—'}</p>
+                <p>💰 Budget: {BUDGET_LABEL[answers.budget] ?? '—'}</p>
+                <p>🎯 Priority: {PREFERENCE_LABEL[answers.preference] ?? '—'}</p>
+                <p>📊 English: {LANGUAGE_LABEL[answers.language] ?? '—'}</p>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -314,3 +402,4 @@ const EligibilityChecker = () => {
 };
 
 export default EligibilityChecker;
+

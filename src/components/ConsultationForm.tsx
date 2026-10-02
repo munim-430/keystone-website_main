@@ -4,16 +4,44 @@ import { Send, CheckCircle, MessageCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY, WHATSAPP_NUMBER } from '../constants';
 
+/** Bangladeshi mobile number regex per AGENTS.md Data Validation Standards.
+ *  Matches: +8801XXXXXXXX, 8801XXXXXXXX, 01XXXXXXXX (operator prefix 13-19)
+ *  Rejects:  landlines (BTCL 02-xxxxxxx), non-numeric, invalid operator codes.
+ */
+const BD_MOBILE_REGEX = /^(?:\+?880|0)?(1[3-9]\d{8})$/;
+
+function validateBdPhone(raw: string): string | null {
+  const cleaned = raw.replace(/[\s\-()]/g, '');
+  if (!cleaned) return null;
+  return BD_MOBILE_REGEX.test(cleaned)
+    ? null
+    : 'Enter a valid Bangladeshi mobile number (e.g. 01711234567). Landlines and international numbers not accepted.';
+}
+
 const ConsultationForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [whatsappUrl, setWhatsappUrl] = useState('');
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhoneError(validateBdPhone(e.target.value));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
+
+    // Re-validate phone on submit as final guard
+    const phoneRaw = formData.get('phone')?.toString() || '';
+    const phoneValidationError = validateBdPhone(phoneRaw);
+    if (phoneValidationError) {
+      setPhoneError(phoneValidationError);
+      return; // Block submission
+    }
+
+    setIsLoading(true);
 
     const name = formData.get('from_name')?.toString() || '';
     const phone = formData.get('phone')?.toString() || '';
@@ -82,8 +110,12 @@ const ConsultationForm = () => {
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-1">Phone Number / WhatsApp *</label>
                   <input required name="phone" type="tel"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none transition-all text-base"
-                    placeholder="019XXXXXXXX" />
+                    onChange={handlePhoneChange}
+                    className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none transition-all text-base ${phoneError ? 'border-red-400 bg-red-50' : 'border-slate-200'}`}
+                    placeholder="01711234567" />
+                  {phoneError && (
+                    <p className="mt-1 text-xs text-red-600">{phoneError}</p>
+                  )}
                 </div>
               </div>
 

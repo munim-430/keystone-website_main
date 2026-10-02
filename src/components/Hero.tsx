@@ -162,7 +162,7 @@ const Hero: React.FC = () => {
           <div className="flex-1 text-center lg:text-left max-w-2xl">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
               <span className="flex h-2 w-2 rounded-full bg-brand-blue animate-pulse" />
-              <span className="text-xs font-bold text-brand-blue uppercase tracking-wider">Keystone Overseas & Academy</span>
+              <span className="text-xs font-bold text-brand-blue uppercase tracking-wider">Keystone Overseas · Language Academy</span>
             </div>
             <p className="text-brand-blue font-medium italic mb-2 tracking-wide">"Where global dreams begin."</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">

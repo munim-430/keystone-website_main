@@ -15,6 +15,20 @@ import ScrollToTop from './components/ScrollToTop';
 import { useEffect } from 'react';
 import { TAWKTO_PROPERTY_ID, TAWKTO_WIDGET_ID } from './constants';
 
+/** Hard-navigates to /districts so the Vercel rewrite to keystone-seo-engine takes effect.
+ *  dangerouslySetInnerHTML scripts are inert on client-side React route transitions.
+ */
+function RedirectToDistricts() {
+  useEffect(() => {
+    window.location.replace('/districts');
+  }, []);
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <p className="text-slate-500 font-semibold">Loading 64 Districts Directory…</p>
+    </div>
+  );
+}
+
 function TawkTo() {
   useEffect(() => {
     if (TAWKTO_PROPERTY_ID === 'YOUR_TAWKTO_PROPERTY_ID') return;
@@ -46,12 +60,7 @@ export default function App() {
                 <Route path="/success-stories" element={<SuccessStories />} />
                 <Route path="/visa-guide" element={<VisaGuide />} />
                 <Route path="/country/:id" element={<CountryDetail />} />
-                <Route path="/districts" element={
-                  <div className="min-h-screen flex items-center justify-center">
-                    <p className="text-slate-500 font-semibold">Loading 64 Districts Directory...</p>
-                    <script dangerouslySetInnerHTML={{ __html: 'window.location.replace("/districts");' }} />
-                  </div>
-                } />
+                <Route path="/districts" element={<RedirectToDistricts />} />
                 <Route path="*" element={
                   <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-24 lg:pb-0">
                     <div className="text-8xl mb-6">🌍</div>
