@@ -11,7 +11,7 @@ export const countries: Country[] = [
       'No IELTS mandatory (Medium of Instruction or internal placement test)',
       'High study gap tolerance (3 to 8+ years accepted)',
       'Zero consular interview in India (Direct CRMD Entry Permit & OKTB)',
-      'Affordable tuition fees (€3,000 – €4,000 / year with installment plans)',
+      'Affordable university tuition with flexible installment plans',
       'Legal part-time work rights (20 hrs/week during study terms)'
     ],
     universities: [
@@ -24,7 +24,7 @@ export const countries: Country[] = [
     requirements: [
       'SSC & HSC / Diploma Transcripts (Apostilled / Attested)',
       'Valid Passport (minimum 2 years validity)',
-      'Bank Solvency Certificate & 6-Month Statement (~€7,000)',
+      'Bank Solvency Certificate & 6-Month Financial Statement',
       'Police Clearance Certificate & Medical Screening'
     ],
     visaProcess: [
@@ -48,7 +48,7 @@ export const countries: Country[] = [
     fullDescription: 'Malaysia is Southeast Asia’s premier education hub, hosting prestigious branch campuses from the UK and Australia alongside globally ranked research universities. Admissions and visa approval letters (eVAL) are processed 100% online through EMGS with rapid turnaround.',
     benefits: [
       '95%+ visa approval ratio through official EMGS system',
-      'Very affordable tuition fees ($2,500 – $4,500 / year)',
+      'Highly accessible statutory tuition structure',
       'Study gaps up to 5 years accepted for Bachelor and Diploma programs',
       'English-speaking academic environment with modern infrastructure',
       'Visa stamped directly at the High Commission of Malaysia in Dhaka'
@@ -87,7 +87,7 @@ export const countries: Country[] = [
     fullDescription: 'Romania provides an authentic European Union higher education pathway regulated by the Romanian Ministry of Education. Non-EU students have the statutory right to enroll in the 1-year Romanian Language Preparatory Year (Anul Pregătitor de Limba Română) with zero IELTS requirement, transitioning directly into 4-year engineering, computer science, and business degrees.',
     benefits: [
       'Zero IELTS required — official 1-year Preparatory Year (60 ECTS)',
-      'Low statutory tuition fees (€2,200 – €2,700 / year)',
+      'Low statutory university tuition structure',
       'Accepts study gaps from 3 to 8+ years with professional experience records',
       'Digital e-Apostille integration via apostille.mygov.bd',
       'Authorized consular submission in Kuala Lumpur, Bangkok, and Hanoi (bypassing India)'
@@ -102,7 +102,7 @@ export const countries: Country[] = [
     requirements: [
       'HSC / Alim / Polytechnic Diploma certificate & marksheet',
       'Digital Hague Apostille via Bangladesh MoFA (apostille.mygov.bd)',
-      'Bank Solvency (€5,000 – €6,500) and 6-month statement',
+      'Bank Solvency Certificate and 6-month statement',
       'Valid Passport, Police Clearance & Medical Certificate'
     ],
     visaProcess: [
@@ -128,7 +128,7 @@ export const countries: Country[] = [
       'Full Schengen visa with unrestricted travel across 29 European countries',
       'Direct in-person submission & biometrics at VFS Global Dhaka (No India trip)',
       'Medium of Instruction (MOI) and internal university language tests accepted',
-      'Moderate tuition costs (€2,500 – €4,500 / year)',
+      'Competitive European standard tuition rates',
       'Comprehensive English-taught Bachelor and Master degree options'
     ],
     universities: [
@@ -141,7 +141,7 @@ export const countries: Country[] = [
     requirements: [
       'Academic certificates attested by Education Board & MoFA Dhaka',
       'MOI Certificate from previous educational institution or IELTS score',
-      'Bank balance certificate and sponsorship declaration (~€8,000)',
+      'Bank balance certificate and sponsorship declaration',
       'Detailed Motivation Letter / Statement of Purpose'
     ],
     visaProcess: [
@@ -168,7 +168,7 @@ export const countries: Country[] = [
       '30% to 100% tuition fee reduction scholarships based on GPA & IELTS / TOPIK',
       'Direct alumni network and founder guidance (9 years resident experience in South Korea)',
       'Legal part-time work rights permitted during semesters (25–30 hrs/week) and full-time in vacations',
-      'Affordable flagship national universities (~2,000,000 KRW / semester) and high-tech career pathways'
+      'Affordable flagship national universities and high-tech career pathways'
     ],
     universities: [
       'Korea University (우수인증대학)',
@@ -185,7 +185,7 @@ export const countries: Country[] = [
     requirements: [
       'HSC / A-Level / Bachelor with minimum GPA 3.50/5.00 (or CGPA 2.80+ for Masters)',
       'English Track: IELTS 5.5–6.5 (or Korean Track: TOPIK Level 3+ / D-4 language training)',
-      'Statutory Bank Solvency: 20M KRW (~$15,000 USD) for Seoul / 16M-18M KRW for Regional Universities',
+      'Statutory Bank Solvency Certificate aligned with Korean Immigration Standards',
       'Attested Academic Certificates (Board, MoE, MoFA Dhaka) & Study Plan'
     ],
     visaProcess: [
@@ -285,10 +285,10 @@ export const countries: Country[] = [
     name: 'Greece (EU Schengen)',
     image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000&auto=format&fit=crop',
     shortDescription: 'Full 29-nation Schengen access, low tuition fees, and direct Dhaka visa processing.',
-    fullDescription: 'Greece provides an accessible and prestigious European Union study corridor with full Schengen residency rights. Bangladeshi students can enroll in English-taught Bachelor and Master degree programs recognized across Europe with affordable tuition fees (€3,000–€5,000/year), low living costs, and direct biometric visa processing through the Greek consular representation in Dhaka without traveling to India.',
+    fullDescription: 'Greece provides an accessible and prestigious European Union study corridor with full Schengen residency rights. Bangladeshi students can enroll in English-taught Bachelor and Master degree programs recognized across Europe with affordable tuition fees, low living costs, and direct biometric visa processing through the Greek consular representation in Dhaka without traveling to India.',
     benefits: [
       'Full 29-Nation Schengen Area residency and visa-free European travel',
-      'Very affordable annual tuition fees (€3,000 – €5,000 / year)',
+      'Very affordable annual statutory tuition fees',
       'Direct visa application processing via VFS Global Dhaka — no trip to India required',
       'English-taught degree programs in Business, IT, Tourism, Shipping, and Health Sciences',
       'Moderate bank solvency requirements with high visa issuance ratio'
@@ -303,7 +303,7 @@ export const countries: Country[] = [
     requirements: [
       'HSC / A-Level / Bachelor transcript with apostille or MoE/MoFA attestation',
       'Basic English proficiency (IELTS 5.5+ or institutional English assessment)',
-      'Bank solvency certificate and 6-month statement (~€6,000–€8,000 equivalent)',
+      'Bank solvency certificate and 6-month financial statement',
       'Police Clearance Certificate & international medical fitness insurance'
     ],
     visaProcess: [

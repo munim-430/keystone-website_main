@@ -32,12 +32,12 @@ const steps: Step[] = [
   },
   {
     id: 'budget',
-    question: 'What is your approximate annual budget?',
+    question: 'What is your tuition fee preference?',
     options: [
-      { label: 'Under $5,000', value: 'low', icon: '💵' },
-      { label: '$5,000 – $12,000', value: 'medium', icon: '💰' },
-      { label: '$12,000 – $25,000', value: 'high', icon: '💎' },
-      { label: 'Open / Scholarship', value: 'scholarship', icon: '🏆' },
+      { label: 'Budget-Conscious / Low Tuition', value: 'low', icon: '🎯' },
+      { label: 'Moderate / Standard Tuition', value: 'medium', icon: '🏛️' },
+      { label: 'Comprehensive / Top Tier', value: 'high', icon: '🌟' },
+      { label: 'Scholarship Priority', value: 'scholarship', icon: '🏆' },
     ],
   },
   {
@@ -77,10 +77,10 @@ const EDUCATION_LABEL: Record<string, string> = {
 };
 
 const BUDGET_LABEL: Record<string, string> = {
-  low: 'Under $5,000',
-  medium: '$5,000–$12,000',
-  high: '$12,000–$25,000',
-  scholarship: 'Scholarship / Open',
+  low: 'Budget-Conscious / Low Tuition',
+  medium: 'Moderate / Standard Tuition',
+  high: 'Comprehensive / Top Tier',
+  scholarship: 'Scholarship Priority',
 };
 
 const PREFERENCE_LABEL: Record<string, string> = {
@@ -141,7 +141,7 @@ function getResults(answers: Record<string, string>): Result[] {
     country: 'Romania (EU)',
     flag: '🇷🇴',
     match: Math.min(romaniaScore, 96),
-    reason: 'Official 1-Year Preparatory Language Year (Anul Pregătitor) with zero IELTS requirement and low statutory tuition (€2,200/yr).',
+    reason: 'Official 1-Year Preparatory Language Year (Anul Pregătitor) with zero IELTS requirement and low statutory tuition.',
     color: 'from-blue-600 to-indigo-700',
   });
 
@@ -156,7 +156,7 @@ function getResults(answers: Record<string, string>): Result[] {
     country: 'Malaysia',
     flag: '🇲🇾',
     match: Math.min(malaysiaScore, 92),
-    reason: 'Very affordable costs ($2,500–$4,500/yr), 95%+ visa ratio via EMGS, and fast eVAL issuance in Dhaka.',
+    reason: 'Accessible tuition structure, 95%+ visa ratio via EMGS, and fast eVAL issuance in Dhaka.',
     color: 'from-emerald-500 to-teal-600',
   });
 
@@ -229,7 +229,7 @@ function getResults(answers: Record<string, string>): Result[] {
     country: 'Greece (Schengen)',
     flag: '🇬🇷',
     match: Math.min(greeceScore, 91),
-    reason: 'Full 29-Nation Schengen residency, very low tuition (€3,000–€5,000/yr), and direct VFS Dhaka processing with zero Indian travel.',
+    reason: 'Full 29-Nation Schengen residency, accessible statutory tuition, and direct VFS Dhaka processing with zero Indian travel.',
     color: 'from-sky-500 to-blue-600',
   });
 
