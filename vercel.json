@@ -22,6 +22,9 @@
     { "source": "/hungary-schengen/:path*", "destination": "https://keystone-seo-engine.vercel.app/hungary-schengen/:path*" },
     { "source": "/south-korea-scholarship/:path*", "destination": "https://keystone-seo-engine.vercel.app/south-korea-scholarship/:path*" },
     { "source": "/ielts-dhanmondi-academy/:path*", "destination": "https://keystone-seo-engine.vercel.app/ielts-dhanmondi-academy/:path*" },
+    { "source": "/compare", "destination": "https://keystone-seo-engine.vercel.app/compare/" },
+    { "source": "/compare/", "destination": "https://keystone-seo-engine.vercel.app/compare/" },
+    { "source": "/compare/:path*", "destination": "https://keystone-seo-engine.vercel.app/compare/:path*" },
     { "source": "/sitemap-districts.xml", "destination": "https://keystone-seo-engine.vercel.app/sitemap-index.xml" },
     { "source": "/sitemap-0.xml", "destination": "https://keystone-seo-engine.vercel.app/sitemap-0.xml" },
     { "source": "/(.*)", "destination": "/index.html" }
