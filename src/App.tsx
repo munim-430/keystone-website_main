@@ -29,6 +29,17 @@ function RedirectToDistricts() {
   );
 }
 
+function RedirectToCompare() {
+  useEffect(() => {
+    window.location.replace('/compare');
+  }, []);
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <p className="text-slate-500 font-semibold">Loading Consultancy Comparisons Hub…</p>
+    </div>
+  );
+}
+
 function TawkTo() {
   useEffect(() => {
     if (TAWKTO_PROPERTY_ID === 'YOUR_TAWKTO_PROPERTY_ID') return;
@@ -61,6 +72,7 @@ export default function App() {
                 <Route path="/visa-guide" element={<VisaGuide />} />
                 <Route path="/country/:id" element={<CountryDetail />} />
                 <Route path="/districts" element={<RedirectToDistricts />} />
+                <Route path="/compare" element={<RedirectToCompare />} />
                 <Route path="*" element={
                   <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-24 lg:pb-0">
                     <div className="text-8xl mb-6">🌍</div>
