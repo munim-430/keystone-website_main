@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "keystoneeducations.com"
+        }
+      ],
+      "destination": "https://www.keystoneeducations.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/districts", "destination": "https://keystone-seo-engine.vercel.app/" },
     { "source": "/districts/", "destination": "https://keystone-seo-engine.vercel.app/" },
