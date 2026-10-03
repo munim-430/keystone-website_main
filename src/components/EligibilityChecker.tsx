@@ -233,6 +233,21 @@ function getResults(answers: Record<string, string>): Result[] {
     color: 'from-sky-500 to-blue-600',
   });
 
+  // United States (USA)
+  let usaScore = 0;
+  if (['hsc', 'bachelor', 'master'].includes(answers.education)) usaScore += 30;
+  if (['high', 'scholarship'].includes(answers.budget)) usaScore += 30;
+  if (['scholarship', 'work', 'pr'].includes(answers.preference)) usaScore += 20;
+  if (['good', 'excellent'].includes(answers.language)) usaScore += 20;
+  if (['none', 'low'].includes(gap)) usaScore += 10;
+  results.push({
+    country: 'United States (USA)',
+    flag: '🇺🇸',
+    match: Math.min(usaScore, 98),
+    reason: 'World-renowned degrees, 3-Year STEM OPT post-study employment rights, and extensive Graduate/Teaching Assistantships.',
+    color: 'from-blue-800 to-red-600',
+  });
+
   return results.sort((a, b) => b.match - a.match);
 }
 

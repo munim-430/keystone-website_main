@@ -318,5 +318,46 @@ export const countries: Country[] = [
       { name: 'Thessaloniki', x: 50, y: 40, description: 'Vibrant northern educational hub known as Greece’s university city.' },
       { name: 'Heraklion (Crete)', x: 60, y: 90, description: 'Major southern maritime and tourism research center.' }
     ]
+  },
+  {
+    id: 'usa',
+    name: 'United States (USA)',
+    image: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1000&auto=format&fit=crop',
+    shortDescription: 'World-leading universities, 3-Year STEM OPT work authorization, and generous scholarships.',
+    fullDescription: 'The United States is the world’s top higher education destination, hosting over 20,000 Bangladeshi students across Tier-1 research universities and prestigious state institutions. Graduates in STEM-designated degree programs are granted 36 months (3 years) of post-study legal work authorization (STEM OPT), creating a direct bridge to high-value American careers.',
+    benefits: [
+      '3-Year Post-Study Work Authorization (36-Month STEM OPT) across all 50 states',
+      'Extensive merit scholarships, Graduate Assistantships (GA), and Teaching Assistantships (TA)',
+      'World-ranked Tier-1 research facilities and global corporate campus recruiting',
+      'Legal 20 hours/week on-campus employment during academic terms',
+      'Direct F-1 student visa interviews at the U.S. Embassy in Dhaka (Madani Avenue, Baridhara)'
+    ],
+    universities: [
+      'University of Texas at Arlington',
+      'Arizona State University',
+      'University of South Florida',
+      'George Mason University',
+      'Purdue University Northwest'
+    ],
+    requirements: [
+      'HSC / A-Level / Bachelor Degree with minimum GPA 3.00 / 4.00 (or equivalent)',
+      'Standardized English test: IELTS 6.0–6.5+, TOEFL 80+, or Duolingo English Test (DET)',
+      'Form I-20 issued by a SEVP-certified U.S. academic institution',
+      'Verifiable 1-year liquid financial solvency statement for tuition and living maintenance',
+      'Non-immigrant intent compliance under INA Section 214(b)'
+    ],
+    visaProcess: [
+      'University admission and issuance of official Form I-20',
+      'SEVIS I-901 fee payment and DS-160 online visa application',
+      'MRV visa fee payment and biometric/consular interview scheduling in Dhaka',
+      'F-1 consular interview at the U.S. Embassy Dhaka and passport collection'
+    ],
+    capital: 'Washington, D.C.',
+    cities: [
+      { name: 'New York', x: 80, y: 35, description: 'Global financial and cultural capital housing premier private and state universities.' },
+      { name: 'Chicago', x: 65, y: 32, description: 'Midwestern industrial, engineering, and tech innovation center.' },
+      { name: 'Dallas / Texas', x: 50, y: 65, description: 'Booming tech and corporate corridor with top STEM research campuses.' },
+      { name: 'Los Angeles / California', x: 15, y: 55, description: 'Silicon Beach and global entertainment/biotech epicenter.' }
+    ]
   }
 ];

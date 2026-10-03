@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import { WHATSAPP_CONSULTATION } from '../constants';
 
 const countries = [
+  { name: '🇺🇸 United States (STEM OPT)', path: '/country/usa' },
   { name: '🇬🇧 United Kingdom', path: '/country/uk' },
   { name: '🇬🇷 Greece (Schengen)', path: '/country/greece' },
   { name: '🇨🇾 Cyprus (No India Trip)', path: '/country/cyprus' },
