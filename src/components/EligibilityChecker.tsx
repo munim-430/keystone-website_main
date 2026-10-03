@@ -204,6 +204,35 @@ function getResults(answers: Record<string, string>): Result[] {
     color: 'from-red-500 to-rose-600',
   });
 
+  // United Kingdom
+  let ukScore = 0;
+  if (['hsc', 'bachelor', 'master'].includes(answers.education)) ukScore += 25;
+  if (['medium', 'high'].includes(answers.budget)) ukScore += 25;
+  if (['work', 'pr', 'scholarship'].includes(answers.preference)) ukScore += 25;
+  if (['good', 'excellent'].includes(answers.language)) ukScore += 20;
+  if (['none', 'low'].includes(gap)) ukScore += 10;
+  results.push({
+    country: 'United Kingdom (UK)',
+    flag: '🇬🇧',
+    match: Math.min(ukScore, 95),
+    reason: '2-Year Graduate Route post-study work visa, 1-year fast-track Masters, and direct VFS Dhaka & Sylhet submission.',
+    color: 'from-blue-700 to-indigo-900',
+  });
+
+  // Greece
+  let greeceScore = 0;
+  if (['ssc', 'hsc', 'bachelor'].includes(answers.education)) greeceScore += 25;
+  if (['low', 'medium'].includes(answers.budget)) greeceScore += 30;
+  if (['affordable', 'work', 'pr'].includes(answers.preference)) greeceScore += 25;
+  if (['none', 'basic', 'good'].includes(answers.language)) greeceScore += 15;
+  results.push({
+    country: 'Greece (Schengen)',
+    flag: '🇬🇷',
+    match: Math.min(greeceScore, 91),
+    reason: 'Full 29-Nation Schengen residency, very low tuition (€3,000–€5,000/yr), and direct VFS Dhaka processing with zero Indian travel.',
+    color: 'from-sky-500 to-blue-600',
+  });
+
   return results.sort((a, b) => b.match - a.match);
 }
 

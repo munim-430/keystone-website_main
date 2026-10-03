@@ -11,6 +11,7 @@ import CountryDetail from './pages/CountryDetail';
 import Services from './pages/Services';
 import SuccessStories from './pages/SuccessStories';
 import VisaGuide from './pages/VisaGuide';
+import Workforce from './pages/Workforce';
 import ScrollToTop from './components/ScrollToTop';
 import { useEffect } from 'react';
 import { TAWKTO_PROPERTY_ID, TAWKTO_WIDGET_ID } from './constants';
@@ -70,6 +71,7 @@ export default function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/success-stories" element={<SuccessStories />} />
                 <Route path="/visa-guide" element={<VisaGuide />} />
+                <Route path="/workforce" element={<Workforce />} />
                 <Route path="/country/:id" element={<CountryDetail />} />
                 <Route path="/districts" element={<RedirectToDistricts />} />
                 <Route path="/compare" element={<RedirectToCompare />} />

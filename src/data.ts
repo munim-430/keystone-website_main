@@ -240,5 +240,83 @@ export const countries: Country[] = [
       { name: 'Vancouver', x: 15, y: 75, description: 'Coastal city renowned for natural beauty and research institutions.' },
       { name: 'Montreal', x: 85, y: 75, description: 'Bilingual cultural hub with top international universities.' }
     ]
+  },
+  {
+    id: 'uk',
+    name: 'United Kingdom (UK)',
+    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1000&auto=format&fit=crop',
+    shortDescription: 'World-class degrees, 2-year Graduate Route work visa, and flexible intakes.',
+    fullDescription: 'The United Kingdom provides world-recognized higher education with standard 3-year Bachelor’s and 1-year Master’s degrees. Bangladeshi students benefit from the 2-year post-study Graduate Route work visa, dedicated university scholarships, and flexible admission pathways with IELTS waivers or Medium of Instruction (MOI) options.',
+    benefits: [
+      '2-Year Post-Study Work Visa (Graduate Route) across England, Scotland & Wales',
+      '1-Year fast-track Master\'s degrees with lower overall living and tuition expense',
+      'Flexible entry: MOI acceptance and internal English tests at partner universities',
+      'Legal part-time work rights up to 20 hours/week during term time and full-time on breaks',
+      'Dedicated VFS Global submission in Dhaka (Delta Life Tower, Gulshan) and Sylhet'
+    ],
+    universities: [
+      'University of Hertfordshire',
+      'Coventry University',
+      'University of Greenwich',
+      'Ulster University (London & Birmingham)',
+      'Northumbria University'
+    ],
+    requirements: [
+      'HSC / A-Level / Bachelor Degree with minimum 60%+ marks (GPA 3.0+)',
+      'IELTS Academic (6.0–6.5 overall) or qualifying MOI / university internal language test',
+      '28-day statutory bank statement covering tuition + UKVI maintenance funds',
+      'Statement of Purpose (SOP), academic recommendation letters, and TB clearance test'
+    ],
+    visaProcess: [
+      'University conditional offer letter and credibility interview assessment',
+      'CAS (Confirmation of Acceptance for Studies) issuance upon deposit payment',
+      'Online UK Student Visa application and Immigration Health Surcharge (IHS) payment',
+      'Biometrics and document submission at VFS Global Dhaka or Sylhet'
+    ],
+    capital: 'London',
+    cities: [
+      { name: 'London', x: 55, y: 75, description: 'Global financial and cultural capital with premier university hubs.' },
+      { name: 'Birmingham', x: 50, y: 65, description: 'Major central industrial and academic center with vibrant student life.' },
+      { name: 'Manchester', x: 45, y: 55, description: 'World-renowned hub for engineering, business, and creative technology.' }
+    ]
+  },
+  {
+    id: 'greece',
+    name: 'Greece (EU Schengen)',
+    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1000&auto=format&fit=crop',
+    shortDescription: 'Full 29-nation Schengen access, low tuition fees, and direct Dhaka visa processing.',
+    fullDescription: 'Greece provides an accessible and prestigious European Union study corridor with full Schengen residency rights. Bangladeshi students can enroll in English-taught Bachelor and Master degree programs recognized across Europe with affordable tuition fees (€3,000–€5,000/year), low living costs, and direct biometric visa processing through the Greek consular representation in Dhaka without traveling to India.',
+    benefits: [
+      'Full 29-Nation Schengen Area residency and visa-free European travel',
+      'Very affordable annual tuition fees (€3,000 – €5,000 / year)',
+      'Direct visa application processing via VFS Global Dhaka — no trip to India required',
+      'English-taught degree programs in Business, IT, Tourism, Shipping, and Health Sciences',
+      'Moderate bank solvency requirements with high visa issuance ratio'
+    ],
+    universities: [
+      'Metropolitan College (partnered with Oxford Brookes & Queen Margaret)',
+      'City Unity College Athens',
+      'DEI College (Thessaloniki)',
+      'Webster University Athens',
+      'New York College Athens'
+    ],
+    requirements: [
+      'HSC / A-Level / Bachelor transcript with apostille or MoE/MoFA attestation',
+      'Basic English proficiency (IELTS 5.5+ or institutional English assessment)',
+      'Bank solvency certificate and 6-month statement (~€6,000–€8,000 equivalent)',
+      'Police Clearance Certificate & international medical fitness insurance'
+    ],
+    visaProcess: [
+      'Academic review & issuance of University Acceptance / Registration Letter',
+      'Tuition fee payment directly to university bank account in Greece',
+      'National Visa (Type D) application filing and biometric appointment at VFS Global Dhaka',
+      'Consular review and visa sticker endorsement for departure to Athens or Thessaloniki'
+    ],
+    capital: 'Athens',
+    cities: [
+      { name: 'Athens', x: 55, y: 70, description: 'Historic capital housing premier international college campuses and university networks.' },
+      { name: 'Thessaloniki', x: 50, y: 40, description: 'Vibrant northern educational hub known as Greece’s university city.' },
+      { name: 'Heraklion (Crete)', x: 60, y: 90, description: 'Major southern maritime and tourism research center.' }
+    ]
   }
 ];

@@ -5,6 +5,8 @@ import { useState, useEffect, useRef } from 'react';
 import { WHATSAPP_CONSULTATION } from '../constants';
 
 const countries = [
+  { name: '🇬🇧 United Kingdom', path: '/country/uk' },
+  { name: '🇬🇷 Greece (Schengen)', path: '/country/greece' },
   { name: '🇨🇾 Cyprus (No India Trip)', path: '/country/cyprus' },
   { name: '🇷🇴 Romania (Zero IELTS)', path: '/country/romania' },
   { name: '🇲🇾 Malaysia (Fast Visa)', path: '/country/malaysia' },
@@ -15,6 +17,7 @@ const countries = [
 
 const mainLinks = [
   { name: 'Home', path: '/' },
+  { name: 'Workforce', path: '/workforce' },
   { name: '64 Districts', path: '/districts' },
   { name: 'Compare Agencies', path: '/compare' },
   { name: 'Academy', path: '/#academy' },
