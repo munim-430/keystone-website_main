@@ -145,9 +145,59 @@ const AnimatedGlobe: React.FC = () => {
   return <canvas ref={canvasRef} width={520} height={520} className="w-full h-full" />;
 };
 
+const AUDIENCE_HOOKS = {
+  students: {
+    badge: '🎓 For Students & Families',
+    title: 'Go to Europe. Apply from Dhaka. No India trip.',
+    bullets: [
+      '5 to 10-year study gap? 100% Accepted.',
+      'No IELTS score? MOI and internal tests accepted.',
+      'All consular papers submitted in Dhaka. Never travel to India.',
+    ],
+    ctaText: 'Check Eligibility on WhatsApp',
+    ctaMsg: 'Hi, I want to check my study abroad eligibility for Europe from Dhaka.',
+  },
+  workers: {
+    badge: '🔨 For Skilled Workers',
+    title: 'Real European work visa. No Dalals. No fake papers.',
+    bullets: [
+      'Verified factory, welding & warehouse jobs in Poland, Romania, Croatia.',
+      'Employer-provided furnished housing & statutory food vouchers.',
+      'Official embassy contracts lodged in Dhaka. Zero hidden cash fees.',
+    ],
+    ctaText: 'View Job Vacancies on WhatsApp',
+    ctaMsg: 'Hi, I want to inquire about verified European technical work permits.',
+  },
+  recruiters: {
+    badge: '🏢 For European Staffing Agencies',
+    title: "Skilled workers from Bangladesh who don't run away.",
+    bullets: [
+      'BTEB welders, electricians & pickers tested on unedited video.',
+      'Pre-departure language & OHS training at Keystone Language Academy.',
+      '90-Day Free Replacement Guarantee if any worker fails probation.',
+    ],
+    ctaText: 'Request B2B Candidate Dossiers',
+    ctaMsg: 'Hi, I represent a European staffing agency inquiring about technical recruitment.',
+  },
+  universities: {
+    badge: '🏛️ For European Universities',
+    title: 'Serious students. High visa approvals. Tuition paid direct.',
+    bullets: [
+      '100% pre-screened academic credentials with zero visa blacklist history.',
+      'Direct student-to-university bank wires. Zero third-party escrow.',
+      'Direct Dhaka consular lodgement for Cyprus, Hungary, and South Korea.',
+    ],
+    ctaText: 'Institutional Partnership Inquiry',
+    ctaMsg: 'Hi, I am reaching out regarding university recruitment partnerships with Keystone.',
+  },
+};
+
 const Hero: React.FC = () => {
+  const [activeTab, setActiveTab] = React.useState<'students' | 'workers' | 'recruiters' | 'universities'>('students');
+  const activeHook = AUDIENCE_HOOKS[activeTab];
+
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-16 lg:pt-32 lg:pb-24">
+    <section className="relative overflow-hidden bg-white pt-16 pb-16 lg:pt-28 lg:pb-24">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full border border-slate-100 opacity-50" />
         <div className="absolute top-[5%] right-[-5%] w-[400px] h-[400px] rounded-full border border-slate-100 opacity-50" />
@@ -160,33 +210,87 @@ const Hero: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
           <div className="flex-1 text-center lg:text-left max-w-2xl">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
-              <span className="flex h-2 w-2 rounded-full bg-brand-blue animate-pulse" />
-              <span className="text-xs font-bold text-brand-blue uppercase tracking-wider">Keystone Overseas · Language Academy</span>
-            </div>
-            <p className="text-brand-blue font-medium italic mb-2 tracking-wide">"Where global dreams begin."</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-              Your Gateway to <span className="text-brand-blue">Global Education.</span>
-            </h1>
-            <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              Empowering Bangladeshi students to achieve their international education goals with excellence.
-              We provide expert counseling and visa processing for top universities in Cyprus, Romania, Malaysia, South Korea, Hungary, and Canada.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-              <a
-                href="#contact"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-brand-blue-dark text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-brand-blue hover:shadow-xl active:scale-95 group"
+            {/* Audience Switcher Tabs */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-1.5 p-1 bg-slate-100 rounded-2xl mb-6 max-w-fit mx-auto lg:mx-0 border border-slate-200">
+              <button
+                onClick={() => setActiveTab('students')}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  activeTab === 'students'
+                    ? 'bg-brand-blue-dark text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+                }`}
               >
-                <MessageCircle size={20} className="text-green-400" />
-                Start Your Journey
+                🎓 Students
+              </button>
+              <button
+                onClick={() => setActiveTab('workers')}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  activeTab === 'workers'
+                    ? 'bg-brand-blue-dark text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+                }`}
+              >
+                🔨 Workers
+              </button>
+              <button
+                onClick={() => setActiveTab('recruiters')}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  activeTab === 'recruiters'
+                    ? 'bg-brand-blue-dark text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+                }`}
+              >
+                🏢 European Staffing
+              </button>
+              <button
+                onClick={() => setActiveTab('universities')}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  activeTab === 'universities'
+                    ? 'bg-brand-blue-dark text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+                }`}
+              >
+                🏛️ Universities
+              </button>
+            </div>
+
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-4">
+              <span className="flex h-2 w-2 rounded-full bg-brand-blue animate-pulse" />
+              <span className="text-xs font-bold text-brand-blue uppercase tracking-wider">{activeHook.badge}</span>
+            </div>
+
+            {/* Disgustingly Simple Hook Headline */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-4 tracking-tight">
+              {activeHook.title}
+            </h1>
+
+            {/* Plain-English Bullet Points */}
+            <div className="space-y-2 mb-8 text-left bg-slate-50/70 p-4 rounded-2xl border border-slate-100">
+              {activeHook.bullets.map((b, idx) => (
+                <div key={idx} className="flex items-start gap-2.5">
+                  <span className="text-emerald-600 font-bold text-sm mt-0.5">✓</span>
+                  <span className="text-slate-700 text-sm sm:text-base font-medium">{b}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+              <a
+                href={`https://wa.me/8801941646278?text=${encodeURIComponent(activeHook.ctaMsg)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3.5 rounded-full font-bold shadow-lg shadow-emerald-600/20 transition-all active:scale-95 group"
+              >
+                <MessageCircle size={20} className="text-white" />
+                {activeHook.ctaText}
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href="#academy"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-brand-red text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-red-700 hover:shadow-xl active:scale-95"
+                href="#contact"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-6 py-3.5 rounded-full font-semibold transition-all active:scale-95"
               >
-                Language Academy
+                Sobhanbag HQ Desk
               </a>
             </div>
 
