@@ -52,7 +52,7 @@ const Footer = () => {
                 { label: 'Services', to: '/services' },
                 { label: 'Visa Guide', to: '/visa-guide' },
                 { label: 'Success Stories', to: '/success-stories' },
-                { label: 'Dhanmondi Desk', to: '/#contact' },
+                { label: 'Contact', to: '/contact' },
               ].map((item) => (
                 <li key={item.label}>
                   {item.to.startsWith('/districts') || item.to.startsWith('/compare') ? (
