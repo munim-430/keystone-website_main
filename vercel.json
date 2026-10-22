@@ -1,16 +1,50 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
       "source": "/:path*",
       "has": [
-        {
-          "type": "host",
-          "value": "keystoneeducations.com"
-        }
+        { "type": "host", "value": "keystoneeducations.com" }
       ],
       "destination": "https://www.keystoneeducations.com/:path*",
-      "permanent": true
-    }
+      "statusCode": 301
+    },
+
+    { "source": "/workforce", "destination": "/manpower-recruitment", "statusCode": 301 },
+    { "source": "/manpower", "destination": "/manpower-recruitment", "statusCode": 301 },
+    { "source": "/recruitment", "destination": "/manpower-recruitment", "statusCode": 301 },
+    { "source": "/jobs", "destination": "/manpower-recruitment", "statusCode": 301 },
+    { "source": "/overseas-jobs", "destination": "/manpower-recruitment", "statusCode": 301 },
+
+    { "source": "/study-abroad", "destination": "/student-consultancy", "statusCode": 301 },
+    { "source": "/students", "destination": "/student-consultancy", "statusCode": 301 },
+    { "source": "/student", "destination": "/student-consultancy", "statusCode": 301 },
+    { "source": "/education", "destination": "/student-consultancy", "statusCode": 301 },
+    { "source": "/education-consultancy", "destination": "/student-consultancy", "statusCode": 301 },
+
+    { "source": "/contact-us", "destination": "/contact", "statusCode": 301 },
+    { "source": "/contacts", "destination": "/contact", "statusCode": 301 },
+    { "source": "/get-in-touch", "destination": "/contact", "statusCode": 301 },
+    { "source": "/about-us", "destination": "/about", "statusCode": 301 },
+    { "source": "/visa", "destination": "/visa-guide", "statusCode": 301 },
+    { "source": "/success", "destination": "/success-stories", "statusCode": 301 },
+
+    { "source": "/country/:id", "destination": "/student-consultancy/study-in-:id-from-bangladesh", "statusCode": 301 },
+    { "source": "/malaysia", "destination": "/student-consultancy/study-in-malaysia-from-bangladesh", "statusCode": 301 },
+    { "source": "/south-korea", "destination": "/student-consultancy/study-in-south-korea-from-bangladesh", "statusCode": 301 },
+    { "source": "/romania", "destination": "/student-consultancy/study-in-romania-from-bangladesh", "statusCode": 301 },
+    { "source": "/cyprus", "destination": "/student-consultancy/study-in-cyprus-from-bangladesh", "statusCode": 301 },
+    { "source": "/hungary", "destination": "/student-consultancy/study-in-hungary-from-bangladesh", "statusCode": 301 },
+    { "source": "/uk", "destination": "/student-consultancy/study-in-uk-from-bangladesh", "statusCode": 301 },
+    { "source": "/canada", "destination": "/student-consultancy/study-in-canada-from-bangladesh", "statusCode": 301 },
+    { "source": "/usa", "destination": "/student-consultancy/study-in-usa-from-bangladesh", "statusCode": 301 },
+    { "source": "/greece", "destination": "/student-consultancy/study-in-greece-from-bangladesh", "statusCode": 301 },
+
+    { "source": "/study-in-malaysia", "destination": "/student-consultancy/study-in-malaysia-from-bangladesh", "statusCode": 301 },
+    { "source": "/study-in-south-korea", "destination": "/student-consultancy/study-in-south-korea-from-bangladesh", "statusCode": 301 },
+    { "source": "/study-in-romania", "destination": "/student-consultancy/study-in-romania-from-bangladesh", "statusCode": 301 },
+    { "source": "/study-in-cyprus", "destination": "/student-consultancy/study-in-cyprus-from-bangladesh", "statusCode": 301 },
+    { "source": "/study-in-hungary", "destination": "/student-consultancy/study-in-hungary-from-bangladesh", "statusCode": 301 }
   ],
   "rewrites": [
     { "source": "/districts", "destination": "https://keystone-seo-engine.vercel.app/" },
