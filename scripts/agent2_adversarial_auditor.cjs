@@ -96,6 +96,8 @@ if (violations.filter(v => v.category === 'REGULATORY_OVERREACH').length === 0) 
 // 3. Contact Vector & PII Integrity
 const piiAndContactPatterns = [
   { name: 'Old Inactive Email (info@keystoneeducations.com)', regex: /info@keystoneeducations\.com/i },
+  { name: 'Non-canonical Email (munim@keystoneoverseasbd.com)', regex: /munim@keystoneoverseasbd\.com/i },
+  { name: 'Non-canonical Email (fahim@keystoneoverseasbd.com)', regex: /fahim@keystoneoverseasbd\.com/i },
   { name: 'Gazipur as Office / Campus Location', regex: /Gazipur\s+(office|branch|campus|desk|headquarters|hq)/i },
 ];
 
@@ -109,7 +111,7 @@ for (const f of files) {
   }
 }
 if (violations.filter(v => v.category === 'CONTACT_INTEGRITY').length === 0) {
-  console.log('✓ PASS: Zero Gazipur office mentions and zero broken email references.');
+  console.log('✓ PASS: Zero Gazipur office mentions and zero broken/non-canonical email references.');
   passCount++;
 }
 
