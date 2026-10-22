@@ -114,7 +114,7 @@ export default function App() {
                 <Route path="/bn/manpower/:region" element={<ManpowerRegionLanding language="bn" />} />
 
                 <Route path="/workforce" element={<Navigate to="/manpower-recruitment" replace />} />
-                <Route path="/country/:id" element={<LegacyCountryRedirect />} />;
+                <Route path="/country/:id" element={<LegacyCountryRedirect />} />
 
                 <Route path="/districts" element={<RedirectToDistricts />} />
                 <Route path="/compare" element={<RedirectToCompare />} />
