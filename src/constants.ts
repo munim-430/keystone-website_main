@@ -1,4 +1,5 @@
 export const BRAND_NAME = 'Keystone Overseas';
+export const BRAND_SLOGAN = 'Your Pathway Beyond Borders';
 export const ACADEMY_NAME = 'Keystone Academy';
 
 export const WHATSAPP_NUMBER = '8801941646278';
