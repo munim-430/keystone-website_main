@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Mail, Phone, MapPin, GraduationCap, BriefcaseBusiness } from 'lucide-react';
-import { CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER, FACEBOOK_URL } from '../constants';
+import { CONTACT_EMAIL, SECONDARY_CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER, FACEBOOK_URL } from '../constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -49,7 +49,7 @@ const Footer = () => {
             <div className="space-y-4 text-sm">
               <div className="flex gap-3"><MapPin className="text-brand-red flex-shrink-0" size={18} /><span>{OFFICE_ADDRESS}</span></div>
               <div className="flex gap-3"><Phone className="text-brand-red flex-shrink-0" size={18} /><span>{WHATSAPP_DISPLAY}</span></div>
-              <div className="flex gap-3"><Mail className="text-brand-red flex-shrink-0" size={18} /><span className="break-all">{CONTACT_EMAIL}</span></div>
+              <div className="flex gap-3"><Mail className="text-brand-red flex-shrink-0" size={18} /><div className="space-y-1"><a className="block break-all hover:text-white" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a><a className="block break-all hover:text-white" href={`mailto:${SECONDARY_CONTACT_EMAIL}`}>{SECONDARY_CONTACT_EMAIL}</a></div></div>
             </div>
             <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
               <Link to="/contact" className="hover:text-white">Contact</Link>
