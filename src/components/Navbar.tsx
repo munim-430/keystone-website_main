@@ -19,6 +19,7 @@ const countries = [
 const mainLinks = [
   { name: 'Home', path: '/' },
   { name: 'Student Consultancy', path: '/student-consultancy' },
+  { name: 'Visa Score', path: '/visa-success-score' },
   { name: 'Manpower Recruitment', path: '/manpower-recruitment' },
   { name: 'Success Stories', path: '/success-stories' },
   { name: 'About', path: '/about' },
@@ -92,6 +93,7 @@ const Navbar = () => {
           </div>
 
           <div className="xl:hidden flex items-center gap-2">
+            <Link to="/visa-success-score" className="px-3 py-2 rounded-full border border-slate-200 text-slate-700 text-xs font-black">Visa Score</Link>
             <Link to="/bn/student-consultancy" className="p-2 rounded-full border border-slate-200 text-slate-600" aria-label="Bangla"><Languages size={18} /></Link>
             <a href={WHATSAPP_CONSULTATION} target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-green-600 transition-all shadow-md">WhatsApp</a>
           </div>
