@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Mail, Phone, MapPin, GraduationCap, BriefcaseBusiness } from 'lucide-react';
-import { CONTACT_EMAIL, SECONDARY_CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER, FACEBOOK_URL } from '../constants';
+import { BRAND_SLOGAN, CONTACT_EMAIL, SECONDARY_CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER, FACEBOOK_URL } from '../constants';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,10 +10,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-5">
+            <div className="flex items-center gap-2 mb-3">
               <img src="/logo.png" alt="Keystone Overseas" className="h-10 w-auto" />
               <span className="font-black text-xl text-white">Keystone<span className="text-brand-red">Overseas</span></span>
             </div>
+            <p className="text-white font-bold tracking-wide mb-4">{BRAND_SLOGAN}</p>
             <p className="text-slate-400 leading-relaxed mb-5">Overseas education and manpower support from Bangladesh, operated as two separate workflows with evidence-first public claims.</p>
             <div className="flex gap-3">
               <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" aria-label="Facebook" className="bg-slate-800 p-3 rounded-full hover:bg-brand-blue"><Facebook size={18} /></a>
@@ -60,7 +61,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-slate-800 pt-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-slate-500">
-          <p>© 2022–{currentYear} Keystone Overseas. All rights reserved.</p>
+          <p>© 2022–{currentYear} Keystone Overseas. {BRAND_SLOGAN}. All rights reserved.</p>
           <div className="flex gap-5"><Link to="/privacy" className="hover:text-slate-300">Privacy Policy</Link><Link to="/terms" className="hover:text-slate-300">Terms of Service</Link></div>
         </div>
       </div>
