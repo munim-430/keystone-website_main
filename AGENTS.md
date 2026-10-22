@@ -2,10 +2,11 @@
 
 ## 1. Domain & Brand Invariants
 - **Brand Identity**: Strictly `Keystone Overseas`. The language training unit is `Keystone Language Academy` (or `Keystone Academy`). Never revert to legacy names.
-- **Physical Headquarters**: `House 7, Mirpur Road, Sobhanbag, Dhanmondi, Dhaka, Bangladesh`.
+- **Physical Headquarters**: `4th Floor, House 5/4, Sobhanbag, Sobhanbag Road No. 16, Dhaka 1207, Bangladesh`.
 - **Contact Channels**: 
   - Phone/WhatsApp: `+880 1941 646278` / `01941-646278` (E.164: `+8801941646278`, clean WhatsApp: `8801941646278`).
-  - Inbound Email: `munim.m247@gmail.com`. The old address `info@keystoneeducations.com` is deprecated and must never be referenced.
+  - Canonical Emails: `munim@keystoneoverseasbd.com` and `Fahim@keystoneoverseasbd.com`.
+  - Gmail addresses associated with Munim and the old address `info@keystoneeducations.com` are deprecated and must never be referenced publicly.
 - **Fee Confidentiality**: NEVER mention agency fees, consultancy service fees, file opening charges, or internal margins on any public webpage, meta tag, or schema. All customer-facing figures must represent direct university tuition bank wires or official statutory consular fees.
 - **Office Exclusivity**: Zero references to Gazipur as an office, branch, campus, or desk. Gazipur may only appear as a student geographic origin district (e.g. "from Gazipur", "32 km to Dhanmondi HQ").
 
@@ -36,5 +37,5 @@ Whenever generating candidate brochures, placement dossiers, or pitch decks:
      - *Column 2 (Living & Safety Standards)*: Accommodations (female-only rooms if female candidate, 2–3 persons max, heating, WiFi), statutory meal subsidies/vouchers, state health insurance, and legal residence rights.
   4. **Assurance & Family Guarantee Banner**: Clear, reassuring highlight box for family/candidate peace of mind (verified employer, legal contract, dedicated welfare contact).
   5. **4-Step Deployment Roadmap**: 4 simple horizontal flow boxes (`[ 1. Work Permit ] → [ 2. Attestation ] → [ 3. Visa ] → [ 4. Arrival ]`).
-  6. **Clean Corporate Footer**: Dhanmondi Headquarters address, verified WhatsApp line (`+880 1941 646278`), email (`munimm247@gmail.com`), and unique candidate tracking reference.
+  6. **Clean Corporate Footer**: Dhanmondi Headquarters address, verified WhatsApp line (`+880 1941 646278`), canonical Keystone email, and unique candidate tracking reference.
 - **Dual Output**: Always generate both the print-ready `.html` (with a one-click `🖨️ Print / Save as PDF` button) and a companion `.md` summary.
