@@ -7,8 +7,8 @@ export default async function handler(req: any, res: any) {
   if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
 
   const supabaseUrl = process.env.SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!supabaseUrl || !serviceKey) return res.status(503).json({ error: 'Content backend not configured yet' });
+  const secretKey = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!supabaseUrl || !secretKey) return res.status(503).json({ error: 'Content backend not configured yet' });
 
   const key = safe(req.query?.key, 180);
   const locale = safe(req.query?.locale, 10) || 'en';
@@ -25,8 +25,7 @@ export default async function handler(req: any, res: any) {
       `${supabaseUrl}/rest/v1/site_content?select=content_key,locale,content_type,route,title,data,seo,sort_order,updated_at&${filters.join('&')}&order=sort_order.asc`,
       {
         headers: {
-          apikey: serviceKey,
-          Authorization: `Bearer ${serviceKey}`,
+          apikey: secretKey,
           Accept: 'application/json',
         },
       },
