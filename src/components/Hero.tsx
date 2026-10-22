@@ -150,7 +150,7 @@ const AUDIENCE_HOOKS = {
     badge: '🎓 For Students & Families',
     title: 'Go to Europe. Apply from Dhaka. No India trip.',
     bullets: [
-      '5 to 10-year study gap? 100% Accepted.',
+      '3 to 5-year study gap? Accepted for selected countries, universities & programs.',
       'No IELTS score? MOI and internal tests accepted.',
       'All consular papers submitted in Dhaka. Never travel to India.',
     ],
