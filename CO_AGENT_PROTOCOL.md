@@ -5,7 +5,7 @@
 
 - **Agent 1: Spec & Invariant Integrity Agent (Lead Builder)**
   - Implements functional requirements, architectural upgrades, UI/UX components, and data pipelines.
-  - Maintains strict invariants: Brand (`Keystone Overseas`), HQ (`House 7, Mirpur Road, Sobhanbag, Dhanmondi, Dhaka`), Phone (`+880 1941 646278`), Email (`munim.m247@gmail.com`), and academic corridors.
+  - Maintains strict invariants: Brand (`Keystone Overseas`), HQ (`4th Floor, House 5/4, Sobhanbag, Sobhanbag Road No. 16, Dhaka 1207`), Phone (`+880 1941 646278`), Emails (`munim@keystoneoverseasbd.com`, `Fahim@keystoneoverseasbd.com`), and academic corridors.
   - Passes turn to Agent 2 after each implementation cycle.
 
 - **Agent 2: Adversarial Boundary Auditor (Lead Validator)**
@@ -13,7 +13,7 @@
   - Hunts for:
     1. **Fee Leakage**: Any accidental mention of agency fees, service fees, or file opening charges.
     2. **Regulatory Overreach**: Unlawful work-visa guarantees or unlicensed manpower export claims.
-    3. **PII & Data Integrity**: Outdated emails (`info@`), unnormalized phone numbers, leaked student credentials.
+    3. **PII & Data Integrity**: Outdated emails (`info@keystoneeducations.com` or deprecated Gmail addresses), unnormalized phone numbers, leaked student credentials.
     4. **Geographic Completeness**: Validating all 64 districts in Bangladesh across programmatic corridors.
     5. **Build & Route Integrity**: Zero broken links, zero 404s, valid Schema.org JSON-LD.
   - Has veto power: Can fail a build and require Agent 1 to remediate.
