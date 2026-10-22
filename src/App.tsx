@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -8,18 +8,24 @@ import ErrorBoundary from './components/ErrorBoundary';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import CountryDetail from './pages/CountryDetail';
 import Services from './pages/Services';
-import SuccessStories from './pages/SuccessStories';
 import VisaGuide from './pages/VisaGuide';
-import Workforce from './pages/Workforce';
 import ScrollToTop from './components/ScrollToTop';
 import { useEffect } from 'react';
 import { TAWKTO_PROPERTY_ID, TAWKTO_WIDGET_ID } from './constants';
+import {
+  StudentConsultancy,
+  StudyCountryLanding,
+  ManpowerRecruitment,
+  ManpowerRegionLanding,
+} from './pages/SiloPages';
+import {
+  StructuredData,
+  ComplianceStrip,
+  HomepageTrust,
+  VerifiedSuccessStories,
+} from './components/TrustAndSchema';
 
-/** Hard-navigates to /districts so the Vercel rewrite to keystone-seo-engine takes effect.
- *  dangerouslySetInnerHTML scripts are inert on client-side React route transitions.
- */
 function RedirectToDistricts() {
   useEffect(() => {
     window.location.replace('/districts');
@@ -56,6 +62,29 @@ function TawkTo() {
   return null;
 }
 
+function HomeWithTrust() {
+  return (
+    <>
+      <Home />
+      <HomepageTrust />
+    </>
+  );
+}
+
+function NotFound() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-24 lg:pb-0">
+      <div className="text-7xl mb-6">↪</div>
+      <h1 className="text-4xl font-extrabold text-slate-900 mb-4">This URL has no active page</h1>
+      <p className="text-slate-500 mb-8 text-lg max-w-xl">Use the two primary service areas below. Legacy URLs are handled by server-side 301 redirects before this screen is reached.</p>
+      <div className="flex flex-wrap justify-center gap-3">
+        <a href="/student-consultancy" className="bg-brand-blue text-white font-bold px-6 py-3 rounded-full">Student Consultancy</a>
+        <a href="/manpower-recruitment" className="bg-slate-900 text-white font-bold px-6 py-3 rounded-full">Manpower Recruitment</a>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <HelmetProvider>
@@ -63,32 +92,37 @@ export default function App() {
         <ErrorBoundary>
           <ScrollToTop />
           <TawkTo />
+          <StructuredData />
           <div className="min-h-screen bg-slate-50 font-sans selection:bg-brand-blue/20 selection:text-brand-blue">
             <Navbar />
             <main>
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<HomeWithTrust />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/success-stories" element={<SuccessStories />} />
+                <Route path="/success-stories" element={<VerifiedSuccessStories />} />
                 <Route path="/visa-guide" element={<VisaGuide />} />
-                <Route path="/workforce" element={<Workforce />} />
-                <Route path="/country/:id" element={<CountryDetail />} />
+
+                <Route path="/student-consultancy" element={<StudentConsultancy />} />
+                <Route path="/student-consultancy/:slug" element={<StudyCountryLanding />} />
+                <Route path="/bn/student-consultancy" element={<StudentConsultancy language="bn" />} />
+                <Route path="/bn/study/:slug" element={<StudyCountryLanding language="bn" />} />
+
+                <Route path="/manpower-recruitment" element={<ManpowerRecruitment />} />
+                <Route path="/manpower-recruitment/:region" element={<ManpowerRegionLanding />} />
+                <Route path="/bn/manpower-recruitment" element={<ManpowerRecruitment language="bn" />} />
+                <Route path="/bn/manpower/:region" element={<ManpowerRegionLanding language="bn" />} />
+
+                <Route path="/workforce" element={<Navigate to="/manpower-recruitment" replace />} />
+                <Route path="/country/:id" element={<Navigate to="/student-consultancy" replace />} />
+
                 <Route path="/districts" element={<RedirectToDistricts />} />
                 <Route path="/compare" element={<RedirectToCompare />} />
-                <Route path="*" element={
-                  <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-24 lg:pb-0">
-                    <div className="text-8xl mb-6">🌍</div>
-                    <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Page Not Found</h1>
-                    <p className="text-slate-500 mb-8 text-lg">This destination doesn't exist yet.</p>
-                    <a href="/" className="bg-brand-blue text-white font-bold px-8 py-4 rounded-full hover:bg-brand-red transition-all">
-                      Go Back Home
-                    </a>
-                  </div>
-                } />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
+            <ComplianceStrip />
             <Footer />
             <WhatsAppButton />
             <BottomTabBar />
