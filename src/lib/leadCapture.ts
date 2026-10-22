@@ -23,18 +23,15 @@ export type LeadPayload = {
   _company?: string;
 };
 
-export const SUPABASE_PROJECT_URL =
-  import.meta.env.VITE_SUPABASE_URL || 'https://puthdofgbzpybexgluee.supabase.co';
+export const SUPABASE_PROJECT_URL = import.meta.env.VITE_SUPABASE_URL || '';
 
-export const LEAD_API_URL =
-  import.meta.env.VITE_LEAD_API_URL || `${SUPABASE_PROJECT_URL}/functions/v1/ingest-lead`;
+// Public browsers submit to the same-origin Vercel function. The Supabase service key stays server-side.
+export const LEAD_API_URL = import.meta.env.VITE_LEAD_API_URL || '/api/lead';
 
-export const SUPABASE_PUBLISHABLE_KEY =
-  import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || '';
+export const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || '';
 
 export const COMPANY_PROFILE_URL =
-  import.meta.env.VITE_COMPANY_PROFILE_URL ||
-  `${SUPABASE_PROJECT_URL}/storage/v1/object/public/company-assets/keystone-overseas-company-profile.pdf`;
+  import.meta.env.VITE_COMPANY_PROFILE_URL || '/about#company-profile';
 
 export function getLeadSessionId() {
   const key = 'keystone_lead_session';
