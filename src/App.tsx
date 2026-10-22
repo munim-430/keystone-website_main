@@ -7,6 +7,7 @@ import BottomTabBar from './components/BottomTabBar';
 import ErrorBoundary from './components/ErrorBoundary';
 import Home from './pages/Home';
 import About from './pages/About';
+import Contact from './pages/Contact';
 import CountryDetail from './pages/CountryDetail';
 import Services from './pages/Services';
 import SuccessStories from './pages/SuccessStories';
@@ -68,6 +69,7 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/success-stories" element={<SuccessStories />} />
                 <Route path="/visa-guide" element={<VisaGuide />} />
