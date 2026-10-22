@@ -26,7 +26,7 @@ async function fetchMigration(path: string) {
 
 export default async function handler(req: any, res: any) {
   if (process.env.VERCEL_ENV !== 'preview') return res.status(404).json({ error: 'Not found' });
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
     const acquisition = await fetchMigration('supabase/migrations/20261023_acquisition_backend.sql');
