@@ -10,6 +10,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
 import VisaGuide from './pages/VisaGuide';
+import StaffLeads from './pages/StaffLeads';
 import { PrivacyPolicy, TermsOfService } from './pages/LegalPages';
 import ScrollToTop from './components/ScrollToTop';
 import { useEffect } from 'react';
@@ -99,6 +100,7 @@ export default function App() {
                 <Route path="/visa-success-score" element={<VisaSuccessScore />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsOfService />} />
+                <Route path="/staff/leads" element={<StaffLeads />} />
 
                 <Route path="/student-consultancy" element={<StudentConsultancy />} />
                 <Route path="/student-consultancy/:slug" element={<SearchOptimizedStudyCountryLanding />} />
@@ -112,7 +114,7 @@ export default function App() {
                 <Route path="/bn/manpower/:region" element={<ManpowerRegionLanding language="bn" />} />
 
                 <Route path="/workforce" element={<Navigate to="/manpower-recruitment" replace />} />
-                <Route path="/country/:id" element={<LegacyCountryRedirect />} />
+                <Route path="/country/:id" element={<LegacyCountryRedirect />} />;
 
                 <Route path="/districts" element={<RedirectToDistricts />} />
                 <Route path="/compare" element={<RedirectToCompare />} />
