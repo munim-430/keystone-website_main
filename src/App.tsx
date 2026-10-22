@@ -10,6 +10,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
 import VisaGuide from './pages/VisaGuide';
+import { PrivacyPolicy, TermsOfService } from './pages/LegalPages';
 import ScrollToTop from './components/ScrollToTop';
 import { useEffect } from 'react';
 import { TAWKTO_PROPERTY_ID, TAWKTO_WIDGET_ID } from './constants';
@@ -21,7 +22,6 @@ import {
   ManpowerRegionLanding,
 } from './pages/SiloPages';
 import {
-  StructuredData,
   ComplianceStrip,
   HomepageTrust,
   VerifiedSuccessStories,
@@ -82,7 +82,6 @@ export default function App() {
         <ErrorBoundary>
           <ScrollToTop />
           <TawkTo />
-          <StructuredData />
           <div className="min-h-screen bg-slate-50 font-sans selection:bg-brand-blue/20 selection:text-brand-blue">
             <Navbar />
             <main>
@@ -93,6 +92,8 @@ export default function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/success-stories" element={<VerifiedSuccessStories />} />
                 <Route path="/visa-guide" element={<VisaGuide />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsOfService />} />
 
                 <Route path="/student-consultancy" element={<StudentConsultancy />} />
                 <Route path="/student-consultancy/:slug" element={<StudyCountryLanding />} />
