@@ -26,14 +26,13 @@ function stringValue(value: unknown, max = 500) {
 
 async function supabaseRest(path: string, init: RequestInit) {
   const url = process.env.SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!url || !serviceKey) throw new Error('Supabase server environment is not configured.');
+  const secretKey = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !secretKey) throw new Error('Supabase server environment is not configured.');
 
   const response = await fetch(`${url}/rest/v1/${path}`, {
     ...init,
     headers: {
-      apikey: serviceKey,
-      Authorization: `Bearer ${serviceKey}`,
+      apikey: secretKey,
       'Content-Type': 'application/json',
       ...(init.headers || {}),
     },
@@ -60,7 +59,8 @@ export default async function handler(req: any, res: any) {
     return res.status(403).json({ error: 'Origin not allowed' });
   }
 
-  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+  const secretKey = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!process.env.SUPABASE_URL || !secretKey) {
     return res.status(503).json({ error: 'Lead backend not configured yet' });
   }
 
