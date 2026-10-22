@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Mail, MapPin, MessageCircle, Clock } from 'lucide-react';
 import {
   CONTACT_EMAIL,
+  SECONDARY_CONTACT_EMAIL,
   OFFICE_ADDRESS,
   OFFICE_HOURS,
   WHATSAPP_CONSULTATION,
@@ -47,15 +48,15 @@ const Contact = () => {
               <p className="text-sm text-slate-500 mt-2">Fastest channel for a new consultation.</p>
             </a>
 
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all"
-            >
+            <div className="bg-white border border-slate-200 rounded-2xl p-6">
               <Mail className="text-brand-blue mb-4" size={28} />
               <h2 className="font-bold text-xl text-slate-900 mb-2">Email</h2>
-              <p className="text-slate-600 break-all">{CONTACT_EMAIL}</p>
+              <div className="space-y-1">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="block text-slate-600 break-all hover:text-brand-blue">{CONTACT_EMAIL}</a>
+                <a href={`mailto:${SECONDARY_CONTACT_EMAIL}`} className="block text-slate-600 break-all hover:text-brand-blue">{SECONDARY_CONTACT_EMAIL}</a>
+              </div>
               <p className="text-sm text-slate-500 mt-2">For documents and detailed inquiries.</p>
-            </a>
+            </div>
 
             <div className="bg-white border border-slate-200 rounded-2xl p-6">
               <MapPin className="text-brand-red mb-4" size={28} />
