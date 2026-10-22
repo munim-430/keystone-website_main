@@ -8,7 +8,7 @@ export const WHATSAPP_CONSULTATION = `${WHATSAPP_BASE}?text=Hi%2C%20I%20want%20a
 
 export const FACEBOOK_URL = 'https://www.facebook.com/share/187gaTjhFD/';
 export const CONTACT_EMAIL = 'munim.m247@gmail.com';
-export const OFFICE_ADDRESS = 'House 7, Mirpur Road, Sobhanbag, Dhanmondi, Dhaka, Bangladesh';
+export const OFFICE_ADDRESS = '4th Floor, House 5/4, Sobhanbag, Sobhanbag Road No. 16, Dhaka 1207, Bangladesh';
 export const OFFICE_HOURS = 'Sat–Thu: 10am–7pm';
 
 // Form Destination Email
