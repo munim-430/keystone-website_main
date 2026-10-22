@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -14,6 +14,7 @@ import ScrollToTop from './components/ScrollToTop';
 import { useEffect } from 'react';
 import { TAWKTO_PROPERTY_ID, TAWKTO_WIDGET_ID } from './constants';
 import {
+  STUDY_DESTINATIONS,
   StudentConsultancy,
   StudyCountryLanding,
   ManpowerRecruitment,
@@ -27,25 +28,19 @@ import {
 } from './components/TrustAndSchema';
 
 function RedirectToDistricts() {
-  useEffect(() => {
-    window.location.replace('/districts');
-  }, []);
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <p className="text-slate-500 font-semibold">Loading 64 Districts Directory…</p>
-    </div>
-  );
+  useEffect(() => { window.location.replace('/districts'); }, []);
+  return <div className="min-h-screen flex items-center justify-center"><p className="text-slate-500 font-semibold">Loading 64 Districts Directory…</p></div>;
 }
 
 function RedirectToCompare() {
-  useEffect(() => {
-    window.location.replace('/compare');
-  }, []);
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <p className="text-slate-500 font-semibold">Loading Consultancy Comparisons Hub…</p>
-    </div>
-  );
+  useEffect(() => { window.location.replace('/compare'); }, []);
+  return <div className="min-h-screen flex items-center justify-center"><p className="text-slate-500 font-semibold">Loading Consultancy Comparisons Hub…</p></div>;
+}
+
+function LegacyCountryRedirect() {
+  const { id } = useParams();
+  const country = STUDY_DESTINATIONS.find((item) => item.id === id);
+  return <Navigate to={country ? `/student-consultancy/${country.slug}` : '/student-consultancy'} replace />;
 }
 
 function TawkTo() {
@@ -63,12 +58,7 @@ function TawkTo() {
 }
 
 function HomeWithTrust() {
-  return (
-    <>
-      <Home />
-      <HomepageTrust />
-    </>
-  );
+  return <><Home /><HomepageTrust /></>;
 }
 
 function NotFound() {
@@ -115,7 +105,7 @@ export default function App() {
                 <Route path="/bn/manpower/:region" element={<ManpowerRegionLanding language="bn" />} />
 
                 <Route path="/workforce" element={<Navigate to="/manpower-recruitment" replace />} />
-                <Route path="/country/:id" element={<Navigate to="/student-consultancy" replace />} />
+                <Route path="/country/:id" element={<LegacyCountryRedirect />} />
 
                 <Route path="/districts" element={<RedirectToDistricts />} />
                 <Route path="/compare" element={<RedirectToCompare />} />
