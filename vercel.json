@@ -47,6 +47,7 @@
     { "source": "/study-in-hungary", "destination": "/student-consultancy/study-in-hungary-from-bangladesh", "statusCode": 301 }
   ],
   "rewrites": [
+    { "source": "/visa-success-score", "destination": "/visa-success-score.html" },
     { "source": "/districts", "destination": "https://keystone-seo-engine.vercel.app/" },
     { "source": "/districts/", "destination": "https://keystone-seo-engine.vercel.app/" },
     { "source": "/districts/:path*/", "destination": "https://keystone-seo-engine.vercel.app/districts/:path*" },
