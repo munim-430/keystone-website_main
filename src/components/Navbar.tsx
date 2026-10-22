@@ -26,6 +26,7 @@ const mainLinks = [
   { name: 'Services', path: '/services' },
   { name: 'Visa Guide', path: '/visa-guide' },
   { name: 'Success Stories', path: '/success-stories' },
+  { name: 'Contact', path: '/contact' },
 ];
 
 const Navbar = () => {
