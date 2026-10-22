@@ -1,7 +1,7 @@
 # Keystone Overseas — Agent Guardrails & Domain Invariants
 
 ## 1. Domain & Brand Invariants
-- **Brand Identity**: Strictly `Keystone Overseas`. The language training unit is `Keystone Language Academy` (or `Keystone Academy`). Never revert to legacy names.
+- **Brand Identity**: Strictly `Keystone Overseas`. The canonical company slogan is strictly `Your Pathway Beyond Borders`. Use this slogan consistently in public brand surfaces and never replace it with a legacy or alternate tagline. The language training unit is `Keystone Language Academy` (or `Keystone Academy`). Never revert to legacy names.
 - **Physical Headquarters**: `4th Floor, House 5/4, Sobhanbag, Sobhanbag Road No. 16, Dhaka 1207, Bangladesh`.
 - **Contact Channels**: 
   - Phone/WhatsApp: `+880 1941 646278` / `01941-646278` (E.164: `+8801941646278`, clean WhatsApp: `8801941646278`).
