@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BadgeCheck, BookOpen, BriefcaseBusiness, CheckCircle2, GraduationCap, Languages, MapPin, MessageCircle, ShieldCheck } from 'lucide-react';
-import { CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_CONSULTATION, WHATSAPP_DISPLAY } from '../constants';
+import { BRAND_SLOGAN, CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_CONSULTATION, WHATSAPP_DISPLAY } from '../constants';
 import { STUDY_DESTINATIONS } from './SiloPages';
 
 const educationSteps = [
@@ -60,6 +60,80 @@ const Home = () => {
                   <div className="flex gap-3"><CheckCircle2 className="text-emerald-400 flex-shrink-0" size={19} /><span>No fake Google review count or rating.</span></div>
                   <div className="flex gap-3"><CheckCircle2 className="text-emerald-400 flex-shrink-0" size={19} /><span>License numbers are published only after document verification.</span></div>
                   <div className="flex gap-3"><CheckCircle2 className="text-emerald-400 flex-shrink-0" size={19} /><span>Success evidence is published only after redaction and permission.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="company-profile" className="py-20 bg-white border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[0.95fr,1.05fr] gap-12 lg:gap-16 items-start">
+              <div className="lg:sticky lg:top-28">
+                <span className="font-bold text-brand-red uppercase tracking-[0.18em] text-xs">Company Profile</span>
+                <h2 className="text-4xl md:text-5xl font-black text-slate-950 mt-4 mb-4">Keystone Overseas</h2>
+                <p className="text-brand-blue font-black text-xl md:text-2xl mb-6">{BRAND_SLOGAN}</p>
+                <p className="text-slate-600 text-lg leading-8 mb-7">
+                  Keystone Overseas is a Dhaka-based overseas services company focused on two clearly separated areas: international education consultancy for students and compliance-led manpower recruitment support for overseas employment pathways.
+                </p>
+                <p className="text-slate-600 leading-7 mb-8">
+                  Our operating model is built around structured intake, document discipline, current requirement checking, transparent communication and evidence-based public claims. We support clients in both English and Bangla and keep education and manpower workflows separate so each case follows the correct process.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link to="/about" className="inline-flex items-center gap-2 bg-slate-950 text-white px-6 py-3 rounded-full font-black">Full Company Profile <ArrowRight size={17} /></Link>
+                  <Link to="/contact" className="inline-flex items-center gap-2 border border-slate-300 text-slate-800 px-6 py-3 rounded-full font-black">Contact Headquarters</Link>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <article className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
+                    <MapPin className="text-brand-red mb-5" size={28} />
+                    <div className="text-xs uppercase tracking-widest font-black text-slate-500 mb-2">Headquarters</div>
+                    <h3 className="font-black text-xl text-slate-950 mb-2">Sobhanbag, Dhaka</h3>
+                    <p className="text-slate-600 leading-7">{OFFICE_ADDRESS}</p>
+                  </article>
+
+                  <article className="rounded-3xl border border-blue-100 bg-blue-50/60 p-7">
+                    <GraduationCap className="text-brand-blue mb-5" size={28} />
+                    <div className="text-xs uppercase tracking-widest font-black text-blue-700 mb-2">Division 01</div>
+                    <h3 className="font-black text-xl text-slate-950 mb-2">Student Consultancy</h3>
+                    <p className="text-slate-600 leading-7">Profile review, country and institution shortlisting, application support, document preparation and visa-stage guidance.</p>
+                  </article>
+
+                  <article className="rounded-3xl border border-amber-100 bg-amber-50/60 p-7">
+                    <BriefcaseBusiness className="text-amber-700 mb-5" size={28} />
+                    <div className="text-xs uppercase tracking-widest font-black text-amber-700 mb-2">Division 02</div>
+                    <h3 className="font-black text-xl text-slate-950 mb-2">Manpower Support</h3>
+                    <p className="text-slate-600 leading-7">Candidate intake, job-demand verification, documentation and coordination through applicable licensed recruitment channels.</p>
+                  </article>
+
+                  <article className="rounded-3xl border border-emerald-100 bg-emerald-50/60 p-7">
+                    <ShieldCheck className="text-emerald-700 mb-5" size={28} />
+                    <div className="text-xs uppercase tracking-widest font-black text-emerald-700 mb-2">Operating Principle</div>
+                    <h3 className="font-black text-xl text-slate-950 mb-2">Evidence First</h3>
+                    <p className="text-slate-600 leading-7">No invented approval rates, fake reviews or unverifiable licensing claims. Public claims should be supported before they are published.</p>
+                  </article>
+                </div>
+
+                <div className="rounded-[2rem] bg-slate-950 text-white p-8 md:p-9">
+                  <div className="grid md:grid-cols-3 gap-7">
+                    <div>
+                      <div className="text-blue-300 text-xs uppercase tracking-widest font-black mb-2">Communication</div>
+                      <div className="font-black text-xl">English + Bangla</div>
+                      <p className="text-slate-400 text-sm leading-6 mt-2">Clear guidance for local applicants, families, candidates and institutional partners.</p>
+                    </div>
+                    <div>
+                      <div className="text-blue-300 text-xs uppercase tracking-widest font-black mb-2">Service Model</div>
+                      <div className="font-black text-xl">Digital + Office</div>
+                      <p className="text-slate-400 text-sm leading-6 mt-2">Online inquiry and document workflows backed by a physical Dhaka office.</p>
+                    </div>
+                    <div>
+                      <div className="text-blue-300 text-xs uppercase tracking-widest font-black mb-2">Core Standard</div>
+                      <div className="font-black text-xl">Separate Pipelines</div>
+                      <p className="text-slate-400 text-sm leading-6 mt-2">Education and manpower cases are not mixed into one generic process.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
