@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, BriefcaseBusiness, CheckCircle2, MapPin, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BookOpen, BriefcaseBusiness, CheckCircle2, Download, MapPin, ShieldCheck } from 'lucide-react';
 import { CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_CONSULTATION, WHATSAPP_DISPLAY } from '../constants';
+import { COMPANY_PROFILE_URL, trackLeadEvent } from '../lib/leadCapture';
 
 const principles = [
   'Verify eligibility before recommending a study route.',
@@ -11,7 +12,13 @@ const principles = [
   'Use current institution, employer and destination requirements before filing.',
 ];
 
+const COMPANY_PROFILE_AVAILABLE = import.meta.env.VITE_COMPANY_PROFILE_AVAILABLE === 'true';
+
 const About = () => {
+  const handleBrochureClick = () => {
+    void trackLeadEvent('company_profile_download_clicked', { placement: 'about_page' });
+  };
+
   return (
     <>
       <Helmet>
@@ -27,6 +34,17 @@ const About = () => {
               <span className="font-bold uppercase tracking-widest text-xs text-blue-200">About Keystone Overseas</span>
               <h1 className="text-4xl md:text-6xl font-black mt-4 mb-6 leading-tight">Built around clearer decisions, cleaner files and separate operating pipelines.</h1>
               <p className="text-blue-100 text-lg leading-relaxed max-w-3xl">Keystone Overseas is a Dhaka-based overseas education and recruitment-support business. The student side focuses on profile-based university admissions. The manpower side is kept separate and follows employer-demand, documentation and licensing checks appropriate to overseas recruitment.</p>
+              {COMPANY_PROFILE_AVAILABLE && (
+                <a
+                  href={COMPANY_PROFILE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={handleBrochureClick}
+                  className="mt-7 inline-flex items-center gap-2 bg-white text-brand-blue-dark px-6 py-3 rounded-full font-black"
+                >
+                  <Download size={18} /> View Company Profile Brochure
+                </a>
+              )}
             </div>
             <div className="bg-white/10 border border-white/15 rounded-3xl p-8 backdrop-blur-sm">
               <ShieldCheck size={34} className="text-emerald-300 mb-5" />
