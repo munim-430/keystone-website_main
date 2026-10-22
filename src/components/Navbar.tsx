@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { GraduationCap, ChevronDown, Languages } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
-import { WHATSAPP_CONSULTATION } from '../constants';
+import { BRAND_SLOGAN, WHATSAPP_CONSULTATION } from '../constants';
 
 const countries = [
   { name: '🇲🇾 Malaysia', path: '/student-consultancy/study-in-malaysia-from-bangladesh' },
@@ -61,7 +61,10 @@ const Navbar = () => {
                 e.currentTarget.parentElement?.querySelector('.fallback-logo')?.classList.remove('hidden');
               }} />
             <div className="fallback-logo hidden bg-brand-blue p-2 rounded-lg"><GraduationCap className="text-white w-6 h-6" /></div>
-            <span className="font-display font-extrabold text-lg tracking-tight text-brand-blue">Keystone<span className="text-brand-red">Overseas</span></span>
+            <div className="leading-tight">
+              <div className="font-display font-extrabold text-lg tracking-tight text-brand-blue">Keystone<span className="text-brand-red">Overseas</span></div>
+              <div className="hidden sm:block text-[10px] uppercase tracking-[0.14em] font-bold text-slate-500">{BRAND_SLOGAN}</div>
+            </div>
           </Link>
 
           <div className="hidden xl:flex items-center gap-0.5">
