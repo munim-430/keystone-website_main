@@ -17,10 +17,14 @@ import { TAWKTO_PROPERTY_ID, TAWKTO_WIDGET_ID } from './constants';
 import {
   STUDY_DESTINATIONS,
   StudentConsultancy,
-  StudyCountryLanding,
   ManpowerRecruitment,
   ManpowerRegionLanding,
 } from './pages/SiloPages';
+import {
+  BanglaSearchLanding,
+  SearchOptimizedStudyCountryLanding,
+  VisaSuccessScore,
+} from './pages/SeoGrowth';
 import {
   ComplianceStrip,
   HomepageTrust,
@@ -92,13 +96,15 @@ export default function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/success-stories" element={<VerifiedSuccessStories />} />
                 <Route path="/visa-guide" element={<VisaGuide />} />
+                <Route path="/visa-success-score" element={<VisaSuccessScore />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsOfService />} />
 
                 <Route path="/student-consultancy" element={<StudentConsultancy />} />
-                <Route path="/student-consultancy/:slug" element={<StudyCountryLanding />} />
+                <Route path="/student-consultancy/:slug" element={<SearchOptimizedStudyCountryLanding />} />
                 <Route path="/bn/student-consultancy" element={<StudentConsultancy language="bn" />} />
-                <Route path="/bn/study/:slug" element={<StudyCountryLanding language="bn" />} />
+                <Route path="/bn/study/:slug" element={<SearchOptimizedStudyCountryLanding language="bn" />} />
+                <Route path="/bn/guide/:slug" element={<BanglaSearchLanding />} />
 
                 <Route path="/manpower-recruitment" element={<ManpowerRecruitment />} />
                 <Route path="/manpower-recruitment/:region" element={<ManpowerRegionLanding />} />
