@@ -1,8 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, BriefcaseBusiness, CheckCircle2, Download, MapPin, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Award, BookOpen, BriefcaseBusiness, CheckCircle2, Download, MapPin, ShieldCheck } from 'lucide-react';
 import { CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_CONSULTATION, WHATSAPP_DISPLAY } from '../constants';
 import { COMPANY_PROFILE_URL, trackLeadEvent } from '../lib/leadCapture';
+import { STUDY_NT_CERTIFICATE_IMAGE } from '../assets/studyntCertificate';
 
 const principles = [
   'Verify eligibility before recommending a study route.',
@@ -80,6 +81,31 @@ const About = () => {
               <div className="space-y-4">{principles.map((item) => <div key={item} className="flex gap-3 text-slate-700"><CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-0.5" size={20} /><span>{item}</span></div>)}</div>
             </div>
           </div>
+
+          <section className="mt-12 bg-white border border-slate-200 rounded-3xl overflow-hidden">
+            <div className="grid lg:grid-cols-[0.9fr,1.1fr] items-stretch">
+              <div className="bg-[#fff7ef] p-6 sm:p-8 flex items-center justify-center">
+                <img
+                  src={STUDY_NT_CERTIFICATE_IMAGE}
+                  alt="Study NT Trained Agent certificate awarded to Munim Hasibul"
+                  className="w-full max-w-sm rounded-xl border border-orange-100 shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-8 sm:p-10 flex flex-col justify-center">
+                <div className="inline-flex items-center gap-2 text-orange-700 font-black uppercase tracking-widest text-xs mb-4">
+                  <Award size={18} /> Professional training credential
+                </div>
+                <h2 className="text-3xl font-black text-slate-900 mb-4">Study NT Trained Agent</h2>
+                <p className="text-slate-600 leading-relaxed mb-5">Munim Hasibul has completed the specialised Study NT education-agent training covering living, studying, working and opportunities in Australia's Northern Territory.</p>
+                <div className="space-y-3 text-sm text-slate-700">
+                  <div className="flex gap-3"><CheckCircle2 className="text-emerald-600 flex-shrink-0" size={18} /><span><strong>Issued by:</strong> Study NT, Northern Territory Government</span></div>
+                  <div className="flex gap-3"><CheckCircle2 className="text-emerald-600 flex-shrink-0" size={18} /><span><strong>Credential:</strong> Trained NT education agent</span></div>
+                  <div className="flex gap-3"><CheckCircle2 className="text-emerald-600 flex-shrink-0" size={18} /><span><strong>Purpose:</strong> Demonstrates destination-specific professional training for Northern Territory student counselling.</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
 
           <div className="mt-12 bg-white border border-slate-200 rounded-3xl p-8 grid md:grid-cols-3 gap-6">
             <div><MapPin className="text-brand-red mb-3" /><h3 className="font-black text-slate-900 mb-1">Office</h3><p className="text-slate-600 text-sm leading-relaxed">{OFFICE_ADDRESS}</p></div>
