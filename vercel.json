@@ -68,6 +68,9 @@
     { "source": "/compare/", "destination": "https://keystone-seo-engine.vercel.app/compare/" },
     { "source": "/compare/:path*/", "destination": "https://keystone-seo-engine.vercel.app/compare/:path*" },
     { "source": "/compare/:path*", "destination": "https://keystone-seo-engine.vercel.app/compare/:path*" },
+    { "source": "/counselor", "destination": "https://keystone-counselor-pwa.vercel.app/" },
+    { "source": "/counselor/", "destination": "https://keystone-counselor-pwa.vercel.app/" },
+    { "source": "/counselor/:path*", "destination": "https://keystone-counselor-pwa.vercel.app/:path*" },
     { "source": "/sitemap-districts.xml", "destination": "https://keystone-seo-engine.vercel.app/sitemap-index.xml" },
     { "source": "/sitemap-0.xml", "destination": "https://keystone-seo-engine.vercel.app/sitemap-0.xml" },
     { "source": "/(.*)", "destination": "/index.html" }
