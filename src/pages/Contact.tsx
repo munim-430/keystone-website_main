@@ -1,9 +1,11 @@
 import { FormEvent, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Mail, MapPin, MessageCircle, Clock, Send } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Clock, Send, ExternalLink } from 'lucide-react';
 import {
   CONTACT_EMAIL,
   SECONDARY_CONTACT_EMAIL,
+  GOOGLE_MAPS_URL,
+  GOOGLE_MAPS_LOCATOR_URL,
   OFFICE_ADDRESS,
   OFFICE_HOURS,
   WHATSAPP_CONSULTATION,
@@ -124,6 +126,38 @@ const Contact = () => {
               <div className="bg-white border border-slate-200 rounded-2xl p-6">
                 <Clock className="text-brand-blue mb-4" size={28} /><h2 className="font-bold text-xl text-slate-900 mb-2">Office hours</h2><p className="text-slate-600">{OFFICE_HOURS}</p>
               </div>
+            </div>
+          </div>
+
+          {/* Interactive Google Maps Locator */}
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <div className="flex items-center gap-2 text-brand-blue font-bold uppercase tracking-widest text-xs mb-1.5">
+                  <MapPin size={15} className="text-brand-red" /> Campus Location & Navigation
+                </div>
+                <h2 className="text-2xl md:text-3xl font-black text-slate-900">Find our Dhanmondi Office on Google Maps</h2>
+                <p className="text-slate-600 text-sm mt-1">{OFFICE_ADDRESS}</p>
+              </div>
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-brand-blue text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-blue-900 transition-colors shadow-sm flex-shrink-0"
+              >
+                Get Directions <ExternalLink size={15} />
+              </a>
+            </div>
+            <div className="w-full h-[450px] md:h-[500px] rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
+              <iframe
+                src={GOOGLE_MAPS_LOCATOR_URL}
+                title="Keystone Overseas Google Maps Location"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </section>

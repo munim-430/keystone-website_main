@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { ArrowRight, BookOpen, BriefcaseBusiness, CheckCircle2, Globe2, Languages, ShieldCheck } from 'lucide-react';
@@ -197,7 +198,7 @@ export const MANPOWER_REGIONS: ManpowerRegion[] = [
   },
 ];
 
-const PageShell = ({ children }: { children: React.ReactNode }) => (
+const PageShell = ({ children }: { children: ReactNode }) => (
   <div className="pt-24 pb-24 lg:pb-16 bg-slate-50 min-h-screen">{children}</div>
 );
 

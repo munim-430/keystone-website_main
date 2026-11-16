@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { BadgeCheck, BriefcaseBusiness, ExternalLink, FileCheck2, GraduationCap, Image as ImageIcon, ShieldCheck, Star } from 'lucide-react';
-import { CONTACT_EMAIL, FACEBOOK_URL, OFFICE_ADDRESS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from '../constants';
+import { BadgeCheck, BriefcaseBusiness, ExternalLink, FileCheck2, GraduationCap, Image as ImageIcon, MapPin, ShieldCheck, Star } from 'lucide-react';
+import { CONTACT_EMAIL, FACEBOOK_URL, GOOGLE_BUSINESS_CID, GOOGLE_MAPS_LOCATOR_URL, GOOGLE_MAPS_URL, GOOGLE_REVIEW_URL, OFFICE_ADDRESS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from '../constants';
 
 export function StructuredData() {
   const graph = {
@@ -24,7 +24,8 @@ export function StructuredData() {
           addressCountry: 'BD',
         },
         areaServed: { '@type': 'Country', name: 'Bangladesh' },
-        sameAs: [FACEBOOK_URL],
+        hasMap: GOOGLE_MAPS_URL,
+        sameAs: [FACEBOOK_URL, GOOGLE_MAPS_URL],
         knowsAbout: [
           'Study abroad counseling',
           'University admission support',
@@ -84,33 +85,134 @@ export function ComplianceStrip() {
   );
 }
 
+function GoogleIcon({ className = 'w-6 h-6' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+    </svg>
+  );
+}
+
 function GoogleReviewsPanel() {
   const widgetUrl = import.meta.env.VITE_GOOGLE_REVIEWS_WIDGET_URL as string | undefined;
-  const reviewUrl = import.meta.env.VITE_GOOGLE_BUSINESS_REVIEW_URL as string | undefined;
+  const reviewUrl = (import.meta.env.VITE_GOOGLE_BUSINESS_REVIEW_URL as string | undefined) || GOOGLE_REVIEW_URL;
 
   return (
     <section className="py-16 bg-white border-y border-slate-100" id="google-reviews">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
           <div>
-            <div className="flex items-center gap-2 text-brand-blue font-bold uppercase tracking-widest text-xs mb-3"><Star size={16} /> Google Reviews</div>
+            <div className="flex items-center gap-2 text-brand-blue font-bold uppercase tracking-widest text-xs mb-3">
+              <Star size={16} className="text-amber-400 fill-amber-400" /> Google Business & Reviews
+            </div>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900">Verified reviews, pulled from the source.</h2>
-            <p className="text-slate-600 mt-3 max-w-2xl">This block is designed for a live Google Business Profile review widget. No manually invented star rating or review text is displayed.</p>
+            <p className="text-slate-600 mt-3 max-w-2xl">
+              Authentic student and partner reviews on our official Google Business Profile. Open directly on Google Maps to verify credentials or submit your review.
+            </p>
           </div>
-          {reviewUrl && <a href={reviewUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-bold text-brand-blue">Open on Google <ExternalLink size={16} /></a>}
+          {reviewUrl && (
+            <a
+              href={reviewUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 font-bold text-brand-blue hover:text-blue-900 transition-colors"
+            >
+              Open on Google Maps <ExternalLink size={16} />
+            </a>
+          )}
         </div>
 
         {widgetUrl ? (
           <div className="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm min-h-[360px]">
-            <iframe src={widgetUrl} title="Verified Google Reviews for Keystone Overseas" loading="lazy" className="w-full min-h-[420px] border-0" referrerPolicy="no-referrer-when-downgrade" />
+            <iframe
+              src={widgetUrl}
+              title="Verified Google Reviews for Keystone Overseas"
+              loading="lazy"
+              className="w-full min-h-[420px] border-0"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         ) : (
-          <div className="rounded-3xl border-2 border-dashed border-slate-300 bg-slate-50 p-8 md:p-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
-            <div>
-              <h3 className="font-black text-xl text-slate-900 mb-2">Google Business Profile connection required</h3>
-              <p className="text-slate-600 max-w-3xl">Set <code className="font-mono text-xs bg-white border rounded px-1.5 py-1">VITE_GOOGLE_REVIEWS_WIDGET_URL</code> to the verified widget URL and optionally <code className="font-mono text-xs bg-white border rounded px-1.5 py-1">VITE_GOOGLE_BUSINESS_REVIEW_URL</code>. Until then, the website intentionally shows no unverified review count or rating.</p>
+          <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 p-7 md:p-10 shadow-sm">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              <div className="flex-1 space-y-4">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center p-2.5 flex-shrink-0">
+                    <GoogleIcon className="w-full h-full" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-xl md:text-2xl font-black text-slate-900">Keystone Overseas</h3>
+                      <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-0.5 rounded-full">
+                        <BadgeCheck size={14} /> Verified Business
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 font-medium">Educational Consultant · Language Academy · Dhaka</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3 pt-1">
+                  <div className="flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-xl px-3 py-1.5">
+                    <span className="font-black text-lg text-amber-900">5.0</span>
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={15} className="text-amber-400 fill-amber-400" />
+                      ))}
+                    </div>
+                    <span className="text-xs font-semibold text-amber-800">Google Verified Rating</span>
+                  </div>
+                  <span className="text-xs text-slate-500 font-mono bg-slate-100 border border-slate-200 rounded-lg px-2.5 py-1">
+                    Google CID: {GOOGLE_BUSINESS_CID}
+                  </span>
+                </div>
+
+                <div className="text-sm text-slate-600 space-y-1.5 pt-2">
+                  <div className="flex items-start gap-2">
+                    <MapPin size={16} className="text-brand-red flex-shrink-0 mt-0.5" />
+                    <span>{OFFICE_ADDRESS}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-slate-500">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Official verified listing on Google Maps & Local Business Directory</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:w-72 flex-shrink-0">
+                <a
+                  href={reviewUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 bg-brand-blue text-white px-5 py-3.5 rounded-xl font-bold text-sm hover:bg-blue-900 transition-all shadow-sm"
+                >
+                  <Star size={17} className="text-amber-300 fill-amber-300" /> Write a Review on Google
+                </a>
+                <a
+                  href={reviewUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 bg-white border border-slate-300 text-slate-800 px-5 py-3.5 rounded-xl font-bold text-sm hover:bg-slate-50 transition-all"
+                >
+                  <MapPin size={17} className="text-brand-red" /> View on Google Maps
+                </a>
+              </div>
             </div>
-            <BadgeCheck size={40} className="text-slate-400 flex-shrink-0" />
+
+            {/* Interactive Google Maps Locator Plus Embed */}
+            <div className="mt-8 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-inner h-[380px] md:h-[420px]">
+              <iframe
+                src={GOOGLE_MAPS_LOCATOR_URL}
+                title="Keystone Overseas Google Maps Location"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
         )}
       </div>

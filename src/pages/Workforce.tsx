@@ -426,7 +426,7 @@ export default function Workforce() {
         </div>
       </section>
 
-      {/* Keystone Language Academy Integration */}
+      {/* Keystone Academy Integration */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="bg-gradient-to-r from-brand-blue to-slate-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl">
           <div className="max-w-2xl relative z-10 space-y-6">
@@ -440,7 +440,7 @@ export default function Workforce() {
             </h2>
 
             <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
-              Arriving in Europe or Southeast Asia without basic survival vocabulary and workplace safety fluency leaves workers vulnerable. Keystone Language Academy equips all candidates with:
+              Arriving in Europe or Southeast Asia without basic survival vocabulary and workplace safety fluency leaves workers vulnerable. Keystone Academy equips all candidates with:
             </p>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">

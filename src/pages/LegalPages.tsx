@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CONTACT_EMAIL } from '../constants';
 
-const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
+const Section = ({ title, children }: { title: string; children: ReactNode }) => (
   <section className="mb-8"><h2 className="text-2xl font-black text-slate-900 mb-3">{title}</h2><div className="text-slate-600 leading-relaxed space-y-3">{children}</div></section>
 );
 

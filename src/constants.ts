@@ -8,6 +8,11 @@ export const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const WHATSAPP_CONSULTATION = `${WHATSAPP_BASE}?text=Hi%2C%20I%20want%20a%20free%20consultation%20about%20studying%20abroad.`;
 
 export const FACEBOOK_URL = 'https://www.facebook.com/share/187gaTjhFD/';
+export const GOOGLE_BUSINESS_CID = '6892951774391999820';
+export const GOOGLE_PLACE_ID = 'ChIJleKDZRu5VTcR2DHMQKuSry0';
+export const GOOGLE_MAPS_URL = `https://www.google.com/maps?cid=${GOOGLE_BUSINESS_CID}`;
+export const GOOGLE_REVIEW_URL = `https://www.google.com/maps?cid=${GOOGLE_BUSINESS_CID}`;
+export const GOOGLE_MAPS_LOCATOR_URL = 'https://storage.googleapis.com/maps-solutions-dz1ep39qyn/locator-plus/aa81/locator-plus.html';
 export const CONTACT_EMAIL = 'munim@keystoneoverseasbd.com';
 export const SECONDARY_CONTACT_EMAIL = 'Fahim@keystoneoverseasbd.com';
 export const OFFICE_ADDRESS = '4th Floor, House 5/4, Sobhanbag, Sobhanbag Road No. 16, Dhaka 1207, Bangladesh';

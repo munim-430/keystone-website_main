@@ -173,7 +173,7 @@ const AUDIENCE_HOOKS = {
     title: "Skilled workers from Bangladesh who don't run away.",
     bullets: [
       'BTEB welders, electricians & pickers tested on unedited video.',
-      'Pre-departure language & OHS training at Keystone Language Academy.',
+      'Pre-departure language & OHS training at Keystone Academy.',
       '90-Day Free Replacement Guarantee if any worker fails probation.',
     ],
     ctaText: 'Request B2B Candidate Dossiers',
